@@ -1,0 +1,88 @@
+"use client"
+
+import { useState, useEffect } from "react"
+
+const heroImages = [
+  "/makeup-artist-applying-makeup.jpg",
+  "/beautiful-bridal-makeup.jpg",
+  "/professional-makeup-artist-course.jpg",
+  "/makeup-academy-instructor-teaching-class.jpg",
+  "/makeup-products-and-brushes.jpg",
+  "/students-practicing-makeup.jpg",
+  "/eyeshadow-blending-technique.jpg",
+  "/bridal-makeup-course.jpg",
+]
+
+const heroSlogans = [
+  "Empowering You To Create Beauty ✨",
+  "Transform Your Passion Into Art 💄",
+  "Master Professional Makeup Skills 🎨",
+  "Where Beauty Meets Excellence ✨",
+  "Unlock Your Creative Potential 💋",
+  "Build Your Dream Career 🌟",
+  "Learn From Industry Experts 👑",
+  "Your Journey To Success Starts Here ✨",
+]
+
+export default function HeroSection() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroImages.length)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <section className="w-full h-screen overflow-hidden relative">
+      {/* Background Images */}
+      {heroImages.map((img, idx) => (
+        <img
+          key={img}
+          src={img}
+          alt={`Makeup academy ${idx + 1}`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${idx === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
+        />
+      ))}
+
+      {/* Overlay */}
+      <div className="hero-overlay"></div>
+
+      {/* Content */}
+      <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div className="text-center px-4 md:px-8 max-w-5xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white mb-6 md:mb-8 drop-shadow-2xl text-balance leading-tight">
+            {heroSlogans[currentIndex]}
+          </h1>
+          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 md:mb-10 drop-shadow-xl max-w-3xl mx-auto">
+            Join the premier makeup academy and learn from industry-leading professionals
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="bg-gradient-to-r from-primary to-accent text-white px-8 md:px-10 py-3 md:py-4 rounded-full hover:shadow-2xl hover:shadow-primary/50 transition-all font-medium text-base md:text-lg hover:scale-105 transform w-full sm:w-auto">
+              Enroll Now
+            </button>
+            <button className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-8 md:px-10 py-3 md:py-4 rounded-full hover:bg-white/20 transition-all font-medium text-base md:text-lg hover:scale-105 transform w-full sm:w-auto">
+              View Courses
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Carousel Indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+        {heroImages.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentIndex(idx)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? "bg-primary w-8" : "bg-white/50 hover:bg-white/80"
+              }`}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
