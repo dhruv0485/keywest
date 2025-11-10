@@ -300,15 +300,9 @@ export default function CoursesGrid() {
                 {/* Decorative Line */}
                 <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/50 to-transparent mb-4" />
 
-                {/* Price and Button */}
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-xs text-gray-500">Starting at</p>
-                    <p className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      {course.price}
-                    </p>
-                  </div>
-                  <button className="bg-gradient-to-r from-primary to-accent text-white px-5 py-2.5 rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all text-sm font-semibold hover:scale-105">
+                {/* Button */}
+                <div className="flex items-center justify-center">
+                  <button className="w-full bg-gradient-to-r from-primary to-accent text-white px-5 py-2.5 rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all text-sm font-semibold hover:scale-105">
                     Enroll Now
                   </button>
                 </div>
