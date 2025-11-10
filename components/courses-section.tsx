@@ -6,7 +6,7 @@ export default function CoursesSection() {
       image: "/foundation-makeup-course.jpg",
       duration: "6 Weeks",
       level: "Beginner",
-      price: "$299",
+
     },
     {
       title: "Bridal Makeup",
@@ -14,7 +14,7 @@ export default function CoursesSection() {
       image: "/bridal-makeup-course.jpg",
       duration: "8 Weeks",
       level: "Intermediate",
-      price: "$499",
+
     },
     {
       title: "Special Effects",
@@ -22,7 +22,7 @@ export default function CoursesSection() {
       image: "/special-effects-makeup-course.jpg",
       duration: "10 Weeks",
       level: "Advanced",
-      price: "$699",
+
     },
     {
       title: "Professional Artistry",
@@ -30,7 +30,7 @@ export default function CoursesSection() {
       image: "/professional-makeup-artist-course.jpg",
       duration: "12 Weeks",
       level: "Professional",
-      price: "$899",
+
     },
   ]
 
@@ -107,16 +107,10 @@ export default function CoursesSection() {
                   </div>
                 </div>
 
-                {/* Price and Button */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-800">
-                  <div>
-                    <p className="text-xs text-gray-500">Starting at</p>
-                    <p className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      {course.price}
-                    </p>
-                  </div>
-                  <button className="bg-gradient-to-r from-primary to-accent text-white px-5 py-2.5 rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all text-sm font-semibold hover:scale-105">
-                    Buy Now
+                {/* Enroll Button */}
+                <div className="pt-4 border-t border-gray-800">
+                  <button className="w-full bg-gradient-to-r from-primary to-accent text-white px-5 py-3 rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all text-sm font-semibold hover:scale-105">
+                    Enroll Now
                   </button>
                 </div>
               </div>

@@ -5,7 +5,6 @@ export interface Course {
   fullDescription: string
   image: string
   images: string[]
-  price: string
   duration: string
   level: string
   category: string
@@ -91,7 +90,6 @@ export const coursesData: Course[] = [
       "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&q=80",
       "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&q=80",
     ],
-    price: "$299",
     duration: "6 Weeks",
     level: "Beginner",
     category: "Basic",
@@ -152,7 +150,6 @@ export const coursesData: Course[] = [
       "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&q=80",
       "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80",
     ],
-    price: "$499",
     duration: "8 Weeks",
     level: "Intermediate",
     category: "Bridal",

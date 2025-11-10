@@ -5,18 +5,12 @@ import { useParams, notFound } from "next/navigation"
 import Navbar from "@/components/navbar"
 import TopBar from "@/components/top-bar"
 import Footer from "@/components/footer"
-import { ShoppingCart, Star, Clock, Users, CheckCircle2, Heart } from "lucide-react"
+import { Star, Clock, Users, CheckCircle2 } from "lucide-react"
 import { getCourseById } from "@/lib/courses-data"
-import { useCart } from "@/lib/cart-context"
-import { useWishlist } from "@/lib/wishlist-context"
-import { useRouter } from "next/navigation"
 
 export default function CoursePage() {
   const params = useParams()
-  const router = useRouter()
   const [selectedImage, setSelectedImage] = useState(0)
-  const { addToCart, cart } = useCart()
-  const { addToWishlist, isInWishlist, removeFromWishlist } = useWishlist()
 
   const courseId = parseInt(params.id as string)
   const course = getCourseById(courseId)
@@ -26,35 +20,6 @@ export default function CoursePage() {
   }
 
   const totalReviews = Math.floor(parseFloat(course.students.replace(/[^0-9.]/g, "")) * 100)
-  const isInCart = cart.some((item) => item.id === course.id)
-  const inWishlist = isInWishlist(course.id)
-
-  const handleAddToCart = () => {
-    addToCart({
-      id: course.id,
-      title: course.title,
-      price: course.price,
-      image: course.images[0],
-      duration: course.duration,
-      level: course.level,
-    })
-    router.push("/cart")
-  }
-
-  const handleWishlist = () => {
-    if (inWishlist) {
-      removeFromWishlist(course.id)
-    } else {
-      addToWishlist({
-        id: course.id,
-        title: course.title,
-        price: course.price,
-        image: course.images[0],
-        duration: course.duration,
-        level: course.level,
-      })
-    }
-  }
 
   return (
     <main className="w-full overflow-hidden bg-gradient-to-b from-white via-pink-50/20 to-white">
@@ -147,40 +112,16 @@ export default function CoursePage() {
                 <p className="text-foreground/70 leading-relaxed">{course.fullDescription}</p>
               </div>
 
-              {/* Price and CTA */}
+              {/* Enroll CTA */}
               <div className="bg-gradient-to-br from-gray-50 to-pink-50/30 rounded-2xl p-6 border-2 border-primary/10">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <p className="text-sm text-foreground/60">Course Price</p>
-                    <p className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      {course.price}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <button
-                    onClick={handleAddToCart}
-                    disabled={isInCart}
-                    className={`flex-1 py-4 rounded-full font-semibold text-lg transition-all hover:scale-[1.02] flex items-center justify-center gap-2 ${
-                      isInCart
-                        ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-                        : "bg-gradient-to-r from-primary to-accent text-white hover:shadow-xl hover:shadow-primary/30"
-                    }`}
-                  >
-                    <ShoppingCart className="w-5 h-5" />
-                    {isInCart ? "Already in Cart" : "Add to Cart"}
-                  </button>
-                  <button
-                    onClick={handleWishlist}
-                    className={`p-4 rounded-full border-2 transition-all hover:scale-[1.02] ${
-                      inWishlist
-                        ? "bg-gradient-to-r from-primary to-accent border-transparent text-white"
-                        : "border-primary text-primary hover:bg-pink-50"
-                    }`}
-                  >
-                    <Heart className={`w-6 h-6 ${inWishlist ? "fill-current" : ""}`} />
-                  </button>
-                </div>
+                <h3 className="text-xl font-serif font-bold text-foreground mb-4">Ready to Start Learning?</h3>
+                <p className="text-foreground/70 mb-6">Join thousands of students and transform your makeup skills today.</p>
+                <a
+                  href="/enquiry"
+                  className="block w-full py-4 rounded-full font-semibold text-lg transition-all hover:scale-[1.02] flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-white hover:shadow-xl hover:shadow-primary/30"
+                >
+                  Enroll Now
+                </a>
               </div>
             </div>
           </div>
