@@ -1,34 +1,27 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { Play, X } from "lucide-react"
 
 export default function AboutSection() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
 
   const reels = [
-    { id: 1, title: "Contouring Basics", thumbnail: "/makeup-contouring-tutorial.jpg" },
-    { id: 2, title: "Eye Shadow Blending", thumbnail: "/eyeshadow-blending-technique.jpg" },
-    { id: 3, title: "Lip Art Designs", thumbnail: "/artistic-lip-makeup-design.jpg" },
-    { id: 4, title: "Bridal Makeup", thumbnail: "/beautiful-bridal-makeup.jpg" },
-    { id: 5, title: "Skin Preparation", thumbnail: "/professional-skin-prep-makeup.jpg" },
-    { id: 6, title: "Foundation Techniques", thumbnail: "/foundation-makeup-course.jpg" },
-    { id: 7, title: "Smokey Eye Tutorial", thumbnail: "/makeup-artist-applying-makeup.jpg" },
-    { id: 8, title: "Glam Makeup Look", thumbnail: "/makeup-products-and-brushes.jpg" },
-    { id: 9, title: "Natural Makeup", thumbnail: "/students-practicing-makeup.jpg" },
-    { id: 10, title: "Evening Glam", thumbnail: "/makeup-academy-instructor-teaching-class.jpg" },
+    { id: 1, title: "Makeup Reel 1", videoUrl: "/Reel 1.mp4" },
+    { id: 2, title: "Makeup Reel 2", videoUrl: "/Reel 2.mp4" },
+    { id: 3, title: "Makeup Reel 3", videoUrl: "/Reel 3.mp4" },
+    { id: 4, title: "Makeup Reel 4", videoUrl: "/Reel 4.mp4" },
+    { id: 5, title: "Makeup Reel 5", videoUrl: "/Reel 5.mp4" },
+    { id: 6, title: "Makeup Reel 6", videoUrl: "/Reel 6.mp4" },
   ]
 
-  const cardsPerSlide = 5
-  const totalSlides = Math.ceil(reels.length / cardsPerSlide)
+  const openVideoModal = () => {
+    setIsVideoOpen(true)
+  }
 
-  // Auto-play reels - slide every 5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides)
-    }, 5000)
-
-    return () => clearInterval(timer)
-  }, [totalSlides])
+  const closeVideoModal = () => {
+    setIsVideoOpen(false)
+  }
 
   return (
     <section className="section-padding bg-white">
@@ -36,13 +29,21 @@ export default function AboutSection() {
         {/* Main About Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 md:mb-20">
           <div className="order-2 md:order-1">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+            <div
+              className="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+              onClick={openVideoModal}
+            >
               <img
-                src="/makeup-academy-instructor-teaching-class.jpg"
-                alt="Makeup academy classroom"
-                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                src="/thumb.jpg"
+                alt="Watch our story"
+                className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Play Button Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-all">
+                <div className="bg-white/95 rounded-full p-6 group-hover:scale-110 transition-transform shadow-2xl">
+                  <Play className="w-12 h-12 md:w-16 md:h-16 text-primary fill-primary" />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -51,52 +52,91 @@ export default function AboutSection() {
               Who We Are?
             </h2>
             <p className="text-foreground/80 text-base md:text-lg leading-relaxed mb-6">
-              At Makeup Academy, we are passionate about empowering individuals to master the art of makeup. Our expert
-              instructors bring years of professional experience and a genuine commitment to your success.
-            </p>
-            <p className="text-foreground/80 text-base md:text-lg leading-relaxed mb-8">
-              Whether you're a beginner looking to explore makeup basics or an aspiring professional seeking advanced
-              techniques, we have the perfect course for you.
+              At Keywest Academy, we empower individuals to master makeup artistry with expert instructors and professional training that transforms passion into thriving careers.
             </p>
 
-            {/* Key Features */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+            {/* Key Features - Larger Size */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div className="flex items-start gap-3 bg-gradient-to-br from-primary/5 to-accent/5 p-4 rounded-xl border border-primary/20 hover:border-primary/40 transition-all">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-lg">✨</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Expert Instructors</h4>
+                  <h4 className="font-bold text-foreground text-base mb-1">Expert Instructors</h4>
                   <p className="text-sm text-foreground/60">Industry professionals with years of experience</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-3 bg-gradient-to-br from-primary/5 to-accent/5 p-4 rounded-xl border border-primary/20 hover:border-primary/40 transition-all">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-lg">🎨</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Hands-On Training</h4>
+                  <h4 className="font-bold text-foreground text-base mb-1">Hands-On Training</h4>
                   <p className="text-sm text-foreground/60">Practical skills you can apply immediately</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-3 bg-gradient-to-br from-primary/5 to-accent/5 p-4 rounded-xl border border-primary/20 hover:border-primary/40 transition-all">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-lg">🏆</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Certification</h4>
+                  <h4 className="font-bold text-foreground text-base mb-1">Certification</h4>
                   <p className="text-sm text-foreground/60">Recognized credentials upon completion</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-3 bg-gradient-to-br from-primary/5 to-accent/5 p-4 rounded-xl border border-primary/20 hover:border-primary/40 transition-all">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-lg">💼</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Career Support</h4>
+                  <h4 className="font-bold text-foreground text-base mb-1">Career Support</h4>
                   <p className="text-sm text-foreground/60">Guidance to launch your makeup career</p>
                 </div>
               </div>
+            </div>
+
+            {/* Statistics */}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl p-3 md:p-4 border-2 border-primary/20">
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-1">
+                  3+
+                </div>
+                <p className="text-xs md:text-sm text-foreground/70 font-medium">Years Running</p>
+              </div>
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl p-3 md:p-4 border-2 border-primary/20">
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-1">
+                  1000+
+                </div>
+                <p className="text-xs md:text-sm text-foreground/70 font-medium">Students Trained</p>
+              </div>
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl p-3 md:p-4 border-2 border-primary/20">
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-1">
+                  100+
+                </div>
+                <p className="text-xs md:text-sm text-foreground/70 font-medium">Job Placements</p>
+              </div>
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl p-3 md:p-4 border-2 border-primary/20">
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-1">
+                  80%
+                </div>
+                <p className="text-xs md:text-sm text-foreground/70 font-medium">Successfully Working</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Featured Video Section */}
+        <div className="mt-16 md:mt-20 mb-16 md:mb-20">
+          <div className="w-full max-w-5xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <video
+                className="w-full h-auto"
+                controls
+                poster="/banner.webp"
+              >
+                <source src="/h2.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
@@ -110,101 +150,69 @@ export default function AboutSection() {
             Watch our latest makeup tutorials and tips
           </p>
 
-          <div className="relative">
-            {/* Left Arrow */}
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1))}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-primary to-accent text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:shadow-lg hover:shadow-primary/50 transition-all hover:scale-110 -ml-5"
-              aria-label="Previous slide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-
-            {/* Right Arrow */}
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev + 1) % totalSlides)}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-primary to-accent text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:shadow-lg hover:shadow-primary/50 transition-all hover:scale-110 -mr-5"
-              aria-label="Next slide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
-
+          <div>
             {/* Reels Container */}
             <div className="overflow-hidden px-2">
-              <div
-                className="flex gap-3 md:gap-4 transition-transform duration-700 ease-in-out"
-                style={{
-                  transform: `translateX(-${currentSlide * 100}%)`,
-                }}
-              >
+              <div className="flex gap-3 md:gap-4 justify-center">
                 {reels.map((reel) => (
                   <div
                     key={reel.id}
-                    className="flex-shrink-0 w-[calc(20%-0.6rem)] md:w-[calc(20%-0.8rem)]"
+                    className="flex-shrink-0 w-[calc(100%/3-0.67rem)] md:w-[calc(100%/6-0.67rem)]"
                     style={{ aspectRatio: "9/16" }}
                   >
-                    <div className="relative h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer">
-                      <img
-                        src={reel.thumbnail || "/placeholder.svg"}
-                        alt={reel.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center shadow-lg">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            className="w-5 h-5 md:w-6 md:h-6 text-white ml-1"
-                          >
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3">
-                        <h4 className="text-white font-semibold text-xs md:text-sm text-balance leading-tight">
-                          {reel.title}
-                        </h4>
-                      </div>
+                    <div className="relative h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+                      <video
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      >
+                        <source src={reel.videoUrl} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-
-            {/* Progress Indicators */}
-            <div className="flex justify-center gap-2 mt-6">
-              {Array.from({ length: totalSlides }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-gradient-to-r from-primary to-accent w-8" : "bg-gray-300 w-2"
-                    }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
           </div>
         </div>
+
+        {/* Video Modal Popup */}
+        {isVideoOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+            onClick={closeVideoModal}
+          >
+            <div
+              className="relative w-full max-w-5xl bg-black rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeVideoModal}
+                className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all hover:scale-110"
+                aria-label="Close video"
+              >
+                <X className="w-6 h-6 text-gray-800" />
+              </button>
+
+              {/* Video Player */}
+              <div className="aspect-video bg-black">
+                <video
+                  className="w-full h-full"
+                  controls
+                  autoPlay
+                  src="/hv.mp4"
+                >
+                  <source src="/hv.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )

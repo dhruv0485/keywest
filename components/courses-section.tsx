@@ -1,36 +1,32 @@
 export default function CoursesSection() {
   const courses = [
     {
-      title: "Foundation Makeup",
-      description: "Learn the basics of makeup application, color theory, and skincare essentials.",
-      image: "/foundation-makeup-course.jpg",
-      duration: "6 Weeks",
-      level: "Beginner",
-
+      title: "Cosmetology",
+      description: "Comprehensive course covering Nail, Skin, Makeup, and Hair with advanced techniques and certifications.",
+      image: "/c1.webp",
+      duration: "Variable",
+      level: "All Levels",
     },
     {
-      title: "Bridal Makeup",
-      description: "Master the art of creating stunning bridal looks for the perfect wedding day.",
-      image: "/bridal-makeup-course.jpg",
-      duration: "8 Weeks",
-      level: "Intermediate",
-
+      title: "Hair Styling Course",
+      description: "Master hairstyling techniques from basic to advanced, including bridal and Hollywood styles.",
+      image: "/c2.webp",
+      duration: "10 Days",
+      level: "Beginner to Advanced",
     },
     {
-      title: "Special Effects",
-      description: "Explore advanced techniques in special effects and theatrical makeup artistry.",
-      image: "/special-effects-makeup-course.jpg",
-      duration: "10 Weeks",
+      title: "Masters in Advanced Artistry",
+      description: "Level 3 course including Masters in Makeup, Airbrush, Hairstyling, Creative Makeup & Career Counselling.",
+      image: "/c3.webp",
+      duration: "3+ Months",
       level: "Advanced",
-
     },
     {
-      title: "Professional Artistry",
-      description: "Become a certified makeup artist with professional skills and portfolio building.",
-      image: "/professional-makeup-artist-course.jpg",
-      duration: "12 Weeks",
-      level: "Professional",
-
+      title: "Masters in Makeup Artistry Course",
+      description: "Level 2 comprehensive course covering Basic to Advanced Makeup, Beauty, Bridal, Airbrush & Hair.",
+      image: "/c4.webp",
+      duration: "Variable",
+      level: "Intermediate to Advanced",
     },
   ]
 
@@ -52,13 +48,13 @@ export default function CoursesSection() {
               key={index}
               className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer border border-primary/20 hover:border-primary/50"
             >
-              <div className="relative overflow-hidden h-48 md:h-56">
+              <div className="relative overflow-hidden h-56 md:h-64 bg-white">
                 <img
                   src={course.image || "/placeholder.svg"}
                   alt={course.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute top-3 right-3 bg-gradient-to-r from-primary to-accent text-white text-xs font-semibold px-3 py-1 rounded-full">
                   {course.level}
                 </div>

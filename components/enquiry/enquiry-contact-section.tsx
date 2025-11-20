@@ -46,7 +46,7 @@ export default function EnquiryContactSection() {
             {/* Contact Info Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
               <a
-                href="tel:+15551234567"
+                href="tel:9811020094"
                 className="flex flex-col items-center p-4 bg-white rounded-2xl shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all hover:scale-105 group"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
@@ -66,11 +66,13 @@ export default function EnquiryContactSection() {
                   </svg>
                 </div>
                 <p className="text-xs text-foreground/60 mb-1">Call Us</p>
-                <p className="text-sm font-semibold text-foreground">+1 (555) 123-4567</p>
+                <p className="text-xs sm:text-sm font-semibold text-foreground text-center break-words px-1">
+                  9811020094<br className="sm:hidden" />, 9899116884
+                </p>
               </a>
 
               <a
-                href="mailto:info@makeupacademy.com"
+                href="mailto:info@keywestacademy.in"
                 className="flex flex-col items-center p-4 bg-white rounded-2xl shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all hover:scale-105 group"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
@@ -90,7 +92,9 @@ export default function EnquiryContactSection() {
                   </svg>
                 </div>
                 <p className="text-xs text-foreground/60 mb-1">Email Us</p>
-                <p className="text-sm font-semibold text-foreground text-center">info@makeup.com</p>
+                <p className="text-xs sm:text-sm font-semibold text-foreground text-center break-all px-1">
+                  info@keywestacademy.in
+                </p>
               </a>
 
               <div className="flex flex-col items-center p-4 bg-white rounded-2xl shadow-lg border-2 border-primary/10">
@@ -107,7 +111,7 @@ export default function EnquiryContactSection() {
                   </svg>
                 </div>
                 <p className="text-xs text-foreground/60 mb-1">Hours</p>
-                <p className="text-sm font-semibold text-foreground text-center">Mon-Sat 9AM-6PM</p>
+                <p className="text-xs sm:text-sm font-semibold text-foreground text-center">Mon-Sat 10AM-7PM</p>
               </div>
             </div>
 
@@ -247,7 +251,7 @@ export default function EnquiryContactSection() {
         {/* Right Side - Google Maps */}
         <div className="relative h-[400px] md:h-[500px] lg:h-[700px] xl:h-[750px] bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9476519598093!2d-73.99185368459395!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.1409102699618!2d77.2439945!3d28.565531099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce30542a1faab%3A0x8b1484a15cec53e6!2sKeywest%20Academy!5e0!3m2!1sen!2sin!4v1763656281930!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -255,12 +259,12 @@ export default function EnquiryContactSection() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="w-full h-full"
-            title="Makeup Academy Location"
+            title="Keywest Academy Location"
           />
           
           {/* Location Card Overlay */}
-          <div className="absolute bottom-6 left-6 right-6 lg:bottom-8 lg:left-8 lg:right-8 bg-white rounded-2xl p-4 lg:p-6 shadow-2xl border-2 border-primary/20">
-            <div className="flex items-start gap-3 lg:gap-4">
+          <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 lg:bottom-8 lg:left-8 lg:right-8 bg-white rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl border-2 border-primary/20">
+            <div className="flex items-start gap-2 sm:gap-3 lg:gap-4">
               <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -278,12 +282,16 @@ export default function EnquiryContactSection() {
                   />
                 </svg>
               </div>
-              <div>
-                <h3 className="font-serif font-bold text-lg lg:text-xl text-foreground mb-1 lg:mb-2">
+              <div className="flex-1 min-w-0">
+                <h3 className="font-serif font-bold text-base sm:text-lg lg:text-xl text-foreground mb-1 lg:mb-2">
                   Visit Our Campus
                 </h3>
-                <p className="text-sm lg:text-base text-foreground/70 mb-0.5 lg:mb-1">123 Beauty Lane</p>
-                <p className="text-sm lg:text-base text-foreground/70">New York, NY 10001</p>
+                <p className="text-xs sm:text-sm lg:text-base text-foreground/70 mb-0.5 lg:mb-1 break-words">
+                  Building no. 63, 2nd floor
+                </p>
+                <p className="text-xs sm:text-sm lg:text-base text-foreground/70 break-words">
+                  Lajpat Nagar 3, New Delhi - 110057
+                </p>
               </div>
             </div>
           </div>

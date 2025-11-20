@@ -63,7 +63,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/60">Call Us</p>
-                  <p className="font-semibold text-foreground">+1 (555) 123-4567</p>
+                  <p className="font-semibold text-foreground">9811020094, 9899116884</p>
                 </div>
               </div>
 
@@ -86,7 +86,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/60">Email Us</p>
-                  <p className="font-semibold text-foreground">info@makeupacademy.com</p>
+                  <p className="font-semibold text-foreground">info@keywestacademy.in</p>
                 </div>
               </div>
 
@@ -110,7 +110,26 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/60">Visit Us</p>
-                  <p className="font-semibold text-foreground">123 Beauty Lane, New York, NY</p>
+                  <p className="font-semibold text-foreground">Building no. 63, 2nd floor, Lajpat Nagar 3, New Delhi - 110057</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-6 h-6 text-white"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm text-foreground/60">Working Hours</p>
+                  <p className="font-semibold text-foreground">Monday to Saturday (10 AM - 7 PM)</p>
                 </div>
               </div>
             </div>

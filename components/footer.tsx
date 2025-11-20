@@ -9,7 +9,7 @@ export default function Footer() {
           {/* About */}
           <div>
             <h3 className="font-serif font-bold text-lg mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Makeup Academy
+              KEYWEST ACADEMY OF BEAUTY & MAKEUP
             </h3>
             <p className="text-white/70 text-sm leading-relaxed">
               Empowering beauty professionals through expert training and comprehensive courses.
@@ -21,22 +21,22 @@ export default function Footer() {
             <h4 className="font-serif font-bold mb-4 text-primary">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-white/70 hover:text-primary transition-colors">
+                <a href="/about" className="text-white/70 hover:text-primary transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-primary transition-colors">
+                <a href="/courses" className="text-white/70 hover:text-primary transition-colors">
                   Courses
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-primary transition-colors">
-                  Gallery
+                <a href="/portfolio" className="text-white/70 hover:text-primary transition-colors">
+                  Student Portfolio
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-primary transition-colors">
+                <a href="/enquiry" className="text-white/70 hover:text-primary transition-colors">
                   Contact
                 </a>
               </li>
@@ -47,17 +47,17 @@ export default function Footer() {
           <div>
             <h4 className="font-serif font-bold mb-4 text-primary">Contact Info</h4>
             <div className="space-y-3 text-sm text-white/70">
-              <div className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Phone size={16} className="text-primary" />
-                <span>+1 (555) 123-4567</span>
+              <div className="flex items-start gap-2 hover:text-primary transition-colors">
+                <Phone size={16} className="text-primary flex-shrink-0 mt-1" />
+                <span>9811020094, 9899116884</span>
               </div>
-              <div className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail size={16} className="text-primary" />
-                <span>info@makeupacademy.com</span>
+              <div className="flex items-start gap-2 hover:text-primary transition-colors">
+                <Mail size={16} className="text-primary flex-shrink-0 mt-1" />
+                <span>info@keywestacademy.in</span>
               </div>
-              <div className="flex items-center gap-2 hover:text-primary transition-colors">
-                <MapPin size={16} className="text-primary" />
-                <span>123 Beauty Lane, New York, NY</span>
+              <div className="flex items-start gap-2 hover:text-primary transition-colors">
+                <MapPin size={16} className="text-primary flex-shrink-0 mt-1" />
+                <span>Building no. 63, 2nd floor, Lajpat Nagar 3, New Delhi - 110057</span>
               </div>
             </div>
           </div>
@@ -94,14 +94,9 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col sm:flex-row items-center justify-between text-sm text-white/60">
-            <p>© 2025 Makeup Academy. All rights reserved.</p>
+            <p>© 2025 KEYWEST ACADEMY OF BEAUTY & MAKEUP. All rights reserved.</p>
             <div className="flex gap-6 mt-4 sm:mt-0">
-              <a href="#" className="hover:text-primary transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                Terms of Service
-              </a>
+              <p className="text-white/60">Monday to Saturday (10 AM - 7 PM)</p>
             </div>
           </div>
         </div>

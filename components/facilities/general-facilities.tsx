@@ -56,24 +56,19 @@ const generalFacilities = [
 
 const amenities = [
   {
-    title: "Climate Control",
-    description: "All studios are air-conditioned with optimal temperature and humidity control for comfortable learning.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop"
+    title: "Professional Training Studio",
+    description: "State-of-the-art training studio equipped with modern facilities and equipment for hands-on learning.",
+    image: "/f1 (1).jpg"
   },
   {
-    title: "Parking Facility",
-    description: "Secure parking space available for students and visitors with 24/7 security surveillance.",
-    image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&h=400&fit=crop"
+    title: "Practice & Learning Space",
+    description: "Spacious and well-lit practice areas designed for comfortable learning and skill development.",
+    image: "/f1 (2).jpg"
   },
   {
-    title: "Accessibility",
-    description: "Wheelchair accessible facilities with elevators and ramps ensuring everyone can pursue their passion.",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=400&fit=crop"
-  },
-  {
-    title: "Cafeteria",
-    description: "On-site cafeteria serving healthy meals, snacks, and beverages throughout the day.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop"
+    title: "Modern Infrastructure",
+    description: "Contemporary facilities with all amenities to ensure the best learning experience for our students.",
+    image: "/f1 (3).jpg"
   }
 ]
 
@@ -137,7 +132,7 @@ export default function GeneralFacilities() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {amenities.map((amenity, index) => (
             <motion.div
               key={index}
@@ -147,14 +142,14 @@ export default function GeneralFacilities() {
               transition={{ delay: index * 0.1 }}
               className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-primary/10 group"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img
                   src={amenity.image}
                   alt={amenity.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">
+                <h3 className="absolute bottom-4 left-4 text-xl font-bold text-white">
                   {amenity.title}
                 </h3>
               </div>
