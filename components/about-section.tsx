@@ -8,12 +8,12 @@ export default function AboutSection() {
   const [isFeaturedVideoPlaying, setIsFeaturedVideoPlaying] = useState(false)
 
   const reels = [
-    { id: 1, title: "Makeup Reel 1", videoUrl: "/Reel 1.mp4" },
-    { id: 2, title: "Makeup Reel 2", videoUrl: "/Reel 2.mp4" },
-    { id: 3, title: "Makeup Reel 3", videoUrl: "/Reel 3.mp4" },
-    { id: 4, title: "Makeup Reel 4", videoUrl: "/Reel 4.mp4" },
-    { id: 5, title: "Makeup Reel 5", videoUrl: "/Reel 5.mp4" },
-    { id: 6, title: "Makeup Reel 6", videoUrl: "/Reel 6.mp4" },
+    { id: 1, title: "Makeup Reel 1", videoUrl: "https://res.cloudinary.com/dex1t9dm2/video/upload/v1763664561/Reel_1_imuf9t.mp4" },
+    { id: 2, title: "Makeup Reel 2", videoUrl: "https://res.cloudinary.com/dex1t9dm2/video/upload/v1763664562/Reel_2_dwunpz.mp4" },
+    { id: 3, title: "Makeup Reel 3", videoUrl: "https://res.cloudinary.com/dex1t9dm2/video/upload/v1763664563/Reel_3_ripkft.mp4" },
+    { id: 4, title: "Makeup Reel 4", videoUrl: "https://res.cloudinary.com/dex1t9dm2/video/upload/v1763664561/Reel_4_oayfwb.mp4" },
+    { id: 5, title: "Makeup Reel 5", videoUrl: "https://res.cloudinary.com/dex1t9dm2/video/upload/v1763664561/Reel_5_h7hnyh.mp4" },
+    { id: 6, title: "Makeup Reel 6", videoUrl: "https://res.cloudinary.com/dex1t9dm2/video/upload/v1763664561/Reel_6_suint4.mp4" },
   ]
 
   const openVideoModal = () => {
