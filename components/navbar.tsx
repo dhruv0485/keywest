@@ -45,6 +45,16 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* Enroll Now Button - Desktop */}
+          <div className="hidden md:block pr-6">
+            <a
+              href="/enquiry"
+              className="bg-gradient-to-r from-primary to-accent text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all font-medium text-base hover:scale-105 transform inline-block"
+            >
+              Enroll Now
+            </a>
+          </div>
+
           {/* Mobile Menu Button */}
           <button className="md:hidden text-primary flex-shrink-0 pr-4" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -63,6 +73,12 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
+            <a
+              href="/enquiry"
+              className="block bg-gradient-to-r from-primary to-accent text-white px-6 py-2.5 rounded-full text-center font-medium text-sm mt-4"
+            >
+              Enroll Now
+            </a>
           </div>
         )}
       </div>

@@ -1,9 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { Play, X } from "lucide-react"
 
 export default function TestimonialsSection() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
+  const [currentVideo, setCurrentVideo] = useState("")
 
   const testimonials = [
     {
@@ -12,7 +15,7 @@ export default function TestimonialsSection() {
         "The instructors here are incredibly skilled and patient. I went from complete beginner to confident makeup artist in just 3 months! The hands-on training and personalized feedback made all the difference.",
       author: "Sarah Johnson",
       role: "Professional Makeup Artist",
-      image: "/student-testimonial.png",
+      videoUrl: "/videos/testimonials/sarah-johnson.mp4",
       rating: 5,
     },
     {
@@ -21,7 +24,7 @@ export default function TestimonialsSection() {
         "Best investment I made for my career. The curriculum is comprehensive and the hands-on training is amazing. I now run my own successful bridal makeup business!",
       author: "Emma Davis",
       role: "Bridal Makeup Specialist",
-      image: "/student-testimonial.png",
+      videoUrl: "/videos/testimonials/emma-davis.mp4",
       rating: 5,
     },
     {
@@ -30,7 +33,7 @@ export default function TestimonialsSection() {
         "Professional environment, supportive community, and practical skills that I use every day in my work. The certification opened so many doors for me.",
       author: "Lisa Martinez",
       role: "Makeup Educator",
-      image: "/student-testimonial.png",
+      videoUrl: "/videos/testimonials/lisa-martinez.mp4",
       rating: 5,
     },
     {
@@ -39,7 +42,7 @@ export default function TestimonialsSection() {
         "I love how the academy focuses on both traditional and modern techniques. The instructors are industry professionals who genuinely care about your success.",
       author: "Priya Sharma",
       role: "Fashion Makeup Artist",
-      image: "/student-testimonial.png",
+      videoUrl: "/videos/testimonials/priya-sharma.mp4",
       rating: 5,
     },
     {
@@ -48,10 +51,20 @@ export default function TestimonialsSection() {
         "The portfolio building sessions were invaluable. I graduated with a professional portfolio that helped me land my dream job at a top beauty brand!",
       author: "Jessica Chen",
       role: "Brand Makeup Artist",
-      image: "/student-testimonial.png",
+      videoUrl: "/videos/testimonials/jessica-chen.mp4",
       rating: 5,
     },
   ]
+
+  const openVideoModal = (videoUrl: string) => {
+    setCurrentVideo(videoUrl)
+    setIsVideoOpen(true)
+  }
+
+  const closeVideoModal = () => {
+    setIsVideoOpen(false)
+    setCurrentVideo("")
+  }
 
   // Auto-play testimonials
   useEffect(() => {
@@ -164,11 +177,13 @@ export default function TestimonialsSection() {
                         <p className="font-serif font-bold text-foreground text-lg">{testimonial.author}</p>
                         <p className="text-primary text-sm">{testimonial.role}</p>
                       </div>
-                      <img
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.author}
-                        className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-4 border-primary/30 shadow-lg"
-                      />
+                      <button
+                        onClick={() => openVideoModal(testimonial.videoUrl)}
+                        className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center border-4 border-primary/30 shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 group"
+                        aria-label={`Watch ${testimonial.author}'s video testimonial`}
+                      >
+                        <Play className="w-8 h-8 md:w-10 md:h-10 text-white fill-white group-hover:scale-110 transition-transform" />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -192,6 +207,41 @@ export default function TestimonialsSection() {
             ))}
           </div>
         </div>
+
+        {/* Video Modal Popup */}
+        {isVideoOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={closeVideoModal}
+          >
+            <div
+              className="relative w-full max-w-4xl bg-white rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeVideoModal}
+                className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all hover:scale-110"
+                aria-label="Close video"
+              >
+                <X className="w-6 h-6 text-gray-800" />
+              </button>
+
+              {/* Video Player */}
+              <div className="aspect-video bg-black">
+                <video
+                  className="w-full h-full"
+                  controls
+                  autoPlay
+                  src={currentVideo}
+                >
+                  <source src={currentVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
