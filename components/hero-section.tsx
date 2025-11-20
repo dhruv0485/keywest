@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react"
 
 const heroImages = [
-  "/makeup-artist-applying-makeup.jpg",
-  "/beautiful-bridal-makeup.jpg",
-  "/professional-makeup-artist-course.jpg",
-  "/makeup-academy-instructor-teaching-class.jpg",
-  "/makeup-products-and-brushes.jpg",
-  "/students-practicing-makeup.jpg",
-  "/eyeshadow-blending-technique.jpg",
-  "/bridal-makeup-course.jpg",
+  "/Img 1 (1).png",
+  "/Img 2 (1).png",
+  "/Img 3 (1).png",
+  "/Img 4 (1).png",
+  "/Img 5 (1).png",
+  "/Img 6.png",
+  "/Img 7.png",
+  "/Img 8.png",
 ]
 
 const heroSlogans = [
