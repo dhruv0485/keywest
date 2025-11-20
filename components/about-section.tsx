@@ -5,6 +5,7 @@ import { Play, X } from "lucide-react"
 
 export default function AboutSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
+  const [isFeaturedVideoPlaying, setIsFeaturedVideoPlaying] = useState(false)
 
   const reels = [
     { id: 1, title: "Makeup Reel 1", videoUrl: "/Reel 1.mp4" },
@@ -21,6 +22,10 @@ export default function AboutSection() {
 
   const closeVideoModal = () => {
     setIsVideoOpen(false)
+  }
+
+  const playFeaturedVideo = () => {
+    setIsFeaturedVideoPlaying(true)
   }
 
   return (
@@ -129,14 +134,38 @@ export default function AboutSection() {
         <div className="mt-16 md:mt-20 mb-16 md:mb-20">
           <div className="w-full max-w-5xl mx-auto">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <video
-                className="w-full h-auto"
-                controls
-                poster="/banner.webp"
-              >
-                <source src="/h2.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              {!isFeaturedVideoPlaying ? (
+                // Thumbnail with Play Button
+                <div
+                  className="relative cursor-pointer group"
+                  onClick={playFeaturedVideo}
+                >
+                  <img
+                    src="/banner.webp"
+                    alt="Play video"
+                    className="w-full h-auto object-cover"
+                  />
+                  {/* Play Button - Bottom Left */}
+                  <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+                    <div className="bg-white/95 hover:bg-white rounded-full p-3 md:p-4 group-hover:scale-110 transition-all shadow-2xl">
+                      <Play className="w-6 h-6 md:w-8 md:h-8 text-primary fill-primary" />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                // Cloudinary Video Player
+                <div className="relative w-full bg-black" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    src="https://player.cloudinary.com/embed/?cloud_name=dex1t9dm2&public_id=h2_fpkk5o&profile=cld-default&fluid=true&autoplay=true"
+                    width="100%"
+                    height="100%"
+                    style={{ position: 'absolute', top: 0, left: 0, border: 0 }}
+                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    title="Keywest Academy Featured Video"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -199,16 +228,16 @@ export default function AboutSection() {
               </button>
 
               {/* Video Player */}
-              <div className="aspect-video bg-black">
-                <video
-                  className="w-full h-full"
-                  controls
-                  autoPlay
-                  src="/hv.mp4"
-                >
-                  <source src="/hv.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+              <div className="relative w-full bg-black" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src="https://player.cloudinary.com/embed/?cloud_name=dex1t9dm2&public_id=hv_su2bd2&profile=cld-default&fluid=true"
+                  width="100%"
+                  height="100%"
+                  style={{ position: 'absolute', top: 0, left: 0, border: 0 }}
+                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                  allowFullScreen
+                  title="Keywest Academy Video"
+                />
               </div>
             </div>
           </div>
