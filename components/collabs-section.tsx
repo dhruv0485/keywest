@@ -5,10 +5,10 @@ export default function CollabsSection() {
   const row1Logos = [
     "/l1.jpg",
     "/l2.jpg",
-    "/l3.png",
-    "/l4.png",
+    "/praush.avif",
+    "/V (1).jpg",
     "/l5.png",
-    "/l6.webp",
+    "/burberry.jpeg",
     "/l7.jpg",
     "/l8.png",
     "/l9.jpg",
@@ -22,7 +22,7 @@ export default function CollabsSection() {
     "/l13.jpg",
     "/l14.png",
     "/l15.jpg",
-    "/l16.png",
+    "/l16.webp",
     "/l17.png",
     "/l18.png",
     "/l19.png",
@@ -32,8 +32,8 @@ export default function CollabsSection() {
     <section className="py-16 md:py-20 bg-gradient-to-b from-white to-pink-50/20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-            Our Collabs 🤝
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
+            Our Collabs
           </h2>
           <p className="text-foreground/70 text-base md:text-lg max-w-2xl mx-auto">
             Trusted by leading brands and organizations
@@ -53,7 +53,9 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 1}`}
-                className="w-full h-full object-contain p-4 grayscale hover:grayscale-0 transition-all duration-300"
+                className={`w-full h-full transition-all duration-300 ${
+                  logo === "/l5.png" ? "object-cover p-2" : "object-contain p-4"
+                }`}
               />
             </div>
           ))}
@@ -66,7 +68,9 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 1}`}
-                className="w-full h-full object-contain p-4 grayscale hover:grayscale-0 transition-all duration-300"
+                className={`w-full h-full transition-all duration-300 ${
+                  logo === "/l5.png" ? "object-cover p-2" : "object-contain p-4"
+                }`}
               />
             </div>
           ))}
@@ -79,7 +83,9 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 1}`}
-                className="w-full h-full object-contain p-4 grayscale hover:grayscale-0 transition-all duration-300"
+                className={`w-full h-full transition-all duration-300 ${
+                  logo === "/l5.png" ? "object-cover p-2" : "object-contain p-4"
+                }`}
               />
             </div>
           ))}
@@ -98,7 +104,9 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 11}`}
-                className="w-full h-full object-contain p-4 grayscale hover:grayscale-0 transition-all duration-300"
+                className={`w-full h-full transition-all duration-300 ${
+                  logo === "/l15.jpg" ? "object-cover p-2" : "object-contain p-4"
+                }`}
               />
             </div>
           ))}
@@ -111,7 +119,9 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 11}`}
-                className="w-full h-full object-contain p-4 grayscale hover:grayscale-0 transition-all duration-300"
+                className={`w-full h-full transition-all duration-300 ${
+                  logo === "/l15.jpg" ? "object-cover p-2" : "object-contain p-4"
+                }`}
               />
             </div>
           ))}
@@ -124,7 +134,9 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 11}`}
-                className="w-full h-full object-contain p-4 grayscale hover:grayscale-0 transition-all duration-300"
+                className={`w-full h-full transition-all duration-300 ${
+                  logo === "/l15.jpg" ? "object-cover p-2" : "object-contain p-4"
+                }`}
               />
             </div>
           ))}

@@ -2,34 +2,34 @@ export default function AboutTimelineSection() {
   const timeline = [
     {
       year: "2020",
-      title: "The Beginning",
+      title: "The Foundation",
       description:
-        "Founded with a vision to revolutionize makeup education. Started with 50 students and 3 expert instructors in a small studio.",
-      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
+        "Started with a simple, powerful promise to deliver precise techniques and personal mentorship in every class, building a strong community centered on excellence rather than shortcuts.",
+      image: "/j1.jpg",
       side: "left",
     },
     {
       year: "2021",
       title: "Rapid Growth",
       description:
-        "Expanded to 500+ students and launched our online courses. Received our first international accreditation for excellence in beauty education.",
-      image: "https://images.unsplash.com/photo--1524178232363-1fb2b075b655?w=800&q=80",
+        "Focussed on shaping industry-ready artists. Students gain clarity, skill, and the confidence to execute with luxury, precision, and professionalism, allowing them to truly stand out.",
+      image: "/j2.jpg",
       side: "right",
     },
     {
       year: "2022",
       title: "Industry Recognition",
       description:
-        "Won the Beauty Excellence Award. Opened two new campuses and partnered with leading makeup brands for hands-on training.",
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
+        "We elevated our offering to meet global luxury beauty standards. With a premium learning environment with high‑end tools, curated lighting, premium product kits, and modern classrooms, we were recognised by industry stalwarts who affirm our commitment to excellence.",
+      image: "/j3.jpg",
       side: "left",
     },
     {
       year: "2023",
       title: "Global Expansion",
       description:
-        "Reached 2,000+ students worldwide. Launched advanced certification programs and established partnerships with top beauty schools globally.",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
+        "We expanded across borders, being part of global shows, working with international clients, and hosting masterclasses beyond borders, all of which showcase our vision on the world stage. Our commitment is to continuously offer world‑class techniques and mentor with precision, empowering every artist to master their craft and own their success.",
+      image: "/j2.jpg",
       side: "right",
     },
   ]
@@ -72,7 +72,7 @@ export default function AboutTimelineSection() {
                     {/* Blackish Card */}
                     <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-[1.02] group">
                       {/* Image on Top */}
-                      <div className="relative h-32 sm:h-40 md:h-56 lg:h-64 overflow-hidden">
+                      <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden">
                         <img
                           src={item.image}
                           alt={item.title}

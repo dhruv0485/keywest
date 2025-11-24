@@ -34,8 +34,8 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side - Info */}
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
-              Start Your Beauty Journey Today ✨
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6 leading-tight min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
+              Start Your Beauty Journey Today
             </h2>
             <p className="text-foreground/80 text-base md:text-lg leading-relaxed mb-8">
               Ready to transform your passion into a career? Fill out the form and our admissions team will get back to

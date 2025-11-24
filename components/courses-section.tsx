@@ -34,8 +34,8 @@ export default function CoursesSection() {
     <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-            Our Featured Courses 💄
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
+            Our Featured Courses
           </h2>
           <p className="text-foreground/70 text-base md:text-lg max-w-2xl mx-auto">
             Explore our carefully designed courses to elevate your makeup skills

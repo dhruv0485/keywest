@@ -48,8 +48,8 @@ export default function NewsletterSection() {
             </svg>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-            Stay Updated 💌
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
+            Stay Updated
           </h2>
           <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             Subscribe to our newsletter for exclusive tips, course updates, and special offers delivered to your inbox.

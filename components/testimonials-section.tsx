@@ -12,46 +12,19 @@ export default function TestimonialsSection() {
     {
       id: 1,
       quote:
-        "The instructors here are incredibly skilled and patient. I went from complete beginner to confident makeup artist in just 3 months! The hands-on training and personalized feedback made all the difference.",
-      author: "Sarah Johnson",
-      role: "Professional Makeup Artist",
-      videoUrl: "/videos/testimonials/sarah-johnson.mp4",
+        "I have been given this opportunity to go and work in Paris Fashion Week as a makeup artist.",
+      author: "Ayushi",
+      role: "Makeup Artist",
+      videoUrl: "/t1.mp4",
       rating: 5,
     },
     {
       id: 2,
       quote:
-        "Best investment I made for my career. The curriculum is comprehensive and the hands-on training is amazing. I now run my own successful bridal makeup business!",
-      author: "Emma Davis",
-      role: "Bridal Makeup Specialist",
-      videoUrl: "/videos/testimonials/emma-davis.mp4",
-      rating: 5,
-    },
-    {
-      id: 3,
-      quote:
-        "Professional environment, supportive community, and practical skills that I use every day in my work. The certification opened so many doors for me.",
-      author: "Lisa Martinez",
-      role: "Makeup Educator",
-      videoUrl: "/videos/testimonials/lisa-martinez.mp4",
-      rating: 5,
-    },
-    {
-      id: 4,
-      quote:
-        "I love how the academy focuses on both traditional and modern techniques. The instructors are industry professionals who genuinely care about your success.",
-      author: "Priya Sharma",
-      role: "Fashion Makeup Artist",
-      videoUrl: "/videos/testimonials/priya-sharma.mp4",
-      rating: 5,
-    },
-    {
-      id: 5,
-      quote:
-        "The portfolio building sessions were invaluable. I graduated with a professional portfolio that helped me land my dream job at a top beauty brand!",
-      author: "Jessica Chen",
-      role: "Brand Makeup Artist",
-      videoUrl: "/videos/testimonials/jessica-chen.mp4",
+        "I learned a lot here, and I must say, if you are interested in makeup, then join Keywest Academy.",
+      author: "Priti Singh",
+      role: "Student",
+      videoUrl: "/t1.mp4",
       rating: 5,
     },
   ]
@@ -76,11 +49,11 @@ export default function TestimonialsSection() {
   }, [testimonials.length])
 
   return (
-    <section className="section-padding bg-gradient-to-b from-white to-pink-50/30">
+    <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-white to-pink-50/30 min-h-screen">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-            What Our Students Say 💕
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
+            What Our Students Say
           </h2>
           <p className="text-foreground/70 text-base md:text-lg max-w-2xl mx-auto">
             Hear from our graduates about their transformative journey with us
@@ -88,7 +61,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Testimonial Slider */}
-        <div className="relative">
+        <div className="relative min-h-[600px] md:min-h-[650px] mb-16">
           {/* Navigation Arrows */}
           <button
             onClick={() =>
@@ -136,7 +109,7 @@ export default function TestimonialsSection() {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-gradient-to-br from-white to-pink-50/50 rounded-3xl p-8 md:p-12 shadow-2xl border border-primary/10 max-w-4xl mx-auto">
+                  <div className="bg-gradient-to-br from-white to-pink-50/50 rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl border border-primary/10 max-w-5xl mx-auto min-h-[550px] md:min-h-[600px] flex flex-col justify-between">
                     {/* Quote Icon */}
                     <div className="flex justify-center mb-6">
                       <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg">
@@ -192,7 +165,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Progress Indicators */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 mt-12">
             {testimonials.map((_, index) => (
               <button
                 key={index}

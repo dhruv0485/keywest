@@ -114,8 +114,8 @@ export default function CoursesGrid() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-            Our Courses 💄
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[3.5rem] md:min-h-[4.5rem] lg:min-h-[6rem]">
+            Our Courses
           </h1>
           <p className="text-foreground/70 text-lg md:text-xl max-w-3xl mx-auto">
             Explore our comprehensive range of makeup courses designed to transform your passion into expertise

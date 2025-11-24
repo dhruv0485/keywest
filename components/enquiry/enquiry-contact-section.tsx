@@ -34,8 +34,8 @@ export default function EnquiryContactSection() {
         <div className="w-full p-4 md:p-6 lg:p-8">
           <div className="w-full">
             <div className="mb-6 md:mb-8">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-                Start Your Journey Today ✨
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
+                Start Your Journey Today
               </h2>
               <p className="text-foreground/70 text-base md:text-lg leading-relaxed">
                 Fill out the form below and our admissions team will contact you within 24 hours to discuss your goals
@@ -73,7 +73,7 @@ export default function EnquiryContactSection() {
 
               <a
                 href="mailto:info@keywestacademy.in"
-                className="flex flex-col items-center p-4 bg-white rounded-2xl shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all hover:scale-105 group"
+                className="flex flex-col items-center p-4 bg-white rounded-2xl shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all hover:scale-105 group sm:col-span-1"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                   <svg
@@ -92,7 +92,7 @@ export default function EnquiryContactSection() {
                   </svg>
                 </div>
                 <p className="text-xs text-foreground/60 mb-1">Email Us</p>
-                <p className="text-xs sm:text-sm font-semibold text-foreground text-center break-all px-1">
+                <p className="text-xs sm:text-sm font-semibold text-foreground text-center break-all px-1 w-full">
                   info@keywestacademy.in
                 </p>
               </a>

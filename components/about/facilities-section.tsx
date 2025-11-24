@@ -10,36 +10,57 @@ export default function FacilitiesSection() {
       id: 1,
       title: "Professional Studios",
       description: "State-of-the-art makeup studios with professional lighting and equipment",
-      image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
-      icon: "🎨",
+      image: "/f1 (1).jpg",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-white">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+        </svg>
+      ),
     },
     {
       id: 2,
       title: "Product Library",
       description: "Extensive collection of premium makeup products from leading brands",
-      image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80",
-      icon: "💄",
+      image: "/f1 (2).jpg",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-white">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+        </svg>
+      ),
     },
     {
       id: 3,
       title: "Practice Rooms",
       description: "Dedicated spaces for hands-on practice and skill development",
-      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
-      icon: "✨",
+      image: "/f1 (3).jpg",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-white">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+        </svg>
+      ),
     },
     {
       id: 4,
       title: "Digital Learning",
       description: "Modern classrooms with digital screens and online learning resources",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
-      icon: "💻",
+      image: "/f1 (1).jpg",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-white">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+        </svg>
+      ),
     },
     {
       id: 5,
       title: "Photography Studio",
       description: "Professional photo studio for portfolio building and documentation",
-      image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=80",
-      icon: "📸",
+      image: "/f1 (2).jpg",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-white">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+        </svg>
+      ),
     },
   ]
 
@@ -56,7 +77,7 @@ export default function FacilitiesSection() {
     <section className="section-padding bg-gradient-to-b from-white to-pink-50/30">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
             Our Facilities
           </h2>
           <p className="text-foreground/70 text-lg md:text-xl max-w-2xl mx-auto">
@@ -97,7 +118,7 @@ export default function FacilitiesSection() {
               <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
                 {/* Icon - Always Visible */}
                 <div
-                  className={`text-4xl md:text-5xl mb-4 transition-all duration-700 ${
+                  className={`mb-4 transition-all duration-700 ${
                     index === activeIndex ? "scale-100 opacity-100" : "scale-75 opacity-70"
                   }`}
                 >
@@ -168,7 +189,7 @@ export default function FacilitiesSection() {
                 {/* Content */}
                 <div className="relative h-full flex flex-col justify-end p-6">
                   {/* Icon */}
-                  <div className="text-4xl mb-3">{facility.icon}</div>
+                  <div className="mb-3">{facility.icon}</div>
 
                   {/* Title */}
                   <h3 className="text-2xl font-serif font-bold text-white mb-3">{facility.title}</h3>

@@ -1,58 +1,75 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Play } from "lucide-react"
 
 const videoTestimonials = [
   {
     id: 1,
-    name: "Priya Sharma",
-    course: "Professional Makeup Course",
-    videoUrl: "/videos/testimonials/priya-sharma.mp4",
-    thumbnail: "/images/testimonials/priya-thumb.jpg",
-    duration: "2:15",
+    videoUrl: "/t1.MOV",
   },
   {
     id: 2,
-    name: "Ananya Patel",
-    course: "Advanced Makeup Course",
-    videoUrl: "/videos/testimonials/ananya-patel.mp4",
-    thumbnail: "/images/testimonials/ananya-thumb.jpg",
-    duration: "1:45",
+    videoUrl: "/t1 (1).mp4",
   },
   {
     id: 3,
-    name: "Riya Mehta",
-    course: "Complete Makeup Course",
-    videoUrl: "/videos/testimonials/riya-mehta.mp4",
-    thumbnail: "/images/testimonials/riya-thumb.jpg",
-    duration: "2:30",
+    videoUrl: "/t1 (2).mp4",
   },
   {
     id: 4,
-    name: "Sneha Reddy",
-    course: "Professional Course",
-    videoUrl: "/videos/testimonials/sneha-reddy.mp4",
-    thumbnail: "/images/testimonials/sneha-thumb.jpg",
-    duration: "1:55",
-  },
-  {
-    id: 5,
-    name: "Kavya Singh",
-    course: "Master Makeup Course",
-    videoUrl: "/videos/testimonials/kavya-singh.mp4",
-    thumbnail: "/images/testimonials/kavya-thumb.jpg",
-    duration: "2:10",
-  },
-  {
-    id: 6,
-    name: "Meera Kapoor",
-    course: "Bridal Makeup Course",
-    videoUrl: "/videos/testimonials/meera-kapoor.mp4",
-    thumbnail: "/images/testimonials/meera-thumb.jpg",
-    duration: "1:50",
+    videoUrl: "/t1 (3).mp4",
   },
 ]
+
+function VideoCard({ testimonial, index }: { testimonial: typeof videoTestimonials[0], index: number }) {
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const handlePlay = () => {
+    setIsPlaying(true)
+  }
+
+  const handlePause = () => {
+    setIsPlaying(false)
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="group"
+    >
+      <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-primary/10 hover:border-primary/30">
+        {/* Video Container */}
+        <div className="relative aspect-[9/16] bg-gradient-to-br from-primary/20 to-accent/20 overflow-hidden">
+          <video
+            className="w-full h-full object-cover"
+            controls
+            preload="metadata"
+            src={testimonial.videoUrl}
+            onPlay={handlePlay}
+            onPause={handlePause}
+            onEnded={handlePause}
+          >
+            Your browser does not support the video tag.
+          </video>
+          
+          {/* Play Button Overlay (shows before video plays) */}
+          {!isPlaying && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all pointer-events-none">
+              <div className="bg-white/90 rounded-full p-4 group-hover:scale-110 transition-transform">
+                <Play className="w-8 h-8 text-primary fill-primary" />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  )
+}
 
 export default function TestimonialsCollage() {
   return (
@@ -75,68 +92,12 @@ export default function TestimonialsCollage() {
         </motion.div>
 
         {/* Video Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {videoTestimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group"
-            >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-primary/10 hover:border-primary/30">
-                {/* Video Container */}
-                <div className="relative aspect-video bg-gradient-to-br from-primary/20 to-accent/20 overflow-hidden">
-                  <video
-                    className="w-full h-full object-cover"
-                    poster={testimonial.thumbnail}
-                    controls
-                    preload="metadata"
-                  >
-                    <source src={testimonial.videoUrl} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  
-                  {/* Play Button Overlay (shows before video plays) */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all pointer-events-none">
-                    <div className="bg-white/90 rounded-full p-4 group-hover:scale-110 transition-transform">
-                      <Play className="w-8 h-8 text-primary fill-primary" />
-                    </div>
-                  </div>
-
-                  {/* Duration Badge */}
-                  <div className="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    {testimonial.duration}
-                  </div>
-                </div>
-
-                {/* Student Info */}
-                <div className="p-5">
-                  <h4 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-1">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-sm text-foreground/60">{testimonial.course}</p>
-                </div>
-              </div>
-            </motion.div>
+            <VideoCard key={testimonial.id} testimonial={testimonial} index={index} />
           ))}
         </div>
 
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <a
-            href="/enquiry"
-            className="inline-block bg-gradient-to-r from-primary to-accent text-white font-semibold py-4 px-8 rounded-xl hover:scale-105 transition-all shadow-lg"
-          >
-            Start Your Journey Today
-          </a>
-        </motion.div>
       </div>
     </section>
   )

@@ -11,16 +11,18 @@ import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="w-full overflow-hidden">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <CoursesSection />
-      <AccreditationsSection />
-      <CollabsSection />
-      <TestimonialsSection />
-      <ContactForm />
+      <main className="w-full overflow-hidden flex-grow">
+        <HeroSection />
+        <AboutSection />
+        <CoursesSection />
+        <AccreditationsSection />
+        <CollabsSection />
+        <TestimonialsSection />
+        <ContactForm />
+      </main>
       <Footer />
-    </main>
+    </div>
   )
 }

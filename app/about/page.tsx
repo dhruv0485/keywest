@@ -3,7 +3,6 @@
 import AboutHeroSection from "@/components/about/about-hero-section"
 import TeamSection from "@/components/about/team-section"
 import AboutTimelineSection from "@/components/about/about-timeline-section"
-import FacilitiesSection from "@/components/about/facilities-section"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 
@@ -14,7 +13,6 @@ export default function AboutPage() {
       <AboutHeroSection />
       <TeamSection />
       <AboutTimelineSection />
-      <FacilitiesSection />
       <Footer />
     </main>
   )
