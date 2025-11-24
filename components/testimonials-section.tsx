@@ -15,7 +15,7 @@ export default function TestimonialsSection() {
         "I have been given this opportunity to go and work in Paris Fashion Week as a makeup artist.",
       author: "Ayushi",
       role: "Makeup Artist",
-      videoUrl: "/t1.mp4",
+      videoUrl: "/t1.MOV",
       rating: 5,
     },
     {
