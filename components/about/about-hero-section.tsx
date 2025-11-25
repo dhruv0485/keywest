@@ -13,9 +13,9 @@ export default function AboutHeroSection() {
       </div>
 
       {/* Content - Bottom Center */}
-      <div className="relative z-10 h-full flex items-end justify-center px-4 pb-12 md:pb-16">
-        <div className="text-center max-w-4xl">
-          <h1 className="text-2xl md:text-3xl lg:text-5xl font-serif font-bold text-white drop-shadow-2xl leading-tight">
+      <div className="relative z-10 h-full flex items-end justify-center px-4 pb-12 md:pb-16 lg:pb-20">
+        <div className="text-center max-w-4xl w-full">
+          <h1 className="text-2xl md:text-3xl lg:text-5xl font-serif font-bold text-white drop-shadow-2xl leading-tight mx-auto">
             Empowering Beauty Professionals
           </h1>
         </div>

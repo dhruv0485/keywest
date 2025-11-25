@@ -29,7 +29,7 @@ export default function AboutTimelineSection() {
       title: "Global Expansion",
       description:
         "We expanded across borders, being part of global shows, working with international clients, and hosting masterclasses beyond borders, all of which showcase our vision on the world stage. Our commitment is to continuously offer world‑class techniques and mentor with precision, empowering every artist to master their craft and own their success.",
-      image: "/j2.jpg",
+      image: "/global.jpeg",
       side: "right",
     },
   ]
