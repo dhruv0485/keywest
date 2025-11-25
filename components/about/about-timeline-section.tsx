@@ -5,7 +5,7 @@ export default function AboutTimelineSection() {
       title: "The Foundation",
       description:
         "Started with a simple, powerful promise to deliver precise techniques and personal mentorship in every class, building a strong community centered on excellence rather than shortcuts.",
-      image: "/j1.jpg",
+      image: "/j1.JPG",
       side: "left",
     },
     {
@@ -21,7 +21,7 @@ export default function AboutTimelineSection() {
       title: "Industry Recognition",
       description:
         "We elevated our offering to meet global luxury beauty standards. With a premium learning environment with high‑end tools, curated lighting, premium product kits, and modern classrooms, we were recognised by industry stalwarts who affirm our commitment to excellence.",
-      image: "/j3.jpg",
+      image: "/j3.JPG",
       side: "left",
     },
     {
