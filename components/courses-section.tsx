@@ -1,43 +1,47 @@
 export default function CoursesSection() {
   const courses = [
     {
-      title: "Cosmetology",
-      description: "Comprehensive course covering Nail, Skin, Makeup, and Hair with advanced techniques and certifications.",
+      title: "Level 1 - Professional Makeup Course",
+      description: "Foundation course covering essential makeup techniques and professional skills for aspiring makeup artists.",
       image: "/c1.webp",
       duration: "Variable",
-      level: "All Levels",
+      level: "Level 1",
     },
     {
-      title: "Hair Styling Course",
-      description: "Master hairstyling techniques from basic to advanced, including bridal and Hollywood styles.",
+      title: "Level 2 - Masters in Makeup Artistry Course",
+      description: "Advanced course covering comprehensive makeup artistry, bridal makeup, and professional techniques.",
       image: "/c2.webp",
-      duration: "10 Days",
-      level: "Beginner to Advanced",
+      duration: "Variable",
+      level: "Level 2",
     },
     {
-      title: "Masters in Advanced Artistry",
-      description: "Level 3 course including Masters in Makeup, Airbrush, Hairstyling, Creative Makeup & Career Counselling.",
+      title: "Level 3 - MasterPro Artistry Certification",
+      description: "Expert-level certification including advanced techniques, creative makeup, and industry specialization.",
       image: "/c3.webp",
-      duration: "3+ Months",
-      level: "Advanced",
+      duration: "Variable",
+      level: "Level 3",
     },
     {
-      title: "Masters in Makeup Artistry Course",
-      description: "Level 2 comprehensive course covering Basic to Advanced Makeup, Beauty, Bridal, Airbrush & Hair.",
+      title: "Level 4 - Global Elite Artistry Program",
+      description: "Elite program for international standards, fashion week preparation, and global career opportunities.",
       image: "/c4.webp",
       duration: "Variable",
-      level: "Intermediate to Advanced",
+      level: "Level 4",
     },
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
+    <section className="section-padding bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+      <div className="relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
-            Our Featured Courses
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Our Featured Courses</span>
           </h2>
-          <p className="text-foreground/70 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
             Explore our carefully designed courses to elevate your makeup skills
           </p>
         </div>
@@ -46,7 +50,7 @@ export default function CoursesSection() {
           {courses.map((course, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer border border-primary/20 hover:border-primary/50"
+              className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105"
             >
               <div className="relative overflow-hidden h-56 md:h-64 bg-white">
                 <img
@@ -113,6 +117,7 @@ export default function CoursesSection() {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   )

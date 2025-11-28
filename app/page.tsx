@@ -17,9 +17,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <CoursesSection />
-        <AccreditationsSection />
         <CollabsSection />
-        <TestimonialsSection />
         <ContactForm />
       </main>
       <Footer />

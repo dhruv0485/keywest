@@ -25,7 +25,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="section-padding bg-gradient-to-br from-pink-50/50 via-white to-pink-50/30 relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
@@ -34,10 +34,10 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side - Info */}
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6 leading-tight min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
-              Start Your Beauty Journey Today
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Start Your Beauty Journey Today</span>
             </h2>
-            <p className="text-foreground/80 text-base md:text-lg leading-relaxed mb-8">
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8">
               Ready to transform your passion into a career? Fill out the form and our admissions team will get back to
               you within 24 hours.
             </p>
@@ -62,8 +62,8 @@ export default function ContactForm() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-foreground/60">Call Us</p>
-                  <p className="font-semibold text-foreground">9811020094, 9899116884</p>
+                  <p className="text-sm text-gray-400">Call Us</p>
+                  <p className="font-semibold text-white">9811020094, 9899116884</p>
                 </div>
               </div>
 
@@ -85,8 +85,8 @@ export default function ContactForm() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-foreground/60">Email Us</p>
-                  <p className="font-semibold text-foreground">info@keywestacademy.in</p>
+                  <p className="text-sm text-gray-400">Email Us</p>
+                  <p className="font-semibold text-white">info@keywestacademy.in</p>
                 </div>
               </div>
 
@@ -109,8 +109,8 @@ export default function ContactForm() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-foreground/60">Visit Us</p>
-                  <p className="font-semibold text-foreground">Building no. 63, 2nd floor, Lajpat Nagar 3, New Delhi - 110057</p>
+                  <p className="text-sm text-gray-400">Visit Us</p>
+                  <p className="font-semibold text-white">Building no. 63, 2nd floor, Lajpat Nagar 3, New Delhi - 110057</p>
                 </div>
               </div>
 
@@ -128,21 +128,21 @@ export default function ContactForm() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-foreground/60">Working Hours</p>
-                  <p className="font-semibold text-foreground">Monday to Saturday (10 AM - 7 PM)</p>
+                  <p className="text-sm text-gray-400">Working Hours</p>
+                  <p className="font-semibold text-white">Monday to Saturday (10 AM - 7 PM)</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Side - Form */}
-          <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-primary/10">
-            <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-6">Enquiry Form</h3>
+          <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl p-8 md:p-10 shadow-2xl border-2 border-primary/30 backdrop-blur-sm">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-6">Enquiry Form</h3>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                   Full Name *
                 </label>
                 <input
@@ -152,14 +152,14 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-primary/30 bg-black/30 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-gray-500"
                   placeholder="Enter your name"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                   Email Address *
                 </label>
                 <input
@@ -169,14 +169,14 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-primary/30 bg-black/30 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-gray-500"
                   placeholder="your@email.com"
                 />
               </div>
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-foreground/80 mb-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
                   Phone Number *
                 </label>
                 <input
@@ -186,14 +186,14 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-primary/30 bg-black/30 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-gray-500"
                   placeholder="+1 (555) 000-0000"
                 />
               </div>
 
               {/* Course Interest */}
               <div>
-                <label htmlFor="course" className="block text-sm font-medium text-foreground/80 mb-2">
+                <label htmlFor="course" className="block text-sm font-medium text-gray-300 mb-2">
                   Course Interest
                 </label>
                 <select
@@ -201,7 +201,7 @@ export default function ContactForm() {
                   name="course"
                   value={formData.course}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-primary/30 bg-black/30 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 >
                   <option value="">Select a course</option>
                   <option value="foundation">Foundation Makeup</option>
@@ -213,7 +213,7 @@ export default function ContactForm() {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                   Message
                 </label>
                 <textarea
@@ -222,7 +222,7 @@ export default function ContactForm() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-primary/30 bg-black/30 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none placeholder:text-gray-500"
                   placeholder="Tell us about your goals..."
                 />
               </div>

@@ -24,15 +24,15 @@ export default function AccreditationsSection() {
   }, [accreditations.length])
 
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-white via-pink-50/30 to-white relative overflow-hidden min-h-screen">
+    <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden min-h-screen">
       {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full">
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[6rem]">
-            Recognized Excellence
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[6rem]">
+            Recognized <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Excellence</span>
           </h2>
         </div>
 
@@ -88,7 +88,7 @@ export default function AccreditationsSection() {
                   <img
                     src={image}
                     alt={`Recognition ${index + 1}`}
-                    className="max-w-3xl w-full h-auto object-contain rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer"
+                    className="max-w-3xl w-full h-auto object-contain rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer shadow-2xl shadow-primary/20 border-2 border-primary/30"
                     style={{
                       maxHeight: "800px",
                     }}
@@ -107,7 +107,7 @@ export default function AccreditationsSection() {
                 className={`transition-all duration-300 rounded-full ${
                   index === currentAccreditation
                     ? "bg-gradient-to-r from-primary to-accent w-12 h-3"
-                    : "bg-gray-300 w-3 h-3 hover:bg-primary/50"
+                    : "bg-gray-600 w-3 h-3 hover:bg-primary/50"
                 }`}
                 aria-label={`Go to recognition ${index + 1}`}
               />

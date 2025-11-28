@@ -42,7 +42,7 @@ function VideoCard({ testimonial, index }: { testimonial: typeof videoTestimonia
       transition={{ delay: index * 0.1 }}
       className="group"
     >
-      <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-primary/10 hover:border-primary/30">
+      <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 border-2 border-primary/30 hover:border-primary backdrop-blur-sm">
         {/* Video Container */}
         <div className="relative aspect-[9/16] bg-gradient-to-br from-primary/20 to-accent/20 overflow-hidden">
           <video
@@ -73,8 +73,8 @@ function VideoCard({ testimonial, index }: { testimonial: typeof videoTestimonia
 
 export default function TestimonialsCollage() {
   return (
-    <section className="py-20 bg-gradient-to-b from-primary/5 to-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,182,193,0.1),transparent_70%)]" />
+    <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(249,140,163,0.15),transparent_70%)]" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -83,10 +83,10 @@ export default function TestimonialsCollage() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             What Our Students Say
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-sans">
             Hear directly from our students about their transformative journey
           </p>
         </motion.div>

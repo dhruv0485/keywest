@@ -10,92 +10,49 @@ export default function CoursesGrid() {
   const courses = [
     {
       id: 1,
-      title: "Cosmetology",
-      description: "Comprehensive course covering Nail, Skin, Makeup, and Hair with advanced techniques and certifications.",
+      title: "Level 1 - Professional Makeup Course",
+      description: "Foundation course covering essential makeup techniques and professional skills for aspiring makeup artists.",
       image: "/c1.webp",
       duration: "Variable",
-      level: "All Levels",
+      level: "Level 1",
       category: "Professional",
       students: "3,500+",
       rating: 5.0,
     },
     {
       id: 2,
-      title: "Hair Styling Course",
-      description: "Master hairstyling techniques from basic to advanced, including bridal and Hollywood styles.",
+      title: "Level 2 - Masters in Makeup Artistry Course",
+      description: "Advanced course covering comprehensive makeup artistry, bridal makeup, and professional techniques.",
       image: "/c2.webp",
-      duration: "10 Days",
-      level: "Beginner to Advanced",
-      category: "Hair",
-      students: "2,200+",
+      duration: "Variable",
+      level: "Level 2",
+      category: "Professional",
+      students: "2,800+",
       rating: 4.9,
     },
     {
       id: 3,
-      title: "Masters in Advanced Artistry",
-      description: "Level 3 course including Masters in Makeup, Airbrush, Hairstyling, Creative Makeup & Career Counselling.",
+      title: "Level 3 - MasterPro Artistry Certification",
+      description: "Expert-level certification including advanced techniques, creative makeup, and industry specialization.",
       image: "/c3.webp",
-      duration: "3+ Months",
-      level: "Advanced",
+      duration: "Variable",
+      level: "Level 3",
       category: "Professional",
       students: "1,800+",
       rating: 5.0,
     },
     {
       id: 4,
-      title: "Masters in Makeup Artistry Course",
-      description: "Level 2 comprehensive course covering Basic to Advanced Makeup, Beauty, Bridal, Airbrush & Hair.",
+      title: "Level 4 - Global Elite Artistry Program",
+      description: "Elite program for international standards, fashion week preparation, and global career opportunities.",
       image: "/c4.webp",
       duration: "Variable",
-      level: "Intermediate to Advanced",
+      level: "Level 4",
       category: "Professional",
-      students: "2,800+",
+      students: "2,200+",
       rating: 4.9,
     },
-    {
-      id: 5,
-      title: "Nail Course",
-      description: "Complete nail artistry course covering nail theory, art & design, and extensions with 20+ techniques.",
-      image: "/c5.webp",
-      duration: "4-6 Weeks",
-      level: "Beginner to Advanced",
-      category: "Nail",
-      students: "1,500+",
-      rating: 4.8,
-    },
-    {
-      id: 6,
-      title: "Professional Makeup Artistry Course",
-      description: "Level 1 course covering Beauty & Bridal makeup with fashion, editorial, and red carpet techniques.",
-      image: "/c6.webp",
-      duration: "6-8 Weeks",
-      level: "Beginner",
-      category: "Makeup",
-      students: "3,200+",
-      rating: 4.9,
-    },
-    {
-      id: 7,
-      title: "Self Makeup Course",
-      description: "Learn to perfect your own makeup from nude to glam looks with personalized guidance.",
-      image: "/c7.webp",
-      duration: "3 Days",
-      level: "Beginner",
-      category: "Self Makeup",
-      students: "4,100+",
-      rating: 4.7,
-    },
-    {
-      id: 8,
-      title: "Skin Course",
-      description: "Professional beauty and skin course covering facials, treatments, manicure, pedicure & PMU.",
-      image: "/c8.webp",
-      duration: "6-8 Weeks",
-      level: "Beginner to Advanced",
-      category: "Skin",
-      students: "2,600+",
-      rating: 4.8,
-    },
+
   ]
 
   const categories = ["all", "Professional", "Hair", "Nail", "Makeup", "Self Makeup", "Skin"]
@@ -110,14 +67,14 @@ export default function CoursesGrid() {
   })
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-white via-pink-50/20 to-white py-16 md:py-20 lg:py-24">
+    <section className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[3.5rem] md:min-h-[4.5rem] lg:min-h-[6rem]">
-            Our Courses
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 leading-tight min-h-[3.5rem] md:min-h-[4.5rem] lg:min-h-[6rem]">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Our Courses</span>
           </h1>
-          <p className="text-foreground/70 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
             Explore our comprehensive range of makeup courses designed to transform your passion into expertise
           </p>
         </div>
@@ -131,7 +88,7 @@ export default function CoursesGrid() {
               placeholder="Search courses..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-6 py-4 pl-14 rounded-full border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white shadow-lg"
+              className="w-full px-6 py-4 pl-14 rounded-full border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-black/30 text-white placeholder:text-gray-500 shadow-lg"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +110,7 @@ export default function CoursesGrid() {
           <div className="flex flex-col items-center justify-center gap-3">
             {/* Category Filter */}
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full justify-center">
-              <span className="text-sm font-medium text-foreground/70 whitespace-nowrap">Category:</span>
+              <span className="text-sm font-medium text-gray-400 whitespace-nowrap">Category:</span>
               <div className="flex gap-2 flex-wrap justify-center">
                 {categories.map((category) => (
                   <button
@@ -162,7 +119,7 @@ export default function CoursesGrid() {
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       selectedCategory === category
                         ? "bg-gradient-to-r from-primary to-accent text-white shadow-lg"
-                        : "bg-white border-2 border-gray-200 text-foreground/70 hover:border-primary/50"
+                        : "bg-black/30 border-2 border-primary/30 text-gray-300 hover:border-primary/50"
                     }`}
                   >
                     {category === "all" ? "All" : category}
@@ -173,7 +130,7 @@ export default function CoursesGrid() {
           </div>
 
           {/* Results Count */}
-          <p className="text-center text-foreground/60 text-sm">
+          <p className="text-center text-gray-400 text-sm">
             Showing {filteredCourses.length} of {courses.length} courses
           </p>
         </div>
@@ -301,8 +258,8 @@ export default function CoursesGrid() {
                 />
               </svg>
             </div>
-            <h3 className="text-2xl font-serif font-bold text-foreground mb-2">No courses found</h3>
-            <p className="text-foreground/60 mb-6">Try adjusting your search or filters</p>
+            <h3 className="text-2xl font-serif font-bold text-white mb-2">No courses found</h3>
+            <p className="text-gray-400 mb-6">Try adjusting your search or filters</p>
             <button
               onClick={() => {
                 setSearchQuery("")

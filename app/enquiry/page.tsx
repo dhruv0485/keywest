@@ -10,7 +10,6 @@ export default function EnquiryPage() {
   return (
     <main className="w-full overflow-hidden">
       <Navbar />
-      <EnquiryHeroSection />
       <EnquiryContactSection />
       <NewsletterSection />
       <Footer />

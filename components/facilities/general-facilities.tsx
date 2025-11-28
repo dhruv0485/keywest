@@ -309,19 +309,22 @@ const amenities = [
 
 export default function GeneralFacilities() {
   return (
-    <section className="py-20 bg-gradient-to-b from-primary/5 to-white">
+    <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
       <div className="container mx-auto px-4">
+        {/* Campus Amenities */}
+        <CampusAmenities />
+
         {/* General Facilities Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 mt-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             General Facilities
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-sans">
             Additional amenities and services to enhance your learning experience
           </p>
         </motion.div>
@@ -336,24 +339,21 @@ export default function GeneralFacilities() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-primary/10 hover:border-primary/30 group"
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 border-2 border-primary/30 hover:border-primary group backdrop-blur-sm"
               >
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${facility.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                   <Icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-serif font-bold text-white mb-2 group-hover:text-primary transition-colors">
                   {facility.title}
                 </h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">
+                <p className="text-sm text-gray-300 leading-relaxed font-sans">
                   {facility.description}
                 </p>
               </motion.div>
             )
           })}
         </div>
-
-        {/* Campus Amenities */}
-        <CampusAmenities />
 
         {/* Call to Action */}
         <motion.div
@@ -362,11 +362,11 @@ export default function GeneralFacilities() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 md:p-12 border border-primary/20">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          <div className="bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl p-8 md:p-12 border-2 border-primary/30 backdrop-blur-sm">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-4">
               Experience Our World-Class Facilities
             </h3>
-            <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto font-sans">
               Schedule a campus tour to see our facilities in person and discover why we're the best choice for your makeup education.
             </p>
             <div className="flex justify-center">

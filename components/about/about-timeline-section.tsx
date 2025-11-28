@@ -35,13 +35,13 @@ export default function AboutTimelineSection() {
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-b from-white via-pink-50/20 to-white">
+    <section className="section-padding bg-gradient-to-b from-black via-gray-900 to-black">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-            Our Journey
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Our Journey</span>
           </h2>
-          <p className="text-foreground/70 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
             From humble beginnings to industry leaders
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function AboutTimelineSection() {
                 className="relative"
               >
                 {/* Center Dot - Visible on all screens */}
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-primary to-accent rounded-full border-2 md:border-4 border-white shadow-lg z-10" />
+                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-primary to-accent rounded-full border-2 md:border-4 border-black shadow-lg z-10" />
 
                 {/* Card Container - Alternating Left/Right on all screens */}
                 <div className={`flex ${item.side === "left" ? "justify-start pr-[52%] md:pr-[52%] lg:pr-[52%]" : "justify-end pl-[52%] md:pl-[52%] lg:pl-[52%]"}`}>

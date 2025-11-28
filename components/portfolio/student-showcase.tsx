@@ -262,195 +262,47 @@ export default function StudentShowcase() {
   })
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-primary/5">
+    <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-serif font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
         >
           Our Success Stories
         </motion.h2>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Image Section */}
+        {/* Photo Grid with Hover Names */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16 max-w-7xl mx-auto">
+          {students.map((student) => (
             <motion.div
-              key={currentStudent.id}
+              key={student.id}
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative group"
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              onClick={() => {
+                setCurrentIndex(student.id - 1)
+                setDescIndex(0)
+              }}
+              className="relative group cursor-pointer aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300"
             >
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[3/4]">
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent z-10" />
-                <img
-                  src={currentStudent.image}
-                  alt={currentStudent.name}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                    {currentStudent.name}
-                  </h3>
-                  <p className="text-white/90 text-sm md:text-base">
-                    {currentStudent.timeline}
-                  </p>
+              <img
+                src={student.image}
+                alt={student.name}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                  <h3 className="text-white font-serif font-bold text-lg">{student.name}</h3>
+                  <p className="text-white/80 text-sm font-sans">{student.timeline}</p>
                 </div>
-              </div>
-
-              {/* Navigation Dots */}
-              <div className="flex justify-center gap-2 mt-6">
-                {students.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setCurrentIndex(index)
-                      setDescIndex(0)
-                    }}
-                    className={`h-2 rounded-full transition-all ${
-                      index === currentIndex
-                        ? "w-8 bg-primary"
-                        : "w-2 bg-primary/30 hover:bg-primary/50"
-                    }`}
-                  />
-                ))}
               </div>
             </motion.div>
-
-            {/* Description Section */}
-            <div className="space-y-6">
-              <div className="bg-white rounded-2xl shadow-xl p-4 md:p-6 lg:p-8 border border-primary/10">
-                <h4 className="text-xl md:text-2xl font-bold text-primary mb-3 md:mb-4">Journey Highlights</h4>
-                
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
-                  {/* Main Content - Left Side */}
-                  <div className="lg:col-span-3 space-y-3">
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={descIndex}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -50 }}
-                        transition={{ duration: 0.6 }}
-                      >
-                        {/* Journey Image */}
-                        <div className="relative overflow-hidden rounded-xl shadow-lg w-full h-40 sm:h-48 md:h-56">
-                          <img
-                            src={currentStudent.descriptions[descIndex].image}
-                            alt={currentStudent.descriptions[descIndex].title}
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                          <div className="absolute bottom-3 left-3 right-3">
-                            <span className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-primary font-bold text-xs md:text-sm">
-                              Step {descIndex + 1} of 3
-                            </span>
-                          </div>
-                        </div>
-                        
-                        {/* Journey Title & Description */}
-                        <div className="space-y-2 bg-gradient-to-br from-primary/5 to-accent/5 p-3 md:p-4 rounded-xl border border-primary/10">
-                          <h5 className="text-base sm:text-lg md:text-xl font-bold text-primary">
-                            {currentStudent.descriptions[descIndex].title}
-                          </h5>
-                          <p className="text-xs sm:text-sm md:text-base text-foreground/80 leading-relaxed">
-                            {currentStudent.descriptions[descIndex].text}
-                          </p>
-                        </div>
-                      </motion.div>
-                    </AnimatePresence>
-                  </div>
-
-                  {/* Vertical Timeline - Right Side */}
-                  <div className="lg:col-span-2 border-t lg:border-t-0 lg:border-l border-primary/20 pt-4 lg:pt-0 lg:pl-4">
-                    <h6 className="text-sm md:text-base font-semibold text-primary mb-4">Journey Timeline</h6>
-                    <div className="relative pl-6">
-                      {/* Vertical Line */}
-                      <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary/30" />
-                      
-                      {currentStudent.descriptions.map((desc, idx) => (
-                        <div
-                          key={idx}
-                          className={`relative mb-4 last:mb-0 transition-all duration-300 ${
-                            idx === descIndex 
-                              ? "opacity-100 scale-105" 
-                              : "opacity-60 hover:opacity-80 scale-100"
-                          }`}
-                        >
-                          {/* Timeline Dot */}
-                          <div
-                            className={`absolute -left-4 top-1 w-4 h-4 rounded-full border-2 transition-all duration-300 ${
-                              idx === descIndex
-                                ? "bg-primary border-primary scale-125 shadow-lg shadow-primary/50"
-                                : idx < descIndex
-                                ? "bg-accent border-accent"
-                                : "bg-white border-primary/30"
-                            }`}
-                          />
-                          
-                          {/* Timeline Content */}
-                          <button
-                            onClick={() => setDescIndex(idx)}
-                            className={`text-left w-full group rounded-lg p-2 transition-all ${
-                              idx === descIndex 
-                                ? "bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20" 
-                                : "hover:bg-primary/5"
-                            }`}
-                          >
-                            <div className={`text-xs md:text-sm font-semibold transition-colors ${
-                              idx === descIndex ? "text-primary" : "text-foreground/70 group-hover:text-primary"
-                            }`}>
-                              {desc.title}
-                            </div>
-                            {idx === descIndex && (
-                              <div className="text-xs text-foreground/60 line-clamp-2 mt-1">
-                                {desc.text}
-                              </div>
-                            )}
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Description Progress */}
-                <div className="flex gap-2 mt-4 md:mt-6">
-                  {currentStudent.descriptions.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setDescIndex(index)}
-                      className={`h-1 flex-1 rounded-full transition-all ${
-                        index === descIndex ? "bg-primary" : "bg-primary/20 hover:bg-primary/40"
-                      }`}
-                      aria-label={`View journey step ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Navigation Buttons */}
-              <div className="flex gap-4">
-                <button
-                  onClick={prevStudent}
-                  className="flex-1 bg-white hover:bg-primary/5 border-2 border-primary text-primary font-semibold py-4 px-6 rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
-                >
-                  <ChevronLeft size={20} />
-                  Previous
-                </button>
-                <button
-                  onClick={nextStudent}
-                  className="flex-1 bg-gradient-to-r from-primary to-accent text-white font-semibold py-4 px-6 rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
-                >
-                  Next
-                  <ChevronRight size={20} />
-                </button>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
+
+
       </div>
     </section>
   )

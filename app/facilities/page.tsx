@@ -11,7 +11,6 @@ export default function FacilitiesPage() {
     <main className="w-full overflow-hidden">
       <Navbar />
       <FacilitiesHero />
-      <CourseFacilities />
       <GeneralFacilities />
       <Footer />
     </main>

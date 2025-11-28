@@ -29,15 +29,15 @@ export default function CollabsSection() {
   ]
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-white to-pink-50/20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden relative">
+      {/* Decorative Elements */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12 relative z-10">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
-            Our Collabs
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Brand Associations</span>
           </h2>
-          <p className="text-foreground/70 text-base md:text-lg max-w-2xl mx-auto">
-            Trusted by leading brands and organizations
-          </p>
         </div>
       </div>
 
@@ -48,7 +48,7 @@ export default function CollabsSection() {
           {row1Logos.map((logo, index) => (
             <div
               key={`row1-first-${index}`}
-              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/50 transition-all duration-300 border-2 border-primary/20 hover:border-primary hover:scale-105"
             >
               <img
                 src={logo}
@@ -63,7 +63,7 @@ export default function CollabsSection() {
           {row1Logos.map((logo, index) => (
             <div
               key={`row1-second-${index}`}
-              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/50 transition-all duration-300 border-2 border-primary/20 hover:border-primary hover:scale-105"
             >
               <img
                 src={logo}
@@ -78,7 +78,7 @@ export default function CollabsSection() {
           {row1Logos.map((logo, index) => (
             <div
               key={`row1-third-${index}`}
-              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/50 transition-all duration-300 border-2 border-primary/20 hover:border-primary hover:scale-105"
             >
               <img
                 src={logo}
@@ -99,7 +99,7 @@ export default function CollabsSection() {
           {row2Logos.map((logo, index) => (
             <div
               key={`row2-first-${index}`}
-              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/50 transition-all duration-300 border-2 border-primary/20 hover:border-primary hover:scale-105"
             >
               <img
                 src={logo}
@@ -114,7 +114,7 @@ export default function CollabsSection() {
           {row2Logos.map((logo, index) => (
             <div
               key={`row2-second-${index}`}
-              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/50 transition-all duration-300 border-2 border-primary/20 hover:border-primary hover:scale-105"
             >
               <img
                 src={logo}
@@ -129,7 +129,7 @@ export default function CollabsSection() {
           {row2Logos.map((logo, index) => (
             <div
               key={`row2-third-${index}`}
-              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+              className="flex-shrink-0 mx-6 w-32 h-24 md:w-40 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/50 transition-all duration-300 border-2 border-primary/20 hover:border-primary hover:scale-105"
             >
               <img
                 src={logo}

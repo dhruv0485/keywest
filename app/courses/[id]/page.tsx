@@ -22,8 +22,7 @@ export default function CoursePage() {
   const totalReviews = Math.floor(parseFloat(course.students.replace(/[^0-9.]/g, "")) * 100)
 
   return (
-    <main className="w-full overflow-hidden bg-gradient-to-b from-white via-pink-50/20 to-white">
-      <TopBar />
+    <main className="w-full overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black">
       <Navbar />
 
       {/* Hero Section with Image Gallery and Details */}
@@ -50,7 +49,7 @@ export default function CoursePage() {
                     className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all ${
                       selectedImage === idx
                         ? "border-primary shadow-lg shadow-primary/30 scale-105"
-                        : "border-gray-200 hover:border-primary/50"
+                        : "border-primary/30 hover:border-primary/50"
                     }`}
                   >
                     <img src={img} alt={`View ${idx + 1}`} className="w-full h-full object-cover" />
@@ -85,22 +84,22 @@ export default function CoursePage() {
                     />
                   ))}
                 </div>
-                <span className="text-foreground/70 text-sm">
+                <span className="text-gray-400 text-sm">
                   {course.rating} ({totalReviews} reviews)
                 </span>
               </div>
 
               {/* Stats */}
               <div className="flex flex-wrap gap-6">
-                <div className="flex items-center gap-2 text-foreground/70">
+                <div className="flex items-center gap-2 text-gray-300">
                   <Clock className="w-5 h-5 text-primary" />
                   <span className="text-sm font-medium">{course.duration}</span>
                 </div>
-                <div className="flex items-center gap-2 text-foreground/70">
+                <div className="flex items-center gap-2 text-gray-300">
                   <Users className="w-5 h-5 text-primary" />
                   <span className="text-sm font-medium">{course.students} Students</span>
                 </div>
-                <div className="flex items-center gap-2 text-foreground/70">
+                <div className="flex items-center gap-2 text-gray-300">
                   <CheckCircle2 className="w-5 h-5 text-primary" />
                   <span className="text-sm font-medium">{course.level}</span>
                 </div>
@@ -108,14 +107,14 @@ export default function CoursePage() {
 
               {/* Description */}
               <div className="space-y-3">
-                <h3 className="text-xl font-serif font-bold text-foreground">About This Course</h3>
-                <p className="text-foreground/70 leading-relaxed">{course.fullDescription}</p>
+                <h3 className="text-xl font-serif font-bold text-white">About This Course</h3>
+                <p className="text-gray-300 leading-relaxed">{course.fullDescription}</p>
               </div>
 
               {/* Enroll CTA */}
-              <div className="bg-gradient-to-br from-gray-50 to-pink-50/30 rounded-2xl p-6 border-2 border-primary/10">
-                <h3 className="text-xl font-serif font-bold text-foreground mb-4">Ready to Start Learning?</h3>
-                <p className="text-foreground/70 mb-6">Join thousands of students and transform your makeup skills today.</p>
+              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border-2 border-primary/30 backdrop-blur-sm">
+                <h3 className="text-xl font-serif font-bold text-white mb-4">Ready to Start Learning?</h3>
+                <p className="text-gray-300 mb-6">Join thousands of students and transform your makeup skills today.</p>
                 <a
                   href="/enquiry"
                   className="block w-full py-4 rounded-full font-semibold text-lg transition-all hover:scale-[1.02] flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-white hover:shadow-xl hover:shadow-primary/30"
@@ -129,13 +128,13 @@ export default function CoursePage() {
       </section>
 
       {/* Timeline/Curriculum Section */}
-      <section className="py-16 md:py-20 bg-white/50">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900">
         <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
               Course Curriculum
             </h2>
-            <p className="text-foreground/70">Your journey through {course.duration} of learning</p>
+            <p className="text-gray-400">Your journey through {course.duration} of learning</p>
           </div>
 
           {/* Timeline */}
@@ -147,18 +146,18 @@ export default function CoursePage() {
               {course.curriculum.map((item, idx) => (
                 <div key={idx} className="relative">
                   {/* Timeline Dot */}
-                  <div className="absolute left-0 md:left-5 top-0 w-7 h-7 bg-gradient-to-br from-primary to-accent rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center">
+                  <div className="absolute left-0 md:left-5 top-0 w-7 h-7 bg-gradient-to-br from-primary to-accent rounded-full border-4 border-black shadow-lg z-10 flex items-center justify-center">
                     <span className="text-white text-xs font-bold">{item.week}</span>
                   </div>
 
                   {/* Content Card */}
-                  <div className="ml-12 md:ml-20 bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all hover:shadow-xl">
-                    <h3 className="text-xl font-serif font-bold text-foreground mb-3">
+                  <div className="ml-12 md:ml-20 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 shadow-lg border-2 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all backdrop-blur-sm">
+                    <h3 className="text-xl font-serif font-bold text-white mb-3">
                       Week {item.week}: {item.title}
                     </h3>
                     <ul className="space-y-2">
                       {item.topics.map((topic, topicIdx) => (
-                        <li key={topicIdx} className="flex items-start gap-2 text-foreground/70">
+                        <li key={topicIdx} className="flex items-start gap-2 text-gray-300">
                           <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                           <span>{topic}</span>
                         </li>
@@ -173,26 +172,26 @@ export default function CoursePage() {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
               Student Reviews
             </h2>
-            <p className="text-foreground/70">What our students say about this course</p>
+            <p className="text-gray-400">What our students say about this course</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {course.reviews.map((review) => (
               <div
                 key={review.id}
-                className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all hover:shadow-xl"
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 shadow-lg border-2 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all backdrop-blur-sm"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <img src={review.avatar} alt={review.name} className="w-12 h-12 rounded-full" />
                   <div>
-                    <h4 className="font-semibold text-foreground">{review.name}</h4>
-                    <p className="text-sm text-foreground/60">{review.date}</p>
+                    <h4 className="font-semibold text-white">{review.name}</h4>
+                    <p className="text-sm text-gray-400">{review.date}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-1 mb-3">
@@ -200,12 +199,12 @@ export default function CoursePage() {
                     <Star
                       key={i}
                       className={`w-4 h-4 ${
-                        i < review.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                        i < review.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-600"
                       }`}
                     />
                   ))}
                 </div>
-                <p className="text-foreground/70 leading-relaxed">{review.comment}</p>
+                <p className="text-gray-300 leading-relaxed">{review.comment}</p>
               </div>
             ))}
           </div>
@@ -213,20 +212,20 @@ export default function CoursePage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-16 md:py-20 bg-white/50">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
               Course Gallery
             </h2>
-            <p className="text-foreground/70">See the amazing work from our students</p>
+            <p className="text-gray-400">See the amazing work from our students</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {course.galleryImages.map((img, idx) => (
               <div
                 key={idx}
-                className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer border-2 border-primary/10 hover:border-primary/30 transition-all"
+                className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all"
               >
                 <img
                   src={img}

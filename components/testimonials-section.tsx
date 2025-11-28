@@ -49,13 +49,16 @@ export default function TestimonialsSection() {
   }, [testimonials.length])
 
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-white to-pink-50/30 min-h-screen">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-black via-gray-900 to-black min-h-screen relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
-            What Our Students Say
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 leading-tight min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
+            What Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Students Say</span>
           </h2>
-          <p className="text-foreground/70 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
             Hear from our graduates about their transformative journey with us
           </p>
         </div>
@@ -109,7 +112,7 @@ export default function TestimonialsSection() {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-gradient-to-br from-white to-pink-50/50 rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl border border-primary/10 max-w-5xl mx-auto min-h-[550px] md:min-h-[600px] flex flex-col justify-between">
+                  <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-primary/20 border-2 border-primary/30 max-w-5xl mx-auto min-h-[550px] md:min-h-[600px] flex flex-col justify-between">
                     {/* Quote Icon */}
                     <div className="flex justify-center mb-6">
                       <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg">
@@ -125,7 +128,7 @@ export default function TestimonialsSection() {
                     </div>
 
                     {/* Quote */}
-                    <p className="text-foreground/80 text-lg md:text-xl text-center leading-relaxed mb-6 italic">
+                    <p className="text-gray-300 text-lg md:text-xl text-center leading-relaxed mb-6 italic">
                       "{testimonial.quote}"
                     </p>
 
@@ -147,7 +150,7 @@ export default function TestimonialsSection() {
                     {/* Author Info - Bottom Right */}
                     <div className="flex justify-end items-center gap-4">
                       <div className="text-right">
-                        <p className="font-serif font-bold text-foreground text-lg">{testimonial.author}</p>
+                        <p className="font-serif font-bold text-white text-lg">{testimonial.author}</p>
                         <p className="text-primary text-sm">{testimonial.role}</p>
                       </div>
                       <button
@@ -173,7 +176,7 @@ export default function TestimonialsSection() {
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentTestimonial
                     ? "bg-gradient-to-r from-primary to-accent w-8"
-                    : "bg-gray-300 w-2"
+                    : "bg-gray-600 w-2"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

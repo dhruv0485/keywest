@@ -27,7 +27,7 @@ export default function EnquiryContactSection() {
   }
 
   return (
-    <section id="contact-form" className="w-full bg-gradient-to-b from-white via-pink-50/30 to-white py-16 md:py-20 lg:py-24">
+    <section id="contact-form" className="w-full bg-gradient-to-b from-black via-gray-900 to-black py-16 md:py-20 lg:py-24">
       <div className="max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         {/* Left Side - Contact Form */}
@@ -37,7 +37,7 @@ export default function EnquiryContactSection() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
                 Start Your Journey Today
               </h2>
-              <p className="text-foreground/70 text-base md:text-lg leading-relaxed">
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-sans">
                 Fill out the form below and our admissions team will contact you within 24 hours to discuss your goals
                 and answer any questions.
               </p>
