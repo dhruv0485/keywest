@@ -7,22 +7,22 @@ export default function HeroSection() {
 
   return (
     <section 
-      className="w-full aspect-[16/9] overflow-hidden relative group mt-0"
+      className="w-full aspect-[1500/586] overflow-hidden relative group mt-0"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Base Image - ban1 (2).jpeg */}
+      {/* Base Image - Keywest Banner Black 1 */}
       <img
-        src="/ban1 (2).jpeg"
+        src="/Keywest Banner Black 1.png"
         alt="Keywest Academy"
         className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out ${
           isHovered ? "opacity-0" : "opacity-100"
         }`}
       />
       
-      {/* Hover Image - ban1 (1).jpeg */}
+      {/* Hover Image - Keywest Banner Black 2 */}
       <img
-        src="/ban1 (1).jpeg"
+        src="/Keywest Banner Black 2.png"
         alt="Keywest Academy"
         className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out ${
           isHovered ? "opacity-100" : "opacity-0"
