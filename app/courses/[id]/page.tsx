@@ -171,46 +171,6 @@ export default function CoursePage() {
         </div>
       </section>
 
-      {/* Reviews Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-              Student Reviews
-            </h2>
-            <p className="text-gray-400">What our students say about this course</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {course.reviews.map((review) => (
-              <div
-                key={review.id}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 shadow-lg border-2 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all backdrop-blur-sm"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <img src={review.avatar} alt={review.name} className="w-12 h-12 rounded-full" />
-                  <div>
-                    <h4 className="font-semibold text-white">{review.name}</h4>
-                    <p className="text-sm text-gray-400">{review.date}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-4 h-4 ${
-                        i < review.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-600"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <p className="text-gray-300 leading-relaxed">{review.comment}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Gallery Section */}
       <section className="py-16 md:py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
