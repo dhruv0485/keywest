@@ -33,11 +33,11 @@ export default function AboutSection() {
         <div className="max-w-5xl mx-auto mb-16 md:mb-20 px-4">
           {/* Title Section */}
           <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl lg:text-8xl font-serif font-bold mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-serif font-bold mb-6 leading-tight">
               <div className="text-white">WELCOME TO</div>
               <div className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">KEYWEST ACADEMY</div>
             </h2>
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+            <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto">
               A founder-led academy by Neha Chhabra, we are dedicated to transforming passion into a professional and world-class career. We celebrate makeup as a craft, empowering women with confidence and promoting financial independence.
             </p>
           </div>
