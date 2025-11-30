@@ -45,22 +45,17 @@ export default function AboutTimelineSection() {
         {/* Desktop Timeline - Horizontal Flow */}
         <div className="hidden lg:block relative">
           {/* Horizontal Timeline Line */}
-          <div className="absolute top-32 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+          <div className="absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary" />
 
           {/* Timeline Items */}
           <div className="grid grid-cols-4 gap-8">
             {timeline.map((item, index) => (
               <div key={item.year} className="relative">
                 {/* Connector Dot */}
-                <div className="absolute top-32 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-gradient-to-br from-primary to-accent rounded-full border-4 border-black shadow-xl z-10" />
-                
-                {/* Year Badge Above Line */}
-                <div className="absolute top-20 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-accent text-white text-xl font-bold px-5 py-2 rounded-full shadow-xl whitespace-nowrap">
-                  {item.year}
-                </div>
+                <div className="absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-gradient-to-br from-primary to-accent rounded-full border-4 border-black shadow-xl z-10" />
 
                 {/* Card Below Line */}
-                <div className="mt-40">
+                <div className="mt-16">
                   <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-105 group">
                     <div className="relative h-64 xl:h-72 overflow-hidden">
                       <img
@@ -93,14 +88,9 @@ export default function AboutTimelineSection() {
           {/* Timeline Items */}
           <div className="space-y-8">
             {timeline.map((item, index) => (
-              <div key={item.year} className="relative pl-20 md:pl-28">
+              <div key={item.year} className="relative pl-16 md:pl-20">
                 {/* Connector Dot */}
                 <div className="absolute left-8 md:left-12 top-6 transform -translate-x-1/2 w-5 h-5 md:w-6 md:h-6 bg-gradient-to-br from-primary to-accent rounded-full border-3 border-black shadow-xl z-10" />
-                
-                {/* Year Badge */}
-                <div className="absolute left-0 top-3 bg-gradient-to-r from-primary to-accent text-white text-sm md:text-base font-bold px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-xl">
-                  {item.year}
-                </div>
 
                 {/* Card */}
                 <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 hover:border-primary/60 transition-all duration-300 group">
