@@ -285,7 +285,7 @@ export default function StudentShowcase() {
                 setCurrentIndex(student.id - 1)
                 setDescIndex(0)
               }}
-              className="relative group cursor-pointer aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300"
+              className="relative group cursor-pointer aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10"
             >
               <img
                 src={student.image}

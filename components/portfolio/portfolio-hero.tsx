@@ -19,7 +19,8 @@ export default function PortfolioHero() {
             Student Portfolio
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-sans">
-            Witness the incredible transformations and artistic journeys of our talented students
+            <span className="block">Witness the incredible transformations and</span>
+            <span className="block">artistic journeys of our talented students</span>
           </p>
         </motion.div>
       </div>

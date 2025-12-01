@@ -1,31 +1,37 @@
+import Link from "next/link"
+
 export default function CoursesSection() {
   const courses = [
     {
+      id: 6,
       title: "Level 1 - Professional Makeup Course",
       description: "Foundation course covering essential makeup techniques and professional skills for aspiring makeup artists.",
       image: "/c1.webp",
-      duration: "Variable",
+      duration: "6-8 Weeks",
       level: "Level 1",
     },
     {
+      id: 4,
       title: "Level 2 - Masters in Makeup Artistry Course",
       description: "Advanced course covering comprehensive makeup artistry, bridal makeup, and professional techniques.",
       image: "/c2.webp",
-      duration: "Variable",
+      duration: "10-12 Weeks",
       level: "Level 2",
     },
     {
+      id: 3,
       title: "Level 3 - MasterPro Artistry Certification",
       description: "Expert-level certification including advanced techniques, creative makeup, and industry specialization.",
       image: "/c3.webp",
-      duration: "Variable",
+      duration: "3+ Months",
       level: "Level 3",
     },
     {
+      id: 1,
       title: "Level 4 - Global Elite Artistry Program",
       description: "Elite program for international standards, fashion week preparation, and global career opportunities.",
       image: "/c4.webp",
-      duration: "Variable",
+      duration: "8-12 Weeks",
       level: "Level 4",
     },
   ]
@@ -48,9 +54,10 @@ export default function CoursesSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 px-4">
           {courses.map((course, index) => (
-            <div
+            <Link
               key={index}
-              className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105"
+              href={`/courses/${course.id}`}
+              className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105 block"
             >
               <div className="relative overflow-hidden h-48 sm:h-56 md:h-64 bg-white">
                 <img
@@ -107,14 +114,14 @@ export default function CoursesSection() {
                   </div>
                 </div>
 
-                {/* Enroll Button */}
+                {/* View Details Button */}
                 <div className="pt-3 sm:pt-4 border-t border-gray-800">
                   <button className="w-full bg-gradient-to-r from-primary to-accent text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all text-xs sm:text-sm font-semibold hover:scale-105">
-                    Enroll Now
+                    View Details
                   </button>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

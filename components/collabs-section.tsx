@@ -20,7 +20,6 @@ export default function CollabsSection() {
     "/l11.png",
     "/l12.webp",
     "/l13.jpg",
-    "/l14.png",
     "/l15.jpg",
     "/l16.webp",
     "/l17.png",

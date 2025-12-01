@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Building2, Sparkles } from "lucide-react"
 
 export default function FacilitiesHero() {
   return (
@@ -16,10 +15,6 @@ export default function FacilitiesHero() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Building2 className="w-12 h-12 text-primary" />
-            <Sparkles className="w-10 h-10 text-accent" />
-          </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             Facilities & Infrastructure
           </h1>

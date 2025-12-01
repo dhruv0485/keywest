@@ -308,6 +308,8 @@ const amenities = [
 ]
 
 export default function GeneralFacilities() {
+  const [selectedFacility, setSelectedFacility] = useState<number | null>(null)
+
   return (
     <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
       <div className="container mx-auto px-4">
@@ -329,56 +331,160 @@ export default function GeneralFacilities() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {generalFacilities.map((facility, index) => {
-            const Icon = facility.icon
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 border-2 border-primary/30 hover:border-primary group backdrop-blur-sm"
-              >
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${facility.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <Icon className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-lg font-serif font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                  {facility.title}
-                </h3>
-                <p className="text-sm text-gray-300 leading-relaxed font-sans">
-                  {facility.description}
-                </p>
-              </motion.div>
-            )
-          })}
-        </div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl p-8 md:p-12 border-2 border-primary/30 backdrop-blur-sm">
-            <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-4">
-              Experience Our World-Class Facilities
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto font-sans">
-              Schedule a campus tour to see our facilities in person and discover why we're the best choice for your makeup education.
-            </p>
-            <div className="flex justify-center">
-              <a
-                href="/courses"
-                className="inline-block bg-gradient-to-r from-primary to-accent text-white font-semibold py-4 px-8 rounded-xl hover:scale-105 transition-all shadow-lg"
-              >
-                View Courses
-              </a>
+        {/* Orbital Facilities */}
+        <div className="relative w-full max-w-6xl mx-auto mb-20 py-16" style={{ minHeight: '900px' }}>
+          {/* Center Circle - Much Bigger */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-2xl z-10">
+            <div className="text-center">
+              <p className="text-white font-bold text-lg sm:text-2xl md:text-3xl">Facilities</p>
+              <p className="text-white/80 text-sm sm:text-lg md:text-xl">& Amenities</p>
             </div>
           </div>
-        </motion.div>
+
+          {/* Rotating Container */}
+          <div className="absolute top-1/2 left-1/2 w-full h-full animate-spin-slow" style={{ transform: 'translate(-50%, -50%)' }}>
+            {/* Orbiting Icons - Evenly spaced around 360 degrees */}
+            {generalFacilities.map((facility, index) => {
+              const Icon = facility.icon
+              // Calculate angle for each icon (360 / 8 = 45 degrees apart)
+              const angle = (index * 360) / 8
+              // Much larger radius with more gap from center
+              const radiusMobile = 280
+              const radiusSm = 380
+              const radiusMd = 450
+              
+              return (
+                <div
+                  key={index}
+                  className="absolute top-1/2 left-1/2"
+                  style={{
+                    transform: `translate(-50%, -50%) rotate(${angle}deg) translateX(${radiusMobile}px)`,
+                  }}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group facility-icon"
+                    onClick={() => setSelectedFacility(index)}
+                  >
+                    {/* Counter-rotating wrapper to keep icons upright */}
+                    <div 
+                      className="animate-spin-reverse"
+                      style={{ transform: `rotate(-${angle}deg)` }}
+                    >
+                      {/* Icon Container - Much Bigger */}
+                      <div className={`w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-r ${facility.color} flex items-center justify-center shadow-xl cursor-pointer transition-all duration-300 hover:scale-125 hover:shadow-2xl hover:shadow-primary/50 relative z-20`}>
+                        <Icon className="w-9 h-9 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" />
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Animation Styles */}
+          <style jsx>{`
+            @keyframes spin-slow {
+              from {
+                transform: translate(-50%, -50%) rotate(0deg);
+              }
+              to {
+                transform: translate(-50%, -50%) rotate(360deg);
+              }
+            }
+
+            @keyframes spin-reverse {
+              from {
+                transform: rotate(0deg);
+              }
+              to {
+                transform: rotate(-360deg);
+              }
+            }
+
+            .animate-spin-slow {
+              animation: spin-slow 20s linear infinite;
+            }
+
+            .animate-spin-reverse {
+              animation: spin-reverse 20s linear infinite;
+            }
+
+            /* Responsive radius adjustments */
+            @media (min-width: 640px) {
+              .absolute.top-1\\/2.left-1\\/2 > .group {
+                transform: translate(-50%, -50%) rotate(${(index) => (index * 360) / 8}deg) translateX(380px) !important;
+              }
+            }
+
+            @media (min-width: 768px) {
+              .absolute.top-1\\/2.left-1\\/2 > .group {
+                transform: translate(-50%, -50%) rotate(${(index) => (index * 360) / 8}deg) translateX(450px) !important;
+              }
+            }
+          `}</style>
+        </div>
+
+        {/* Popup Modal */}
+        {selectedFacility !== null && (
+          <div 
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedFacility(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 20 }}
+              className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 sm:p-8 md:p-10 max-w-md sm:max-w-lg md:max-w-xl w-full shadow-2xl border-2 border-primary/50 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedFacility(null)}
+                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-white">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Icon */}
+              <div className="flex justify-center mb-6">
+                <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r ${generalFacilities[selectedFacility].color} flex items-center justify-center shadow-xl`}>
+                  {(() => {
+                    const Icon = generalFacilities[selectedFacility].icon
+                    return <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
+                  })()}
+                </div>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-4 text-center">
+                {generalFacilities[selectedFacility].title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed text-center">
+                {generalFacilities[selectedFacility].description}
+              </p>
+
+              {/* Close Button at Bottom */}
+              <div className="mt-8 flex justify-center">
+                <button
+                  onClick={() => setSelectedFacility(null)}
+                  className="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
+                >
+                  Close
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+
+
       </div>
     </section>
   )

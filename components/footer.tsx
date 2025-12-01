@@ -82,7 +82,9 @@ export default function Footer() {
             <h4 className="font-serif font-bold mb-4 text-primary">Follow Us</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/keywestacademy.in?igsh=OGU1dGMxbW04OWpq"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/70 hover:text-primary transition-all hover:scale-110"
                 aria-label="Instagram"
               >

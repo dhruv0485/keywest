@@ -5,7 +5,7 @@ import { useParams, notFound } from "next/navigation"
 import Navbar from "@/components/navbar"
 import TopBar from "@/components/top-bar"
 import Footer from "@/components/footer"
-import { Star, Clock, Users, CheckCircle2 } from "lucide-react"
+import { Clock, CheckCircle2 } from "lucide-react"
 import { getCourseById } from "@/lib/courses-data"
 
 export default function CoursePage() {
@@ -19,7 +19,12 @@ export default function CoursePage() {
     notFound()
   }
 
-  const totalReviews = Math.floor(parseFloat(course.students.replace(/[^0-9.]/g, "")) * 100)
+  const scrollToCurriculum = () => {
+    const curriculumSection = document.getElementById('curriculum-section')
+    if (curriculumSection) {
+      curriculumSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
 
   return (
     <main className="w-full overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black">
@@ -72,32 +77,11 @@ export default function CoursePage() {
                 {course.title}
               </h1>
 
-              {/* Rating */}
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-5 h-5 ${
-                        i < Math.floor(course.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <span className="text-gray-400 text-sm">
-                  {course.rating} ({totalReviews} reviews)
-                </span>
-              </div>
-
               {/* Stats */}
               <div className="flex flex-wrap gap-6">
                 <div className="flex items-center gap-2 text-gray-300">
                   <Clock className="w-5 h-5 text-primary" />
                   <span className="text-sm font-medium">{course.duration}</span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-300">
-                  <Users className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium">{course.students} Students</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-300">
                   <CheckCircle2 className="w-5 h-5 text-primary" />
@@ -108,19 +92,30 @@ export default function CoursePage() {
               {/* Description */}
               <div className="space-y-3">
                 <h3 className="text-xl font-serif font-bold text-white">About This Course</h3>
-                <p className="text-gray-300 leading-relaxed">{course.fullDescription}</p>
+                {course.aboutPoints ? (
+                  <ul className="space-y-2">
+                    {course.aboutPoints.map((point, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-gray-300">
+                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="leading-relaxed">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-300 leading-relaxed">{course.fullDescription}</p>
+                )}
               </div>
 
-              {/* Enroll CTA */}
+              {/* Course Curriculum CTA */}
               <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border-2 border-primary/30 backdrop-blur-sm">
-                <h3 className="text-xl font-serif font-bold text-white mb-4">Ready to Start Learning?</h3>
-                <p className="text-gray-300 mb-6">Join thousands of students and transform your makeup skills today.</p>
-                <a
-                  href="/enquiry"
-                  className="block w-full py-4 rounded-full font-semibold text-lg transition-all hover:scale-[1.02] flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-white hover:shadow-xl hover:shadow-primary/30"
+                <h3 className="text-xl font-serif font-bold text-white mb-4">Explore the Course</h3>
+                <p className="text-gray-300 mb-6">Discover what you'll learn in this comprehensive program.</p>
+                <button
+                  onClick={scrollToCurriculum}
+                  className="w-full py-4 rounded-full font-semibold text-lg transition-all hover:scale-[1.02] flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-white hover:shadow-xl hover:shadow-primary/30"
                 >
-                  Enroll Now
-                </a>
+                  View Course Curriculum
+                </button>
               </div>
             </div>
           </div>
@@ -128,7 +123,7 @@ export default function CoursePage() {
       </section>
 
       {/* Timeline/Curriculum Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900">
+      <section id="curriculum-section" className="py-16 md:py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900 scroll-mt-20">
         <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
@@ -181,7 +176,7 @@ export default function CoursePage() {
             <p className="text-gray-400">See the amazing work from our students</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {course.galleryImages.map((img, idx) => (
               <div
                 key={idx}
