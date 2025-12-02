@@ -3,9 +3,11 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
 
   const navLinks = [
     { name: "ABOUT", href: "/about" },
@@ -35,15 +37,22 @@ export default function Navbar() {
         <div className="w-full px-4">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8 py-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-white hover:text-black font-medium text-sm lg:text-base transition-all hover:scale-105 whitespace-nowrap"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`font-medium text-sm lg:text-base transition-all hover:scale-105 whitespace-nowrap ${
+                    isActive
+                      ? "text-black font-bold"
+                      : "text-white hover:text-black"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              )
+            })}
           </div>
 
           {/* Mobile Menu Button */}
@@ -57,15 +66,22 @@ export default function Navbar() {
           {/* Mobile Navigation */}
           {isOpen && (
             <div className="md:hidden pb-4 space-y-3 border-t border-white/20 pt-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="block text-white hover:text-black font-medium text-sm transition-colors py-2"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={`block font-medium text-sm transition-colors py-2 ${
+                      isActive
+                        ? "text-black font-bold"
+                        : "text-white hover:text-black"
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                )
+              })}
             </div>
           )}
         </div>
