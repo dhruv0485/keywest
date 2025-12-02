@@ -65,3 +65,6 @@ Get-ChildItem public\*.mp4 | Select-Object Name, @{Name="Size(MB)";Expression={[
 ```
 
 If any file is over 100MB, let me know and we'll use Cloudinary instead!
+
+
+

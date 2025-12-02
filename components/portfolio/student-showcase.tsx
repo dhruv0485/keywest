@@ -273,29 +273,24 @@ export default function StudentShowcase() {
           Our Success Stories
         </motion.h2>
 
-        {/* Photo Grid with Hover Names */}
+        {/* Success Stories Photo Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16 max-w-7xl mx-auto">
-          {students.map((student) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
             <motion.div
-              key={student.id}
+              key={num}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              onClick={() => {
-                setCurrentIndex(student.id - 1)
-                setDescIndex(0)
-              }}
               className="relative group cursor-pointer aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10"
             >
               <img
-                src={student.image}
-                alt={student.name}
+                src={`/s${num}.png`}
+                alt={`Student Success Story ${num}`}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-                  <h3 className="text-white font-serif font-bold text-lg">{student.name}</h3>
-                  <p className="text-white/80 text-sm font-sans">{student.timeline}</p>
+                  <h3 className="text-white font-serif font-bold text-lg">Success Story {num}</h3>
                 </div>
               </div>
             </motion.div>

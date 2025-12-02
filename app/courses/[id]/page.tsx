@@ -73,7 +73,7 @@ export default function CoursePage() {
               </div>
 
               {/* Title */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
                 {course.title}
               </h1>
 
@@ -88,6 +88,28 @@ export default function CoursePage() {
                   <span className="text-sm font-medium">{course.level}</span>
                 </div>
               </div>
+
+              {/* Pricing */}
+              {course.price && (
+                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border-2 border-primary/30">
+                  <div className="flex items-center gap-4">
+                    <div>
+                      <p className="text-gray-400 text-sm mb-1">Course Fee</p>
+                      <div className="flex items-center gap-3">
+                        {course.originalPrice && (
+                          <span className="text-gray-500 text-xl line-through">₹{course.originalPrice.toLocaleString()}/-</span>
+                        )}
+                        <span className="text-primary text-3xl font-bold">₹{course.price.toLocaleString()}/-</span>
+                      </div>
+                      {course.originalPrice && (
+                        <p className="text-green-400 text-sm mt-1">
+                          Save ₹{(course.originalPrice - course.price).toLocaleString()}/- (50% OFF)
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Description */}
               <div className="space-y-3">
