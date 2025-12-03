@@ -184,10 +184,10 @@ export const coursesData: Course[] = [
     ],
     reviews: defaultReviews,
     galleryImages: [
-      "/E1.png",
-      "/E2.png",
-      "/E3.png",
-      "/E4.png",
+      "/gec1.png",
+      "/gec2.png",
+      "/gec3.png",
+      "/gec4.png",
     ],
   },
   {
@@ -382,10 +382,10 @@ export const coursesData: Course[] = [
     ],
     reviews: defaultReviews,
     galleryImages: [
-      "/P1.png",
-      "/P2.png",
-      "/P3.png",
-      "/P4.png",
+      "/pac1.png",
+      "/pac2.png",
+      "/pac3.png",
+      "/pac4.png",
     ],
   },
   {
@@ -544,10 +544,10 @@ export const coursesData: Course[] = [
     ],
     reviews: defaultReviews,
     galleryImages: [
-      "/MA1.png",
-      "/MA2.png",
-      "/MA3.png",
-      "/MA4.png",
+      "/mac1.png",
+      "/mac2.png",
+      "/mac3.png",
+      "/mac4.png",
     ],
   },
   {
@@ -722,10 +722,10 @@ export const coursesData: Course[] = [
     ],
     reviews: defaultReviews,
     galleryImages: [
-      "/PMC1.png",
-      "/PMC2.png",
-      "/PMC3.png",
-      "/PMC4.png",
+      "/pm1c.png",
+      "/pm2c.png",
+      "/pm3c.png",
+      "/pm4c.png",
     ],
   },
   {
