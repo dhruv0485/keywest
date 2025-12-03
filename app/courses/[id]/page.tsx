@@ -47,15 +47,14 @@ export default function CoursePage() {
 
               {/* Thumbnail Images */}
               <div className="grid grid-cols-4 gap-3">
-                {course.images.map((img, idx) => (
+                {(course.thumbnails || course.images).map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => setSelectedImage(idx)}
-                    className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all ${
-                      selectedImage === idx
-                        ? "border-primary shadow-lg shadow-primary/30 scale-105"
-                        : "border-primary/30 hover:border-primary/50"
-                    }`}
+                    className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all ${selectedImage === idx
+                      ? "border-primary shadow-lg shadow-primary/30 scale-105"
+                      : "border-primary/30 hover:border-primary/50"
+                      }`}
                   >
                     <img src={img} alt={`View ${idx + 1}`} className="w-full h-full object-cover" />
                   </button>

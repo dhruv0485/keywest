@@ -6,6 +6,7 @@ export interface Course {
   aboutPoints?: string[]
   image: string
   images: string[]
+  thumbnails?: string[]
   duration: string
   level: string
   category: string
@@ -78,8 +79,9 @@ export const coursesData: Course[] = [
       "Preparation for global fashion industry and runway work",
       "Industry networking with international makeup artists"
     ],
-    image: "/E1.png",
-    images: ["/E1.png", "/E2.png", "/E3.png", "/E4.png"],
+    image: "/ge_1_640.png",
+    images: ["/ge_3_640.png", "/ge_4_640.png", "/ge_2_640.png", "/ge_1_640.png"],
+    thumbnails: ["/ge1.png", "/ge2.png", "/ge3.png", "/ge4.png"],
     duration: "6 Months (includes Levels 1, 2 & 3)",
     level: "Level 4",
     category: "Professional",
@@ -280,7 +282,8 @@ export const coursesData: Course[] = [
       "Professional portfolio enhancement and makeup kit guidance"
     ],
     image: "/P1.png",
-    images: ["/P1.png", "/P2.png", "/P3.png", "/P4.png"],
+    images: ["/pa_1_640.png", "/pa_2_640.png", "/pa_4_640.png", "/pa_3_640.png"],
+    thumbnails: ["/pa1.png", "/pa2.png", "/pa4.png", "/pa3.png"],
     duration: "4 Months (includes Levels 1 & 2)",
     level: "Level 3",
     category: "Professional",
@@ -411,7 +414,8 @@ export const coursesData: Course[] = [
       "2 complimentary courses options available at the academy"
     ],
     image: "/c4.webp",
-    images: ["/c4.webp", "/c4.webp", "/c4.webp", "/c4.webp"],
+    images: ["/ma_1_640.png", "/ma_2_640.png", "/ma_3_640.png"],
+    thumbnails: ["/ma7.png", "/ma5.png", "/ma6.png"],
     duration: "3 Months (includes Level 1)",
     level: "Level 2",
     category: "Professional",
@@ -648,7 +652,8 @@ export const coursesData: Course[] = [
       "Weekdays (Monday - Friday) and Weekend batches available"
     ],
     image: "/c6.webp",
-    images: ["/c6.webp", "/c6.webp", "/c6.webp", "/c6.webp"],
+    images: ["/pm_1_640.png", "/pm_4_640.png", "/pm_3_640.png", "/pm_2_640.png"],
+    thumbnails: ["/pm1.png", "/pm4.png", "/pm3.png", "/pm2.png"],
     duration: "1 Month (4-5 Weeks)",
     level: "Level 1",
     category: "Makeup",
