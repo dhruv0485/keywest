@@ -275,22 +275,33 @@ export default function StudentShowcase() {
 
         {/* Success Stories Photo Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16 max-w-7xl mx-auto">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+          {[
+            { num: 1, name: "Avneet" },
+            { num: 2, name: "Neeti" },
+            { num: 3, name: "Kanika" },
+            { num: 4, name: "Pooja" },
+            { num: 5, name: "Vardha" },
+            { num: 6, name: "Sonia" },
+            { num: 7, name: "Preeti Singh" },
+            { num: 8, name: "Manisha" },
+            { num: 9, name: "Mahek" },
+            { num: 10, name: "shailigill" },
+          ].map((student) => (
             <motion.div
-              key={num}
+              key={student.num}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               className="relative group cursor-pointer aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10"
             >
               <img
-                src={`/s${num}.png`}
-                alt={`Student Success Story ${num}`}
+                src={`/s${student.num}.png`}
+                alt={`${student.name} - Student Success Story`}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-                  <h3 className="text-white font-serif font-bold text-lg">Success Story {num}</h3>
+                  <h3 className="text-white font-serif font-bold text-lg">{student.name}</h3>
                 </div>
               </div>
             </motion.div>
