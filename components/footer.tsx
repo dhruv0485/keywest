@@ -212,20 +212,20 @@ export default function Footer() {
                   <h2 className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
                     Refund Policy
                   </h2>
-                  <div className="space-y-4 text-gray-300 leading-relaxed">
+                  <div className="space-y-6 text-gray-300 leading-relaxed">
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">RULES & REGULATIONS</h3>
-                      <ol className="list-decimal list-inside space-y-2">
-                        <li>FEE ONCE PAID NO REQUEST FOR FEE REFUND IS ENTERTAINED.</li>
-                        <li>STUDENTS USING FEE INSTALLMENTS OPTIONS HAVE TO CLEAR THE FEES BEFORE STARTING OF 3RD WEEK OF THE COURSE. INCASE THE FEE IS NOT CLEARED TILL THEN IT WILL LEAD TO TERMINATION OF STUDENT SERVICES. RE-ADMISSION FEE IS APPLICABLE IN SUCH CASES.</li>
-                        <li>NO FEE INSTALLMENT FOR PMU COURSE.</li>
-                        <li>SEPARATE FEE IS APPLICABLE FOR CERTIFIED INTERNATIONAL ACCREDITATION COURSES.</li>
-                        <li>STUDENT MUST RETAIN ALL ORIGINAL FEE SLIPS WHICH MAY BE REQUIRED TILL COURSE COMPLETION.</li>
-                        <li>COURSE Dates Subject to change depending on the government rules on Covid19 precautions for educational academy in India.</li>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Rules & Regulations</h3>
+                      <ol className="list-decimal list-inside space-y-3 text-gray-300">
+                        <li>Fee once paid, no request for fee refund is entertained.</li>
+                        <li>Students using fee installment options have to clear the fees before starting of 3rd week of the course. In case the fee is not cleared till then, it will lead to termination of student services. Re-admission fee is applicable in such cases.</li>
+                        <li>No fee installment for PMU course.</li>
+                        <li>Separate fee is applicable for certified international accreditation courses.</li>
+                        <li>Student must retain all original fee slips which may be required till course completion.</li>
+                        <li>Course dates subject to change depending on the government rules on Covid-19 precautions for educational academy in India.</li>
                         <li>Consent letter must be duly signed by parents/guardian for below 16-year students.</li>
-                        <li>Security amount of 200/- will be charged for lockers used by student.</li>
-                        <li>AFTERCARE PROGRAMME IS VALID ONLY FOR STUDENTS WHO ARE A part of the Masters in Advanced Artistry course. This is ONLY valid for 6 months post their certification date. STUDENTS CAN TAKE UPTO 5 CLASSES.</li>
-                        <li>ANY DAMAGE OR THEFT IN ACADEMY BY THE STUDENT, HE/SHE WILL BE LIABLE TO PAY THE EXPENSE.</li>
+                        <li>Security amount of ₹200/- will be charged for lockers used by student.</li>
+                        <li>Aftercare programme is valid only for students who are a part of the Masters in Advanced Artistry course. This is only valid for 6 months post their certification date. Students can take up to 5 classes.</li>
+                        <li>Any damage or theft in academy by the student, he/she will be liable to pay the expense.</li>
                       </ol>
                     </section>
                   </div>
@@ -237,98 +237,98 @@ export default function Footer() {
                   <h2 className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
                     Terms & Conditions
                   </h2>
-                  <div className="space-y-4 text-gray-300 leading-relaxed">
+                  <div className="space-y-6 text-gray-300 leading-relaxed">
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">RULES & REGULATIONS</h3>
-                      <ol className="list-decimal list-inside space-y-2">
-                        <li>FEE ONCE PAID NO REQUEST FOR FEE REFUND IS ENTERTAINED.</li>
-                        <li>STUDENTS USING FEE INSTALLMENTS OPTIONS HAVE TO CLEAR THE FEES BEFORE STARTING OF 3RD WEEK OF THE COURSE. INCASE THE FEE IS NOT CLEARED TILL THEN IT WILL LEAD TO TERMINATION OF STUDENT SERVICES. RE-ADMISSION FEE IS APPLICABLE IN SUCH CASES.</li>
-                        <li>NO FEE INSTALLMENT FOR PMU COURSE.</li>
-                        <li>SEPARATE FEE IS APPLICABLE FOR CERTIFIED INTERNATIONAL ACCREDITATION COURSES.</li>
-                        <li>STUDENT MUST RETAIN ALL ORIGINAL FEE SLIPS WHICH MAY BE REQUIRED TILL COURSE COMPLETION.</li>
-                        <li>COURSE Dates Subject to change depending on the government rules on Covid19 precautions for educational academy in India.</li>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Rules & Regulations</h3>
+                      <ol className="list-decimal list-inside space-y-3 text-gray-300">
+                        <li>Fee once paid, no request for fee refund is entertained.</li>
+                        <li>Students using fee installment options have to clear the fees before starting of 3rd week of the course. In case the fee is not cleared till then, it will lead to termination of student services. Re-admission fee is applicable in such cases.</li>
+                        <li>No fee installment for PMU course.</li>
+                        <li>Separate fee is applicable for certified international accreditation courses.</li>
+                        <li>Student must retain all original fee slips which may be required till course completion.</li>
+                        <li>Course dates subject to change depending on the government rules on Covid-19 precautions for educational academy in India.</li>
                         <li>Consent letter must be duly signed by parents/guardian for below 16-year students.</li>
-                        <li>Security amount of 200/- will be charged for lockers used by student.</li>
-                        <li>AFTERCARE PROGRAMME IS VALID ONLY FOR STUDENTS WHO ARE A part of the Masters in Advanced Artistry course. This is ONLY valid for 6 months post their certification date. STUDENTS CAN TAKE UPTO 5 CLASSES.</li>
-                        <li>ANY DAMAGE OR THEFT IN ACADEMY BY THE STUDENT, HE/SHE WILL BE LIABLE TO PAY THE EXPENSE.</li>
+                        <li>Security amount of ₹200/- will be charged for lockers used by student.</li>
+                        <li>Aftercare programme is valid only for students who are a part of the Masters in Advanced Artistry course. This is only valid for 6 months post their certification date. Students can take up to 5 classes.</li>
+                        <li>Any damage or theft in academy by the student, he/she will be liable to pay the expense.</li>
                       </ol>
                     </section>
 
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">EXAMINATION & PASSING CERTIFICATES</h3>
-                      <ol className="list-decimal list-inside space-y-2">
-                        <li>EVERY TRAINING PROGRAMME IS COMPLETE AFTER AN ASSESSMENT OF THEORY AND PRACTICAL EXAMINATION. THESE EXAMS ARE CONDUCTED AS PER GUIDELINES LAID BY KEYWEST ACADEMY.</li>
-                        <li>A COURSE COMPLETION CERTIFICATE IS ISSUED TO THE STUDENTS ONLY ON SUCCESSFUL COMPLETION OF THE COURSE AND EXAMINATION.</li>
-                        <li>CERTIFICATE WILL BE ISSUED TO STUDENTS ON SUCCESSFUL COMPLETION OF THE COURSE SUBJECT TO CLEARANCE OF ANY OUTSTANDING FEE DUES.</li>
-                        <li>IN CASE OF LOSS OR DAMAGE TO THE CERTIFICATE, A DUPLICATE ONE WILL BE ISSUED AT ADDITIONAL COST.</li>
-                        <li>ONCE THE STUDENT APPEARS FOR THE EXAMINATION, NO RE-EXAM IS ALLOWED.</li>
-                        <li>CERTIFICATES HAVE TO BE COLLECTED IN PERSON FROM THE ACADEMY ITSELF.</li>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Examination & Passing Certificates</h3>
+                      <ol className="list-decimal list-inside space-y-3 text-gray-300">
+                        <li>Every training programme is complete after an assessment of theory and practical examination. These exams are conducted as per guidelines laid by Keywest Academy.</li>
+                        <li>A course completion certificate is issued to the students only on successful completion of the course and examination.</li>
+                        <li>Certificate will be issued to students on successful completion of the course subject to clearance of any outstanding fee dues.</li>
+                        <li>In case of loss or damage to the certificate, a duplicate one will be issued at additional cost.</li>
+                        <li>Once the student appears for the examination, no re-exam is allowed.</li>
+                        <li>Certificates have to be collected in person from the academy itself.</li>
                       </ol>
                     </section>
 
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">ATTENDANCE AND LEAVE</h3>
-                      <ol className="list-decimal list-inside space-y-2">
-                        <li>A MINIMUM OF 80% ATTENDANCE IS REQUIRED TO BE ELIGIBLE FOR EXAMINATION. THE STUDENT ATTENDANCE RECORD IS MAINTAINED IN LOG BOOKS & THE STUDENTS HAS TO SIGN THE LOG BOOK DAILY.</li>
-                        <li>IN CASE OF MEDICAL ISSUES THE LEAVE APPLICATION HAS TO BE SUPPORTED BY MEDICAL CERTIFICATE.</li>
-                        <li>IN CASE OF UNINFORMED ABSENCE FOR MORE THAN 7 DAYS THE STUDENT'S NAME WILL BE STRUCK OFF ROLLS AND HE/SHE WILL HAVE TO REJOIN.</li>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Attendance and Leave</h3>
+                      <ol className="list-decimal list-inside space-y-3 text-gray-300">
+                        <li>A minimum of 80% attendance is required to be eligible for examination. The student attendance record is maintained in log books and the students have to sign the log book daily.</li>
+                        <li>In case of medical issues, the leave application has to be supported by medical certificate.</li>
+                        <li>In case of uninformed absence for more than 7 days, the student's name will be struck off rolls and he/she will have to rejoin.</li>
                       </ol>
-                      <p className="mt-2">Students are not allowed to bring any outsider during the working hours.</p>
+                      <p className="mt-3 text-gray-300">Students are not allowed to bring any outsider during the working hours.</p>
                     </section>
 
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">GROUNDS OF TERMINATION</h3>
-                      <p>INDISCIPLINE OR MISBEHAVIOUR IN THE ACADEMY PREMISES CALLS FOR IMMEDIATE TERMINATION. KEYWEST ACADEMY RESERVES THE RIGHTS TO TERMINATE THE STUDENT WITHOUT ANY NOTICE AND FEE REFUND.</p>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Grounds of Termination</h3>
+                      <p className="text-gray-300">Indiscipline or misbehaviour in the academy premises calls for immediate termination. Keywest Academy reserves the rights to terminate the student without any notice and fee refund.</p>
                     </section>
 
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">DEGRADING A COURSE</h3>
-                      <p>DEGRADING COURSE IS NOT PERMISSIBLE. HOWEVER ACADEMY RESERVES THE RIGHT TO CHANGE THE POLICY.</p>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Degrading a Course</h3>
+                      <p className="text-gray-300">Degrading course is not permissible. However, academy reserves the right to change the policy.</p>
                     </section>
 
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">BATCH TIMINGS</h3>
-                      <p>THE STUDENT HAS TO FOLLOW THE BATCH TIMINGS ALLOTTED TO HIM/HER AT THE TIME OF ADMISSION. THE STUDENT AGREES TO FOLLOW THE BATCH TIMINGS ALLOTTED TO THEM AT ADMISSION TIME. REQUEST TO CHANGE BATCH TIMINGS WILL BE THE MANAGEMENT'S DECISION.</p>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Batch Timings</h3>
+                      <p className="text-gray-300">The student has to follow the batch timings allotted to him/her at the time of admission. The student agrees to follow the batch timings allotted to them at admission time. Request to change batch timings will be the management's decision.</p>
                     </section>
 
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">PUNCTUALITY & DISCIPLINE</h3>
-                      <ol className="list-decimal list-inside space-y-2">
-                        <li>STUDENT MUST REPORT 15 MINUTES BEFORE THEIR BATCH TIMINGS. IF A STUDENT IS LATE, THE CLASS TOPIC WILL NOT BE REPEATED.</li>
-                        <li>STUDENTS ARE RESPONSIBLE FOR THEIR OWN BELONGINGS. KEYWEST ACADEMY WILL NOT BE RESPONSIBLE FOR ANY LOSS OF VALUABLES.</li>
-                        <li>STUDENTS HAVE TO VOLUNTEER FOR BEING A MODEL DURING CLASS DEMOS.</li>
-                        <li>THE USE OF MOBILE PHONE IS PROHIBITED IN CLASSES. IN CASE OF NON-ADHERENCE THE MANAGEMENT RESERVES THE RIGHTS TO CONFISCATE THE PHONE AND TAKE DISCIPLINARY ACTION.</li>
-                      </ol>
-                    </section>
-
-                    <section>
-                      <h3 className="text-xl font-bold text-white mb-2">PHOTOS AND VIDEOS</h3>
-                      <ol className="list-decimal list-inside space-y-2">
-                        <li>KEYWEST ACADEMY RESERVES THE RIGHTS TO USE ANY PHOTOGRAPHS OR VIDEOS TAKEN DURING THE PROGRAMME ON BRAND PROMOTION AND SOCIAL PLATFORMS.</li>
-                        <li>NO VIDEOS OR PHOTOGRAPHS OF PRESENTATIONS TO BE TAKEN WHILE CLASSES ARE BEING CONDUCTED.</li>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Punctuality & Discipline</h3>
+                      <ol className="list-decimal list-inside space-y-3 text-gray-300">
+                        <li>Student must report 15 minutes before their batch timings. If a student is late, the class topic will not be repeated.</li>
+                        <li>Students are responsible for their own belongings. Keywest Academy will not be responsible for any loss of valuables.</li>
+                        <li>Students have to volunteer for being a model during class demos.</li>
+                        <li>The use of mobile phone is prohibited in classes. In case of non-adherence, the management reserves the rights to confiscate the phone and take disciplinary action.</li>
                       </ol>
                     </section>
 
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">STUDENT REDRESSAL MECHANISM</h3>
-                      <p>FOR ANY KIND OF STUDENT ISSUES AND CONCERNS YOU MAY WRITE A MAIL AT THE MAIL ID SHARED WITH YOU AT THE TIME OF ADMISSION.</p>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Photos and Videos</h3>
+                      <ol className="list-decimal list-inside space-y-3 text-gray-300">
+                        <li>Keywest Academy reserves the rights to use any photographs or videos taken during the programme on brand promotion and social platforms.</li>
+                        <li>No videos or photographs of presentations to be taken while classes are being conducted.</li>
+                      </ol>
                     </section>
 
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">STUDENT PRODUCTS & KITS</h3>
-                      <p>THE STUDENT HAVE TO USE OFFICIALLY APPROVED PRODUCTS & KITS IN THE CLASSROOM. ANY UNAUTHORISED PRODUCTS USAGE IS NOT PERMISSIBLE.</p>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Student Redressal Mechanism</h3>
+                      <p className="text-gray-300">For any kind of student issues and concerns, you may write a mail at the mail ID shared with you at the time of admission.</p>
                     </section>
 
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">STUDENT INTERNSHIP/PLACEMENT</h3>
-                      <p>THE STUDENT PLACEMENT & INTERNSHIP ASSISTANCE DEPENDS ON THEIR FINAL PERFORMANCE AND EXAMINATION AND IS AVAILABLE ON SELECTED COURSES.</p>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Student Products & Kits</h3>
+                      <p className="text-gray-300">The student have to use officially approved products and kits in the classroom. Any unauthorised products usage is not permissible.</p>
                     </section>
 
                     <section>
-                      <h3 className="text-xl font-bold text-white mb-2">DISCLAIMER</h3>
-                      <ol className="list-decimal list-inside space-y-2">
-                        <li>THESE GUIDELINES ARE INTENDED AS GENERAL GUIDE FOR KEYWEST ACADEMY STUDENTS. KEYWEST RESERVES THE RIGHT TO MAKE CHANGES IN ACADEMIC PROGRAMMES AND OPERATING PROCEDURES AT ANY TIME. ALL SUCH CHANGES WILL BE MADE EFFECTIVE BY COMPETENT AUTHORITIES AND MAY APPLY TO ENROLLED AND PROSPECTIVE STUDENTS.</li>
-                        <li>KEYWEST ACADEMY DOES NOT MAKE ANY COMMITMENT, CONFIRMATION OR GUARANTEE OF ANY KIND OF JOB PLACEMENT TO ITS STUDENT.</li>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Student Internship/Placement</h3>
+                      <p className="text-gray-300">The student placement and internship assistance depends on their final performance and examination and is available on selected courses.</p>
+                    </section>
+
+                    <section>
+                      <h3 className="text-2xl font-serif font-bold text-primary mb-4">Disclaimer</h3>
+                      <ol className="list-decimal list-inside space-y-3 text-gray-300">
+                        <li>These guidelines are intended as general guide for Keywest Academy students. Keywest reserves the right to make changes in academic programmes and operating procedures at any time. All such changes will be made effective by competent authorities and may apply to enrolled and prospective students.</li>
+                        <li>Keywest Academy does not make any commitment, confirmation or guarantee of any kind of job placement to its student.</li>
                       </ol>
                     </section>
                   </div>

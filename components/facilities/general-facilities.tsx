@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Wifi, Coffee, BookOpen, Users, Laptop, Shield, Clock, Award } from "lucide-react"
+import { Wifi, BookOpen, Users, Laptop, Shield, Clock, Award } from "lucide-react"
 
 function CampusAmenities() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -72,7 +72,7 @@ function CampusAmenities() {
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          Campus Amenities
+          Campus Facilities
         </h2>
         <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
           Everything you need for a comfortable and productive learning environment
@@ -85,9 +85,8 @@ function CampusAmenities() {
           <div
             key={amenity.id}
             onClick={() => setActiveIndex(index)}
-            className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-in-out ${
-              index === activeIndex ? "flex-[3]" : "flex-[0.5]"
-            }`}
+            className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-in-out ${index === activeIndex ? "flex-[3]" : "flex-[0.5]"
+              }`}
             style={{
               minWidth: index === activeIndex ? "300px" : "80px",
             }}
@@ -101,40 +100,36 @@ function CampusAmenities() {
 
             {/* Overlay */}
             <div
-              className={`absolute inset-0 bg-gradient-to-t transition-opacity duration-700 ${
-                index === activeIndex
-                  ? "from-black/80 via-black/40 to-transparent"
-                  : "from-black/60 to-black/20"
-              }`}
+              className={`absolute inset-0 bg-gradient-to-t transition-opacity duration-700 ${index === activeIndex
+                ? "from-black/80 via-black/40 to-transparent"
+                : "from-black/60 to-black/20"
+                }`}
             />
 
             {/* Content */}
             <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
               {/* Icon - Always Visible */}
               <div
-                className={`mb-4 transition-all duration-700 ${
-                  index === activeIndex ? "scale-100 opacity-100" : "scale-75 opacity-70"
-                }`}
+                className={`mb-4 transition-all duration-700 ${index === activeIndex ? "scale-100 opacity-100" : "scale-75 opacity-70"
+                  }`}
               >
                 {amenity.icon}
               </div>
 
               {/* Title - Always Visible */}
               <h3
-                className={`font-serif font-bold text-white transition-all duration-700 ${
-                  index === activeIndex
-                    ? "text-2xl md:text-3xl lg:text-4xl mb-4"
-                    : "text-lg md:text-xl [writing-mode:vertical-rl] md:rotate-180"
-                }`}
+                className={`font-serif font-bold text-white transition-all duration-700 ${index === activeIndex
+                  ? "text-2xl md:text-3xl lg:text-4xl mb-4"
+                  : "text-lg md:text-xl [writing-mode:vertical-rl] md:rotate-180"
+                  }`}
               >
                 {amenity.title}
               </h3>
 
               {/* Description - Only Active */}
               <div
-                className={`transition-all duration-700 overflow-hidden ${
-                  index === activeIndex ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                }`}
+                className={`transition-all duration-700 overflow-hidden ${index === activeIndex ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  }`}
               >
                 <p className="text-white/90 text-base md:text-lg leading-relaxed mb-6">
                   {amenity.description}
@@ -165,9 +160,8 @@ function CampusAmenities() {
           <div
             key={amenity.id}
             onClick={() => setActiveIndex(index)}
-            className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ${
-              index === activeIndex ? "ring-4 ring-primary shadow-2xl shadow-primary/30" : "opacity-70"
-            }`}
+            className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ${index === activeIndex ? "ring-4 ring-primary shadow-2xl shadow-primary/30" : "opacity-70"
+              }`}
           >
             {/* Background Image */}
             <div className="relative h-80">
@@ -211,11 +205,10 @@ function CampusAmenities() {
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`transition-all duration-300 rounded-full ${
-              index === activeIndex
-                ? "bg-gradient-to-r from-primary to-accent w-12 h-3"
-                : "bg-gray-300 w-3 h-3 hover:bg-primary/50"
-            }`}
+            className={`transition-all duration-300 rounded-full ${index === activeIndex
+              ? "bg-gradient-to-r from-primary to-accent w-12 h-3"
+              : "bg-gray-300 w-3 h-3 hover:bg-primary/50"
+              }`}
             aria-label={`Go to amenity ${index + 1}`}
           />
         ))}
@@ -243,49 +236,49 @@ const generalFacilities = [
     icon: BookOpen,
     title: "Specialized Skin Course Areas",
     description: "Dedicated areas for skin courses and specialized equipment for advanced skin treatments.",
-    color: "from-purple-500 to-pink-500"
+    color: "from-primary to-accent"
   },
   {
     icon: Users,
     title: "Prime Delhi Location",
     description: "Located in the heart of Delhi, it is easily accessible via metro stations and public transport.",
-    color: "from-green-500 to-emerald-500"
+    color: "from-primary to-accent"
   },
   {
     icon: Laptop,
     title: "Professional Lighting Setup",
     description: "Professional lighting and setup to precisely simulate real-world makeup and salon conditions.",
-    color: "from-indigo-500 to-purple-500"
+    color: "from-primary to-accent"
   },
   {
     icon: Users,
     title: "Collaborative Learning Spaces",
     description: "Space available for group projects, practice sessions, and collaborative learning experiences.",
-    color: "from-green-500 to-emerald-500"
+    color: "from-primary to-accent"
   },
   {
     icon: Wifi,
     title: "High-Speed Internet",
     description: "Free high-speed internet access throughout the campus for staying connected.",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-primary to-accent"
   },
   {
     icon: Shield,
     title: "Safety & Hygiene Protocols",
     description: "Strict hygiene protocols, sanitization stations, and safety measures are enforced throughout the facility.",
-    color: "from-red-500 to-pink-500"
+    color: "from-primary to-accent"
   },
   {
     icon: Award,
     title: "Well-Lit Mirror Stations",
     description: "Large, well-lit mirrors at every station for precise makeup application and practice.",
-    color: "from-yellow-500 to-orange-500"
+    color: "from-primary to-accent"
   },
   {
     icon: Clock,
     title: "Power Backup System",
     description: "Emergency Lighting/Power Backup (Inverter/Generator) to ensure practice is not interrupted by power cuts.",
-    color: "from-teal-500 to-cyan-500"
+    color: "from-primary to-accent"
   }
 ]
 
@@ -352,7 +345,7 @@ export default function GeneralFacilities() {
               const radiusMobile = 280
               const radiusSm = 380
               const radiusMd = 450
-              
+
               return (
                 <div
                   key={index}
@@ -366,17 +359,21 @@ export default function GeneralFacilities() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="group facility-icon"
-                    onClick={() => setSelectedFacility(index)}
+                    className="group facility-icon relative"
+                    onMouseEnter={() => setSelectedFacility(index)}
+                    onMouseLeave={() => setSelectedFacility(null)}
                   >
                     {/* Counter-rotating wrapper to keep icons upright */}
-                    <div 
+                    <div
                       className="animate-spin-reverse"
                       style={{ transform: `rotate(-${angle}deg)` }}
                     >
-                      {/* Icon Container - Much Bigger */}
-                      <div className={`w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-r ${facility.color} flex items-center justify-center shadow-xl cursor-pointer transition-all duration-300 hover:scale-125 hover:shadow-2xl hover:shadow-primary/50 relative z-20`}>
-                        <Icon className="w-9 h-9 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" />
+                      {/* Icon Container - Much Bigger with gradient border */}
+                      <div className={`w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-r ${facility.color} p-1 shadow-xl cursor-pointer transition-all duration-300 hover:scale-125 hover:shadow-2xl hover:shadow-primary/50 relative z-20`}>
+                        {/* Inner circle with black background */}
+                        <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+                          <Icon className="w-9 h-9 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" />
+                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -428,60 +425,38 @@ export default function GeneralFacilities() {
           `}</style>
         </div>
 
-        {/* Popup Modal */}
+        {/* Hover Tooltip */}
         {selectedFacility !== null && (
-          <div 
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedFacility(null)}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.8, y: 20 }}
-              className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 sm:p-8 md:p-10 max-w-md sm:max-w-lg md:max-w-xl w-full shadow-2xl border-2 border-primary/50 relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedFacility(null)}
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-white">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-
+            <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 sm:p-8 max-w-sm sm:max-w-md w-full shadow-2xl border-2 border-primary/50">
               {/* Icon */}
-              <div className="flex justify-center mb-6">
-                <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r ${generalFacilities[selectedFacility].color} flex items-center justify-center shadow-xl`}>
-                  {(() => {
-                    const Icon = generalFacilities[selectedFacility].icon
-                    return <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
-                  })()}
+              <div className="flex justify-center mb-4">
+                <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r ${generalFacilities[selectedFacility].color} p-1 shadow-xl`}>
+                  <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+                    {(() => {
+                      const Icon = generalFacilities[selectedFacility].icon
+                      return <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                    })()}
+                  </div>
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-4 text-center">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-3 text-center">
                 {generalFacilities[selectedFacility].title}
               </h3>
 
               {/* Description */}
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed text-center">
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-center">
                 {generalFacilities[selectedFacility].description}
               </p>
-
-              {/* Close Button at Bottom */}
-              <div className="mt-8 flex justify-center">
-                <button
-                  onClick={() => setSelectedFacility(null)}
-                  className="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
-                >
-                  Close
-                </button>
-              </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         )}
 
 
