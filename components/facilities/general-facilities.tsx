@@ -309,7 +309,7 @@ export default function GeneralFacilities() {
         {/* Campus Amenities */}
         <CampusAmenities />
 
-        {/* General Facilities Grid */}
+        {/* General Facilities - Bento Grid Style */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -324,140 +324,45 @@ export default function GeneralFacilities() {
           </p>
         </motion.div>
 
-        {/* Orbital Facilities */}
-        <div className="relative w-full max-w-6xl mx-auto mb-20 py-16" style={{ minHeight: '900px' }}>
-          {/* Center Circle - Much Bigger */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-2xl z-10">
-            <div className="text-center">
-              <p className="text-white font-bold text-lg sm:text-2xl md:text-3xl">Facilities</p>
-              <p className="text-white/80 text-sm sm:text-lg md:text-xl">& Amenities</p>
-            </div>
-          </div>
-
-          {/* Rotating Container */}
-          <div className="absolute top-1/2 left-1/2 w-full h-full animate-spin-slow" style={{ transform: 'translate(-50%, -50%)' }}>
-            {/* Orbiting Icons - Evenly spaced around 360 degrees */}
+        {/* Glowing Cards Grid - Matching Statistics Style */}
+        <div className="max-w-7xl mx-auto px-4 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {generalFacilities.map((facility, index) => {
               const Icon = facility.icon
-              // Calculate angle for each icon (360 / 8 = 45 degrees apart)
-              const angle = (index * 360) / 8
-              // Much larger radius with more gap from center
-              const radiusMobile = 280
-              const radiusSm = 380
-              const radiusMd = 450
-
               return (
-                <div
+                <motion.div
                   key={index}
-                  className="absolute top-1/2 left-1/2"
-                  style={{
-                    transform: `translate(-50%, -50%) rotate(${angle}deg) translateX(${radiusMobile}px)`,
-                  }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group relative"
                 >
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="group facility-icon relative"
-                    onMouseEnter={() => setSelectedFacility(index)}
-                    onMouseLeave={() => setSelectedFacility(null)}
-                  >
-                    {/* Counter-rotating wrapper to keep icons upright */}
-                    <div
-                      className="animate-spin-reverse"
-                      style={{ transform: `rotate(-${angle}deg)` }}
-                    >
-                      {/* Icon Container - Much Bigger with gradient border */}
-                      <div className={`w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-r ${facility.color} p-1 shadow-xl cursor-pointer transition-all duration-300 hover:scale-125 hover:shadow-2xl hover:shadow-primary/50 relative z-20`}>
-                        {/* Inner circle with black background */}
-                        <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                          <Icon className="w-9 h-9 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" />
-                        </div>
-                      </div>
+                  {/* Glowing blur effect behind card */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                  
+                  {/* Main Card */}
+                  <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 md:p-8 border-2 border-primary/30 hover:border-primary shadow-xl hover:scale-105 transition-all h-full flex flex-col">
+                    {/* Icon Circle */}
+                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                      <Icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                     </div>
-                  </motion.div>
-                </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg md:text-xl font-serif font-bold text-white mb-3 text-center">
+                      {facility.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-sm md:text-base text-gray-300 leading-relaxed text-center flex-grow">
+                      {facility.description}
+                    </p>
+                  </div>
+                </motion.div>
               )
             })}
           </div>
-
-          {/* Animation Styles */}
-          <style jsx>{`
-            @keyframes spin-slow {
-              from {
-                transform: translate(-50%, -50%) rotate(0deg);
-              }
-              to {
-                transform: translate(-50%, -50%) rotate(360deg);
-              }
-            }
-
-            @keyframes spin-reverse {
-              from {
-                transform: rotate(0deg);
-              }
-              to {
-                transform: rotate(-360deg);
-              }
-            }
-
-            .animate-spin-slow {
-              animation: spin-slow 20s linear infinite;
-            }
-
-            .animate-spin-reverse {
-              animation: spin-reverse 20s linear infinite;
-            }
-
-            /* Responsive radius adjustments */
-            @media (min-width: 640px) {
-              .absolute.top-1\\/2.left-1\\/2 > .group {
-                transform: translate(-50%, -50%) rotate(${(index) => (index * 360) / 8}deg) translateX(380px) !important;
-              }
-            }
-
-            @media (min-width: 768px) {
-              .absolute.top-1\\/2.left-1\\/2 > .group {
-                transform: translate(-50%, -50%) rotate(${(index) => (index * 360) / 8}deg) translateX(450px) !important;
-              }
-            }
-          `}</style>
         </div>
-
-        {/* Hover Tooltip */}
-        {selectedFacility !== null && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none"
-          >
-            <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 sm:p-8 max-w-sm sm:max-w-md w-full shadow-2xl border-2 border-primary/50">
-              {/* Icon */}
-              <div className="flex justify-center mb-4">
-                <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r ${generalFacilities[selectedFacility].color} p-1 shadow-xl`}>
-                  <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                    {(() => {
-                      const Icon = generalFacilities[selectedFacility].icon
-                      return <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                    })()}
-                  </div>
-                </div>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-3 text-center">
-                {generalFacilities[selectedFacility].title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-center">
-                {generalFacilities[selectedFacility].description}
-              </p>
-            </div>
-          </motion.div>
-        )}
 
 
       </div>

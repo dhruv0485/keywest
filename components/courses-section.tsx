@@ -1,3 +1,6 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import Link from "next/link"
 
 export default function CoursesSection() {
@@ -6,35 +9,57 @@ export default function CoursesSection() {
       id: 6,
       title: "Level 1 - Professional Makeup Course",
       description: "Foundation course covering essential makeup techniques and professional skills for aspiring makeup artists.",
-      image: "/c1.webp",
-      duration: "6-8 Weeks",
+      images: ["/pm_1_640.png", "/pm_4_640.png", "/pm_3_640.png", "/pm_2_640.png"],
+      duration: "1 Month (4-5 Weeks)",
       level: "Level 1",
     },
     {
       id: 4,
       title: "Level 2 - Masters in Makeup Artistry Course",
       description: "Advanced course covering comprehensive makeup artistry, bridal makeup, and professional techniques.",
-      image: "/c2.webp",
-      duration: "10-12 Weeks",
+      images: ["/ma_1_640.png", "/ma_2_640.png", "/ma_3_640.png"],
+      duration: "3 Months",
       level: "Level 2",
     },
     {
       id: 3,
       title: "Level 3 - MasterPro Artistry Certification",
       description: "Expert-level certification including advanced techniques, creative makeup, and industry specialization.",
-      image: "/c3.webp",
-      duration: "3+ Months",
+      images: ["/pa_1_640.png", "/pa_2_640.png", "/pa_4_640.png", "/pa_3_640.png"],
+      duration: "4 Months",
       level: "Level 3",
     },
     {
       id: 1,
       title: "Level 4 - Global Elite Artistry Program",
       description: "Elite program for international standards, fashion week preparation, and global career opportunities.",
-      image: "/c4.webp",
-      duration: "8-12 Weeks",
+      images: ["/ge_3_640.png", "/ge_4_640.png", "/ge_2_640.png", "/ge_1_640.png"],
+      duration: "6 Months",
       level: "Level 4",
     },
   ]
+
+  const [currentImageIndex, setCurrentImageIndex] = useState<{ [key: number]: number }>({})
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => {
+        const newState = { ...prev }
+        courses.forEach((course) => {
+          const currentIndex = newState[course.id] || 0
+          newState[course.id] = (currentIndex + 1) % course.images.length
+        })
+        return newState
+      })
+    }, 3000) // Change image every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const getCurrentImage = (courseId: number, images: string[]) => {
+    const index = currentImageIndex[courseId] || 0
+    return images[index]
+  }
 
   return (
     <section className="section-padding bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
@@ -60,11 +85,16 @@ export default function CoursesSection() {
               className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105 block"
             >
               <div className="relative overflow-hidden h-48 sm:h-56 md:h-64 bg-white">
-                <img
-                  src={course.image || "/placeholder.svg"}
-                  alt={course.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                {course.images.map((img, imgIdx) => (
+                  <img
+                    key={imgIdx}
+                    src={img}
+                    alt={`${course.title} - Image ${imgIdx + 1}`}
+                    className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ${
+                      imgIdx === (currentImageIndex[course.id] || 0) ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                ))}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-gradient-to-r from-primary to-accent text-white text-xs font-semibold px-2 py-1 sm:px-3 sm:py-1 rounded-full">
                   {course.level}

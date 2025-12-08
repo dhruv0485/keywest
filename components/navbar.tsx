@@ -14,7 +14,7 @@ export default function Navbar() {
     { name: "COURSES", href: "/courses" },
     { name: "STUDENT PORTFOLIO", href: "/portfolio" },
     { name: "AMENITIES", href: "/facilities" },
-    { name: "CALL TO ENQUIRE", href: "/enquiry" },
+    { name: "CONTACT US", href: "/enquiry" },
   ]
 
   return (
