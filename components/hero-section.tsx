@@ -6,10 +6,12 @@ export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
   
   const slides = [
-    "/B_1.jpeg",
-    "/Banner 2.png",
-    "/Banner 3.png",
-    "/Banner 4.png"
+    "/A.png",
+    "/B.png",
+    "/C.png",
+    "/D.png",
+    "/E.png",
+    "/F.png"
   ]
 
   useEffect(() => {

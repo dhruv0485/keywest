@@ -13,7 +13,7 @@ export default function Navbar() {
     { name: "ABOUT", href: "/about" },
     { name: "COURSES", href: "/courses" },
     { name: "STUDENT PORTFOLIO", href: "/portfolio" },
-    { name: "AMENITIES", href: "/facilities" },
+    { name: "INFRASTRUCTURE", href: "/facilities" },
     { name: "CONTACT US", href: "/enquiry" },
   ]
 
