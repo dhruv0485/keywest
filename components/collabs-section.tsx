@@ -17,14 +17,11 @@ export default function CollabsSection() {
 
   // Row 2 logos (right to left)
   const row2Logos = [
-    "/l11.png",
     "/l12.webp",
-    "/l13.jpg",
-    "/l15.jpg",
-    "/l16.webp",
+    "/l16.png",
     "/l17.png",
     "/l18.png",
-    "/l19.png",
+    "/l19.png"
   ]
 
   return (
@@ -35,7 +32,7 @@ export default function CollabsSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12 relative z-10">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Hall of Fame</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Wall of Fame</span>
           </h2>
         </div>
       </div>
@@ -52,9 +49,8 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 1}`}
-                className={`w-full h-full transition-all duration-300 ${
-                  logo === "/l5.png" ? "object-cover p-2" : "object-contain p-4"
-                }`}
+                className={`w-full h-full transition-all duration-300 ${logo === "/l5.png" ? "object-cover p-2" : "object-contain p-4"
+                  }`}
               />
             </div>
           ))}
@@ -67,9 +63,8 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 1}`}
-                className={`w-full h-full transition-all duration-300 ${
-                  logo === "/l5.png" ? "object-cover p-2" : "object-contain p-4"
-                }`}
+                className={`w-full h-full transition-all duration-300 ${logo === "/l5.png" ? "object-cover p-2" : "object-contain p-4"
+                  }`}
               />
             </div>
           ))}
@@ -82,9 +77,8 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 1}`}
-                className={`w-full h-full transition-all duration-300 ${
-                  logo === "/l5.png" ? "object-cover p-2" : "object-contain p-4"
-                }`}
+                className={`w-full h-full transition-all duration-300 ${logo === "/l5.png" ? "object-cover p-2" : "object-contain p-4"
+                  }`}
               />
             </div>
           ))}
@@ -103,9 +97,7 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 11}`}
-                className={`w-full h-full transition-all duration-300 ${
-                  logo === "/l15.jpg" ? "object-cover p-2" : "object-contain p-4"
-                }`}
+                className="w-full h-full object-contain p-4 transition-all duration-300"
               />
             </div>
           ))}
@@ -118,9 +110,7 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 11}`}
-                className={`w-full h-full transition-all duration-300 ${
-                  logo === "/l15.jpg" ? "object-cover p-2" : "object-contain p-4"
-                }`}
+                className="w-full h-full object-contain p-4 transition-all duration-300"
               />
             </div>
           ))}
@@ -133,9 +123,7 @@ export default function CollabsSection() {
               <img
                 src={logo}
                 alt={`Collaboration ${index + 11}`}
-                className={`w-full h-full transition-all duration-300 ${
-                  logo === "/l15.jpg" ? "object-cover p-2" : "object-contain p-4"
-                }`}
+                className="w-full h-full object-contain p-4 transition-all duration-300"
               />
             </div>
           ))}

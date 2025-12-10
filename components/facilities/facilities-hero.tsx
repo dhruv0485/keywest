@@ -18,7 +18,7 @@ export default function FacilitiesHero() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             Infrastructure
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-sans">
+          <p className="text-lg md:text-xl text-white max-w-3xl mx-auto font-sans">
             World-class facilities designed to provide the best learning experience for every course. 
             Explore our state-of-the-art infrastructure tailored for your success.
           </p>

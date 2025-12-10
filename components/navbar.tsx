@@ -12,6 +12,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "ABOUT", href: "/about" },
     { name: "COURSES", href: "/courses" },
+    { name: "MASTERCLASS", href: "/masterclass" },
     { name: "STUDENT PORTFOLIO", href: "/portfolio" },
     { name: "INFRASTRUCTURE", href: "/facilities" },
     { name: "CONTACT US", href: "/enquiry" },

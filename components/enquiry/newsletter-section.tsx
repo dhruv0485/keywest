@@ -155,7 +155,7 @@ export default function NewsletterSection() {
               </svg>
             </div>
             <h3 className="text-white font-semibold mb-2">Special Offers</h3>
-            <p className="text-gray-400 text-sm">Early access to course discounts</p>
+            <p className="text-white text-sm">Early access to course discounts</p>
           </div>
 
           <div className="text-center">
@@ -176,7 +176,7 @@ export default function NewsletterSection() {
               </svg>
             </div>
             <h3 className="text-white font-semibold mb-2">Course Updates</h3>
-            <p className="text-gray-400 text-sm">Be first to know about new courses</p>
+            <p className="text-white text-sm">Be first to know about new courses</p>
           </div>
         </div>
       </div>

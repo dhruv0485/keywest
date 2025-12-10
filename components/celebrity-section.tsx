@@ -7,45 +7,33 @@ export default function CelebritySection() {
   const celebrities = [
     {
       id: 1,
-      name: "Celebrity Makeup Demo 1",
-      role: "Bridal & Party Makeup",
-      image: "/c1.webp",
-      description: "Professional bridal makeup transformation"
+      type: "image",
+      media: "/celebs (1).jpeg",
     },
     {
       id: 2,
-      name: "Celebrity Makeup Demo 2",
-      role: "Editorial & Fashion",
-      image: "/c2.webp",
-      description: "High-fashion editorial makeup look"
+      type: "image",
+      media: "/celebs (1).jpg",
     },
     {
       id: 3,
-      name: "Celebrity Makeup Demo 3",
-      role: "Red Carpet Glamour",
-      image: "/c3.webp",
-      description: "Red carpet ready glamorous makeup"
+      type: "video",
+      media: "/celebs (1).MOV",
     },
     {
       id: 4,
-      name: "Celebrity Makeup Demo 4",
-      role: "Special Effects",
-      image: "/c4.webp",
-      description: "Creative special effects makeup"
+      type: "image",
+      media: "/celebs (2).jpg",
     },
     {
       id: 5,
-      name: "Celebrity Makeup Demo 5",
-      role: "Bridal & Party Makeup",
-      image: "/c5.webp",
-      description: "Elegant bridal makeup artistry"
+      type: "video",
+      media: "/celebs (2).MOV",
     },
     {
       id: 6,
-      name: "Celebrity Makeup Demo 6",
-      role: "Editorial & Fashion",
-      image: "/c6.webp",
-      description: "Contemporary fashion makeup"
+      type: "image",
+      media: "/celebs (3).JPG",
     },
   ]
 
@@ -56,21 +44,6 @@ export default function CelebritySection() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Celebrity Collaborations
-          </h2>
-          <p className="text-lg text-white max-w-2xl mx-auto">
-            Explore our exclusive makeup work with celebrities and high-profile clients
-          </p>
-        </motion.div>
-
         {/* Celebrity Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {celebrities.map((celebrity, index) => (
@@ -87,32 +60,30 @@ export default function CelebritySection() {
 
               {/* Card */}
               <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-105 shadow-xl">
-                {/* Image Container */}
-                <div className="relative h-80 overflow-hidden">
-                  <img
-                    src={celebrity.image}
-                    alt={celebrity.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                {/* Media Container */}
+                <div className="relative h-96 overflow-hidden">
+                  {celebrity.type === "video" ? (
+                    <video
+                      src={celebrity.media}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src={celebrity.media}
+                      alt={`Celebrity collaboration ${celebrity.id}`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
                   {/* Star Badge */}
                   <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-accent p-2 rounded-full">
                     <Star className="w-5 h-5 text-white fill-white" />
                   </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-serif font-bold text-white mb-1 group-hover:text-primary transition-colors">
-                    {celebrity.name}
-                  </h3>
-                  <p className="text-sm text-primary font-semibold mb-3">
-                    {celebrity.role}
-                  </p>
-                  <p className="text-white text-sm leading-relaxed">
-                    {celebrity.description}
-                  </p>
                 </div>
               </div>
             </motion.div>

@@ -319,7 +319,7 @@ export default function GeneralFacilities() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             General Facilities
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-sans">
+          <p className="text-lg text-white max-w-2xl mx-auto font-sans">
             Additional amenities and services to enhance your learning experience
           </p>
         </motion.div>

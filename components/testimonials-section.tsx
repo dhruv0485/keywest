@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 leading-tight min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
             What Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Students Say</span>
           </h2>
-          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-white text-base md:text-lg max-w-2xl mx-auto">
             Hear from our graduates about their transformative journey with us
           </p>
         </div>

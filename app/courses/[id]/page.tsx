@@ -95,7 +95,7 @@ export default function CoursePage() {
                 <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border-2 border-primary/30">
                   <div className="flex items-center gap-4">
                     <div>
-                      <p className="text-gray-400 text-sm mb-1">Course Fee</p>
+                      <p className="text-white text-sm mb-1">Course Fee</p>
                       <div className="flex items-center gap-3">
                         {course.originalPrice && (
                           <span className="text-gray-500 text-xl line-through">₹{course.originalPrice.toLocaleString()}/-</span>
@@ -173,7 +173,7 @@ export default function CoursePage() {
                 <h2 className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
                   Course Curriculum
                 </h2>
-                <p className="text-gray-400">Your journey through {course.duration} of learning</p>
+                <p className="text-white">Your journey through {course.duration} of learning</p>
               </div>
 
               {/* Timeline */}
@@ -219,23 +219,45 @@ export default function CoursePage() {
             <h2 className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
               Course Gallery
             </h2>
-            <p className="text-gray-400">See the amazing work from our students</p>
+            <p className="text-white">See the amazing work from our students</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {course.galleryImages.map((img, idx) => (
-              <div
-                key={idx}
-                className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all"
-              >
-                <img
-                  src={img}
-                  alt={`Gallery ${idx + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="flex flex-col gap-4 md:gap-6 max-w-5xl mx-auto">
+            {/* First Row - 3 images */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              {course.galleryImages.slice(0, 3).map((img, idx) => (
+                <div
+                  key={idx}
+                  className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all"
+                >
+                  <img
+                    src={img}
+                    alt={`Gallery ${idx + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+              ))}
+            </div>
+            
+            {/* Second Row - 2 images centered */}
+            {course.galleryImages.length > 3 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto w-full">
+                {course.galleryImages.slice(3, 5).map((img, idx) => (
+                  <div
+                    key={idx + 3}
+                    className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all"
+                  >
+                    <img
+                      src={img}
+                      alt={`Gallery ${idx + 4}`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>

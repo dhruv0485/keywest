@@ -7,38 +7,22 @@ export default function CoursesSection() {
   const courses = [
     {
       id: 3,
-      title: "Level 3 - MasterPro Artistry Certification",
-      description: "Expert-level certification including advanced techniques, creative makeup, and industry specialization.",
+      title: "Masters in PRO Artistry Course",
+      description: "Level 3 advanced course including Regional Bridal, Fantasy Makeup, Brazilian Makeup, Airbrush & MLD.",
       images: ["/pa_1_640.png", "/pa_2_640.png", "/pa_4_640.png", "/pa_3_640.png"],
       duration: "4 Months",
       level: "Level 3",
       badge: "Bestseller",
     },
     {
-      id: 1,
-      title: "Level 4 - Global Elite Artistry Program",
-      description: "Elite program for international standards, fashion week preparation, and global career opportunities.",
-      images: ["/ge_3_640.png", "/ge_4_640.png", "/ge_2_640.png", "/ge_1_640.png"],
-      duration: "6 Months",
-      level: "Level 4",
-    },
-    {
-      id: 5,
-      title: "Upcoming Course 1",
-      description: "New advanced course coming soon. Stay tuned for more details about this exciting program.",
-      images: ["/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg"],
-      duration: "Coming Soon",
-      level: "Upcoming",
-      isUpcoming: true,
-    },
-    {
-      id: 6,
-      title: "Upcoming Course 2",
-      description: "Specialized training program launching soon. Register your interest to be notified.",
-      images: ["/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg"],
-      duration: "Coming Soon",
-      level: "Upcoming",
-      isUpcoming: true,
+      id: 7,
+      title: "STAR 2026 Course - Masterclass",
+      description: "Limited time masterclass covering comprehensive makeup and hair artistry in just 60 days.",
+      images: ["/masterclass_800.png", "/masterclass_800.png", "/masterclass_800.png", "/masterclass_800.png"],
+      duration: "60 Days",
+      level: "Masterclass",
+      badge: "LIMITED TIME",
+      isMasterclass: true,
     },
   ]
 
@@ -73,19 +57,19 @@ export default function CoursesSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Our Featured Courses</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Our Offerings</span>
           </h2>
           <p className="text-white text-lg md:text-xl max-w-2xl mx-auto">
-            Explore our carefully designed courses to elevate your makeup skills
+            Explore our carefully designed courses and masterclass to elevate your makeup skills
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 px-4">
+        <div className="flex justify-center gap-4 sm:gap-6 md:gap-8 px-4 max-w-3xl mx-auto">
           {courses.map((course, index) => (
             <Link
               key={index}
               href={`/courses/${course.id}`}
-              className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105 block"
+              className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105 block flex-1 min-w-0"
             >
               <div className="relative overflow-hidden h-48 sm:h-56 md:h-64 bg-white">
                 {!course.isUpcoming ? (
@@ -111,7 +95,11 @@ export default function CoursesSection() {
                   {course.level}
                 </div>
                 {course.badge && (
-                  <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-yellow-500 text-black text-xs font-bold px-2 py-1 sm:px-3 sm:py-1 rounded-full">
+                  <div className={`absolute top-2 left-2 sm:top-3 sm:left-3 text-xs font-bold px-2 py-1 sm:px-3 sm:py-1 rounded-full ${
+                    course.badge === "LIMITED TIME" 
+                      ? "bg-red-600 text-white" 
+                      : "bg-yellow-500 text-black"
+                  }`}>
                     {course.badge}
                   </div>
                 )}

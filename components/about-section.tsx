@@ -1,11 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import { Play, X } from "lucide-react"
+import { useState, useRef } from "react"
+import { X } from "lucide-react"
 
 export default function AboutSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
-  const [isFeaturedVideoPlaying, setIsFeaturedVideoPlaying] = useState(false)
+  const [showThumbnail, setShowThumbnail] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   const reels = [
     { id: 1, title: "Makeup Reel 1", videoUrl: "https://res.cloudinary.com/dex1t9dm2/video/upload/v1763664561/Reel_1_imuf9t.mp4" },
@@ -14,16 +15,23 @@ export default function AboutSection() {
     { id: 6, title: "Makeup Reel 6", videoUrl: "https://res.cloudinary.com/dex1t9dm2/video/upload/v1763664561/Reel_6_suint4.mp4" },
   ]
 
-  const openVideoModal = () => {
-    setIsVideoOpen(true)
-  }
-
   const closeVideoModal = () => {
     setIsVideoOpen(false)
   }
 
-  const playFeaturedVideo = () => {
-    setIsFeaturedVideoPlaying(true)
+  const handleVideoHover = () => {
+    setShowThumbnail(false)
+    if (videoRef.current) {
+      videoRef.current.play()
+    }
+  }
+
+  const handleVideoLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+    }
+    setShowThumbnail(true)
   }
 
   return (
@@ -99,38 +107,33 @@ export default function AboutSection() {
         {/* Featured Video Section */}
         <div className="mt-16 md:mt-20 mb-16 md:mb-20">
           <div className="w-full max-w-5xl mx-auto">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl group" onMouseEnter={playFeaturedVideo}>
-              {!isFeaturedVideoPlaying ? (
-                // Thumbnail with Play Button
-                <div
-                  className="relative cursor-pointer"
-                >
+            <div 
+              className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer" 
+              onMouseEnter={handleVideoHover}
+              onMouseLeave={handleVideoLeave}
+            >
+              {/* Thumbnail */}
+              {showThumbnail && (
+                <div className="absolute inset-0 z-10 pointer-events-none">
                   <img
                     src="/banner.webp"
-                    alt="Play video"
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {/* Play Button - Bottom Left */}
-                  <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-                    <div className="bg-white/95 hover:bg-white rounded-full p-3 md:p-4 group-hover:scale-110 transition-all shadow-2xl">
-                      <Play className="w-6 h-6 md:w-8 md:h-8 text-primary fill-primary" />
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                // Cloudinary Video Player
-                <div className="relative w-full bg-black" style={{ paddingBottom: '56.25%' }}>
-                  <iframe
-                    src="https://player.cloudinary.com/embed/?cloud_name=dex1t9dm2&public_id=h2_fpkk5o&profile=cld-default&fluid=true&autoplay=true"
-                    width="100%"
-                    height="100%"
-                    style={{ position: 'absolute', top: 0, left: 0, border: 0 }}
-                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                    allowFullScreen
-                    title="Keywest Academy Featured Video"
+                    alt="Hover to play video"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               )}
+              
+              {/* Video Element */}
+              <video
+                ref={videoRef}
+                className="w-full h-auto object-cover"
+                muted
+                playsInline
+                loop
+              >
+                <source src="https://res.cloudinary.com/dex1t9dm2/video/upload/v1763664561/h2_fpkk5o.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>

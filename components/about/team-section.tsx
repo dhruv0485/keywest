@@ -28,7 +28,7 @@ export default function TeamSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
             Meet Our Founder
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-white text-lg md:text-xl max-w-2xl mx-auto">
             Visionary leader bringing international standards to India
           </p>
         </div>

@@ -18,7 +18,7 @@ export default function PortfolioHero() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             Student Portfolio
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-sans">
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto font-sans">
             <span className="block">Witness the incredible transformations and</span>
             <span className="block">artistic journeys of our talented students</span>
           </p>
