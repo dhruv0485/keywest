@@ -37,13 +37,13 @@ export default function AboutSection() {
               <div className="text-white">WELCOME TO</div>
               <div className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">KEYWEST ACADEMY</div>
             </h2>
-            <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto text-justify">
+            <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto text-justify">
               A founder-led academy by Neha Chhabra, we are dedicated to transforming passion into a professional and world-class career. We celebrate makeup as a craft, empowering women with confidence and promoting financial independence.
             </p>
           </div>
 
           {/* Statistics - Unique Hexagon Style with Icons */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 max-w-4xl mx-auto">
             {/* Years Running */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
@@ -56,7 +56,7 @@ export default function AboutSection() {
                 <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
                   4+
                 </div>
-                <p className="text-sm md:text-base text-gray-300 font-medium">Years Running</p>
+                <p className="text-sm md:text-base text-white font-medium">Years Running</p>
               </div>
             </div>
 
@@ -72,7 +72,7 @@ export default function AboutSection() {
                 <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
                   5000+
                 </div>
-                <p className="text-sm md:text-base text-gray-300 font-medium">Trained</p>
+                <p className="text-sm md:text-base text-white font-medium">Trained</p>
               </div>
             </div>
 
@@ -88,23 +88,7 @@ export default function AboutSection() {
                 <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
                   1000+
                 </div>
-                <p className="text-sm md:text-base text-gray-300 font-medium">Job Placements</p>
-              </div>
-            </div>
-
-            {/* Successfully Working */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-              <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 md:p-8 border-2 border-primary/30 hover:border-primary shadow-xl hover:scale-105 transition-all text-center">
-                <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 md:w-10 md:h-10 text-white">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                  </svg>
-                </div>
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
-                  80%
-                </div>
-                <p className="text-sm md:text-base text-gray-300 font-medium">Placed</p>
+                <p className="text-sm md:text-base text-white font-medium">Job Placements</p>
               </div>
             </div>
           </div>
@@ -115,17 +99,16 @@ export default function AboutSection() {
         {/* Featured Video Section */}
         <div className="mt-16 md:mt-20 mb-16 md:mb-20">
           <div className="w-full max-w-5xl mx-auto">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl group" onMouseEnter={playFeaturedVideo}>
               {!isFeaturedVideoPlaying ? (
                 // Thumbnail with Play Button
                 <div
-                  className="relative cursor-pointer group"
-                  onClick={playFeaturedVideo}
+                  className="relative cursor-pointer"
                 >
                   <img
                     src="/banner.webp"
                     alt="Play video"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   {/* Play Button - Bottom Left */}
                   <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">

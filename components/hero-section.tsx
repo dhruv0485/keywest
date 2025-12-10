@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  
+
   const slides = [
     "/A.png",
     "/B.png",
@@ -30,9 +30,8 @@ export default function HeroSection() {
           key={index}
           src={slide}
           alt={`Keywest Academy Banner ${index + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
-            currentSlide === index ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"
+            }`}
         />
       ))}
 
@@ -42,11 +41,10 @@ export default function HeroSection() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-              currentSlide === index
-                ? "bg-primary w-6 sm:w-8"
-                : "bg-white/50 hover:bg-white/75"
-            }`}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${currentSlide === index
+              ? "bg-primary w-6 sm:w-8"
+              : "bg-white/50 hover:bg-white/75"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

@@ -190,6 +190,7 @@ export const coursesData: Course[] = [
       "/gec2.png",
       "/gec3.png",
       "/gec4.png",
+      "/Course 4.png",
     ],
   },
   {
@@ -389,6 +390,7 @@ export const coursesData: Course[] = [
       "/pac2.png",
       "/pac3.png",
       "/pac4.png",
+      "/Course 3.png",
     ],
   },
   {
@@ -552,6 +554,7 @@ export const coursesData: Course[] = [
       "/mac2.png",
       "/mac3.png",
       "/mac4.png",
+      "/Course 2.png",
     ],
   },
   {
@@ -731,6 +734,7 @@ export const coursesData: Course[] = [
       "/pm2c.png",
       "/pm3c.png",
       "/pm4c.png",
+      "/Course 1.png",
     ],
   },
   {

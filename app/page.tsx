@@ -5,9 +5,12 @@ import AboutSection from "@/components/about-section"
 import CoursesSection from "@/components/courses-section"
 import AccreditationsSection from "@/components/accreditations-section"
 import CollabsSection from "@/components/collabs-section"
+import CelebritySection from "@/components/celebrity-section"
 import TestimonialsSection from "@/components/testimonials-section"
+import TestimonialsCollage from "@/components/portfolio/testimonials-collage"
 import ContactForm from "@/components/contact-form"
 import Footer from "@/components/footer"
+import WhatsAppButton from "@/components/whatsapp-button"
 
 export default function Home() {
   return (
@@ -17,10 +20,13 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <CoursesSection />
+        <TestimonialsCollage />
         <CollabsSection />
+        <CelebritySection />
         <ContactForm />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

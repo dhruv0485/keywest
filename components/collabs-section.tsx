@@ -35,7 +35,7 @@ export default function CollabsSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12 relative z-10">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Brand Associations</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Hall of Fame</span>
           </h2>
         </div>
       </div>

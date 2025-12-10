@@ -74,7 +74,7 @@ export default function CoursesGrid() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 leading-tight min-h-[3.5rem] md:min-h-[4.5rem] lg:min-h-[6rem]">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Our Courses</span>
           </h1>
-          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-white text-lg md:text-xl max-w-3xl mx-auto">
             Explore our comprehensive range of makeup courses designed to transform your passion into expertise
           </p>
         </div>
@@ -118,10 +118,10 @@ export default function CoursesGrid() {
                 <h3 className="text-xl font-serif font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">
                   {course.title}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-2">{course.description}</p>
+                <p className="text-white text-sm leading-relaxed mb-4 line-clamp-2">{course.description}</p>
 
                 {/* Course Info */}
-                <div className="flex items-center gap-4 mb-4 text-xs text-gray-400">
+                <div className="flex items-center gap-4 mb-4 text-xs text-white">
                   <div className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -37,7 +37,7 @@ export default function AboutTimelineSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Our Journey</span>
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-white text-lg md:text-xl max-w-2xl mx-auto">
             From humble beginnings to industry leaders
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function AboutTimelineSection() {
                       <h3 className="text-xl xl:text-2xl font-serif font-bold text-white mb-3 group-hover:text-primary transition-colors">
                         {item.title}
                       </h3>
-                      <p className="text-gray-300 text-sm xl:text-base leading-relaxed line-clamp-4">
+                      <p className="text-white text-sm xl:text-base leading-relaxed line-clamp-4">
                         {item.description}
                       </p>
                     </div>
@@ -106,7 +106,7 @@ export default function AboutTimelineSection() {
                     <h3 className="text-xl md:text-2xl font-serif font-bold text-white mb-3 group-hover:text-primary transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                    <p className="text-white text-sm md:text-base leading-relaxed">
                       {item.description}
                     </p>
                   </div>

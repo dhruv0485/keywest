@@ -6,28 +6,13 @@ import Link from "next/link"
 export default function CoursesSection() {
   const courses = [
     {
-      id: 6,
-      title: "Level 1 - Professional Makeup Course",
-      description: "Foundation course covering essential makeup techniques and professional skills for aspiring makeup artists.",
-      images: ["/pm_1_640.png", "/pm_4_640.png", "/pm_3_640.png", "/pm_2_640.png"],
-      duration: "1 Month (4-5 Weeks)",
-      level: "Level 1",
-    },
-    {
-      id: 4,
-      title: "Level 2 - Masters in Makeup Artistry Course",
-      description: "Advanced course covering comprehensive makeup artistry, bridal makeup, and professional techniques.",
-      images: ["/ma_1_640.png", "/ma_2_640.png", "/ma_3_640.png"],
-      duration: "3 Months",
-      level: "Level 2",
-    },
-    {
       id: 3,
       title: "Level 3 - MasterPro Artistry Certification",
       description: "Expert-level certification including advanced techniques, creative makeup, and industry specialization.",
       images: ["/pa_1_640.png", "/pa_2_640.png", "/pa_4_640.png", "/pa_3_640.png"],
       duration: "4 Months",
       level: "Level 3",
+      badge: "Bestseller",
     },
     {
       id: 1,
@@ -36,6 +21,24 @@ export default function CoursesSection() {
       images: ["/ge_3_640.png", "/ge_4_640.png", "/ge_2_640.png", "/ge_1_640.png"],
       duration: "6 Months",
       level: "Level 4",
+    },
+    {
+      id: 5,
+      title: "Upcoming Course 1",
+      description: "New advanced course coming soon. Stay tuned for more details about this exciting program.",
+      images: ["/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg"],
+      duration: "Coming Soon",
+      level: "Upcoming",
+      isUpcoming: true,
+    },
+    {
+      id: 6,
+      title: "Upcoming Course 2",
+      description: "Specialized training program launching soon. Register your interest to be notified.",
+      images: ["/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg"],
+      duration: "Coming Soon",
+      level: "Upcoming",
+      isUpcoming: true,
     },
   ]
 
@@ -72,7 +75,7 @@ export default function CoursesSection() {
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-4 leading-tight min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Our Featured Courses</span>
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-white text-lg md:text-xl max-w-2xl mx-auto">
             Explore our carefully designed courses to elevate your makeup skills
           </p>
         </div>
@@ -85,29 +88,42 @@ export default function CoursesSection() {
               className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105 block"
             >
               <div className="relative overflow-hidden h-48 sm:h-56 md:h-64 bg-white">
-                {course.images.map((img, imgIdx) => (
-                  <img
-                    key={imgIdx}
-                    src={img}
-                    alt={`${course.title} - Image ${imgIdx + 1}`}
-                    className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ${
-                      imgIdx === (currentImageIndex[course.id] || 0) ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                ))}
+                {!course.isUpcoming ? (
+                  <>
+                    {course.images.map((img, imgIdx) => (
+                      <img
+                        key={imgIdx}
+                        src={img}
+                        alt={`${course.title} - Image ${imgIdx + 1}`}
+                        className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ${
+                          imgIdx === (currentImageIndex[course.id] || 0) ? "opacity-100" : "opacity-0"
+                        }`}
+                      />
+                    ))}
+                  </>
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                    <span className="text-white text-lg font-semibold">Coming Soon</span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-gradient-to-r from-primary to-accent text-white text-xs font-semibold px-2 py-1 sm:px-3 sm:py-1 rounded-full">
                   {course.level}
                 </div>
+                {course.badge && (
+                  <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-yellow-500 text-black text-xs font-bold px-2 py-1 sm:px-3 sm:py-1 rounded-full">
+                    {course.badge}
+                  </div>
+                )}
               </div>
               <div className="p-4 sm:p-5 md:p-6">
                 <h3 className="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">
                   {course.title}
                 </h3>
-                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">{course.description}</p>
+                <p className="text-white text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">{course.description}</p>
 
                 {/* Course Details */}
-                <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-4 text-xs text-gray-400 flex-wrap">
+                <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-4 text-xs text-white flex-wrap">
                   <div className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
