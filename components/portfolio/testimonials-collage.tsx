@@ -21,6 +21,14 @@ const videoTestimonials = [
     id: 4,
     videoUrl: "/t1 (3).mp4",
   },
+  {
+    id: 5,
+    videoUrl: "/Keywest 1.mp4",
+  },
+  {
+    id: 6,
+    videoUrl: "/Keywest 2.mp4",
+  }
 ]
 
 function VideoCard({ testimonial, index }: { testimonial: typeof videoTestimonials[0], index: number }) {
@@ -91,11 +99,15 @@ export default function TestimonialsCollage() {
           </p>
         </motion.div>
 
-        {/* Video Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {videoTestimonials.map((testimonial, index) => (
-            <VideoCard key={testimonial.id} testimonial={testimonial} index={index} />
-          ))}
+        {/* Video Grid Layout - Single Row */}
+        <div className="overflow-x-auto pb-4">
+          <div className="flex gap-6 min-w-max px-4">
+            {videoTestimonials.map((testimonial, index) => (
+              <div key={testimonial.id} className="w-64 flex-shrink-0">
+                <VideoCard testimonial={testimonial} index={index} />
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
