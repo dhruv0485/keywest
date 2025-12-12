@@ -64,12 +64,12 @@ export default function CoursesSection() {
           </p>
         </div>
 
-        <div className="flex justify-center gap-4 sm:gap-6 md:gap-8 px-4 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 px-4 max-w-4xl mx-auto">
           {courses.map((course, index) => (
             <Link
               key={index}
               href={`/courses/${course.id}`}
-              className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105 block flex-1 min-w-0"
+              className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105 block w-full"
             >
               <div className="relative overflow-hidden h-48 sm:h-56 md:h-64 bg-white">
                 {!course.isUpcoming ? (

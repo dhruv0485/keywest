@@ -288,55 +288,7 @@ export default function MasterclassDetailPage() {
         </div>
       )}
 
-      {/* Gallery Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-              Course Gallery
-            </h2>
-            <p className="text-white">See the amazing work from our students</p>
-          </div>
 
-          <div className="flex flex-col gap-4 md:gap-6 max-w-5xl mx-auto">
-            {/* First Row - 3 images */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-              {masterclass.galleryImages.slice(0, 3).map((img, idx) => (
-                <div
-                  key={idx}
-                  className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all"
-                >
-                  <img
-                    src={img}
-                    alt={`Gallery ${idx + 1}`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-              ))}
-            </div>
-            
-            {/* Second Row - 2 images centered */}
-            {masterclass.galleryImages.length > 3 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto w-full">
-                {masterclass.galleryImages.slice(3, 5).map((img, idx) => (
-                  <div
-                    key={idx + 3}
-                    className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all"
-                  >
-                    <img
-                      src={img}
-                      alt={`Gallery ${idx + 4}`}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </main>

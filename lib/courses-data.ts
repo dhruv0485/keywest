@@ -82,7 +82,7 @@ export const coursesData: Course[] = [
     ],
     image: "/ge_4_8000.png",
     images: ["/ge_4_800.png", "/ge_2_800.png", "/ge_1_800.png", "/ge_3_800.png"],
-    thumbnails: ["/ge1.png", "/ge2.png", "/ge3.png", "/ge4.png"],
+    thumbnails: ["/ge1.png", "/ge2.png", "/ge3.png", "/ge_3_800.png"],
     thumbnailMapping: { 0: 0, 1: 1, 2: 2, 3: 3 }, // ge1->ge_3_640, ge2->ge_4_640, ge3->ge_2_640, ge4->ge_1_640
     duration: "6 Months (includes Levels 1, 2 & 3)",
     level: "Level 4",
@@ -285,8 +285,8 @@ export const coursesData: Course[] = [
       "Professional portfolio enhancement and makeup kit guidance"
     ],
     image: "/P1.png",
-    images: ["/pa_2_800.png", "/pa_3_800.png", "/pa_4_800.png", "/pa_1_800.png"],
-    thumbnails: ["/pa1.png", "/pa2.png", "/pa3.png", "/pa4.png"],
+    images: ["/pa_2_800.png", "/pa_1_800.png", "/pa_4_800.png", "/pa_3_800.png"],
+    thumbnails: ["/pa1.png", "/pa_1_800.png", "/pa3.png", "/pa_3_800.png"],
     thumbnailMapping: { 0: 0, 1: 1, 2: 2, 3: 3 }, // pa1->pa_1_640, pa2->pa_2_640, pa3->pa_4_640, pa4->pa_3_640
     duration: "4 Months (includes Levels 1 & 2)",
     level: "Level 3",
@@ -420,7 +420,7 @@ export const coursesData: Course[] = [
     ],
     image: "/ma_1_800.png",
     images: ["/ma_2_800.png", "/ma_1_800.png", "/ma_4_800.png","/ma_3_800.png"],
-    thumbnails: ["/ma7.png", "/ma5.png", "/ma_4_800.png","/ma8.png"],
+    thumbnails: ["/ma_2_800.png", "/ma5.png", "/ma_4_800.png","/ma8.png"],
     thumbnailMapping: { 0: 0, 1: 1, 2: 2 , 3: 3 }, // ma7->ma_1_640, ma5->ma_2_640, ma6->ma_3_640
     duration: "3 Months (includes Level 1)",
     level: "Level 2",
@@ -660,7 +660,7 @@ export const coursesData: Course[] = [
     ],
     image: "/c6.webp",
     images: ["/pm_3_800.png", "/pm_1_800.png", "/pm_4_800.png", "/pm_2_800.png"],
-    thumbnails: ["/pm1.png", "/pm4.png", "/pm3.png", "/pm2.png"],
+    thumbnails: ["/pm1.png", "/pm_1_800.png", "/pm3.png", "/pm2.png"],
     thumbnailMapping: { 0: 0, 1: 1, 2: 2, 3: 3 }, // pm1->pm_1_640, pm4->pm_2_640, pm3->pm_3_640, pm2->pm_4_640
     duration: "1 Month (4-5 Weeks)",
     level: "Level 1",

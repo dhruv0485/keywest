@@ -276,16 +276,16 @@ export default function StudentShowcase() {
         {/* Success Stories Photo Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16 max-w-7xl mx-auto">
           {[
-            { num: 1, name: "Avneet" },
-            { num: 2, name: "Neeti" },
-            { num: 3, name: "Kanika" },
-            { num: 4, name: "Pooja" },
-            { num: 5, name: "Vardha" },
-            { num: 6, name: "Sonia" },
-            { num: 7, name: "Preeti Singh" },
-            { num: 8, name: "Manisha" },
-            { num: 9, name: "Mahek" },
-            { num: 10, name: "shailigill" },
+            { num: 1, name: "Avneet", course: "Masters in Pro Artistry Level 3" },
+            { num: 2, name: "Neeti", course: "Masters Makeup Artistry Level 2" },
+            { num: 3, name: "Kanika", course: "Masters in Pro Artistry Level 3" },
+            { num: 4, name: "Pooja", course: "Global Artistry Course Level 4" },
+            { num: 5, name: "Vardha", course: "Masters In Pro Artistry Level 3" },
+            { num: 6, name: "Sonia", course: "Global Artistry Course" },
+            { num: 7, name: "Preeti Singh", course: "Global Artistry Course Level 4" },
+            { num: 8, name: "Manisha", course: "Masters in Pro Artistry Level 3" },
+            { num: 9, name: "Mahek", course: "Masters in Makeup Artistry" },
+            { num: 10, name: "shailigill", course: "Global Artistry Course Level 4" },
           ].map((student) => (
             <motion.div
               key={student.num}
@@ -296,18 +296,78 @@ export default function StudentShowcase() {
             >
               <img
                 src={`/s${student.num}.png`}
-                alt={`${student.name} - Student Success Story`}
+                alt={`${student.name} - ${student.course}`}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-                  <h3 className="text-white font-serif font-bold text-lg">{student.name}</h3>
+                  <h3 className="text-white font-serif font-bold text-base mb-1">{student.name}</h3>
+                  <p className="text-white/90 text-xs font-medium">{student.course}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
+        {/* Course Gallery Section */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-serif font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+        >
+          Student Work Gallery
+        </motion.h2>
+
+        {/* Gallery Grid - All 20 Images */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+          {[
+            // Global Elite Artistry (Course 1) - 5 images
+            { src: "/gec1.png", course: "Global Elite Artistry" },
+            { src: "/gec2.png", course: "Global Elite Artistry" },
+            { src: "/gec3.png", course: "Global Elite Artistry" },
+            { src: "/gec4.png", course: "Global Elite Artistry" },
+            { src: "/Course 4.png", course: "Global Elite Artistry" },
+            // Masters Pro Artistry (Course 3) - 5 images
+            { src: "/pac1.png", course: "Masters Pro Artistry" },
+            { src: "/pac2.png", course: "Masters Pro Artistry" },
+            { src: "/pac3.png", course: "Masters Pro Artistry" },
+            { src: "/pac4.png", course: "Masters Pro Artistry" },
+            { src: "/Course 3.png", course: "Masters Pro Artistry" },
+            // Masters Makeup Artistry (Course 4) - 5 images
+            { src: "/mac1.png", course: "Masters Makeup Artistry" },
+            { src: "/mac2.png", course: "Masters Makeup Artistry" },
+            { src: "/mac3.png", course: "Masters Makeup Artistry" },
+            { src: "/mac4.png", course: "Masters Makeup Artistry" },
+            { src: "/Course 2.png", course: "Masters Makeup Artistry" },
+            // Professional Makeup (Course 6) - 5 images
+            { src: "/pm1c.png", course: "Professional Makeup" },
+            { src: "/pm2c.png", course: "Professional Makeup" },
+            { src: "/pm3c.png", course: "Professional Makeup" },
+            { src: "/pm4c.png", course: "Professional Makeup" },
+            { src: "/Course 1.png", course: "Professional Makeup" },
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.05 }}
+              className="relative group cursor-pointer aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-105 hover:z-10"
+            >
+              <img
+                src={item.src}
+                alt={`${item.course} - Student Work`}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                  <p className="text-white font-medium text-sm">{item.course}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
       </div>
     </section>

@@ -63,7 +63,11 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-gray-400">Call Us</p>
-                  <p className="font-semibold text-white text-sm sm:text-base">9811020094, 9899116884</p>
+                  <p className="font-semibold text-white text-sm sm:text-base">
+                    <span className="block sm:inline">9811020094</span>
+                    <span className="hidden sm:inline">, </span>
+                    <span className="block sm:inline">9899116884</span>
+                  </p>
                 </div>
               </div>
 
