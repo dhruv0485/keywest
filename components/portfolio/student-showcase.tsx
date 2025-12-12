@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Play } from "lucide-react"
 
 const students = [
   {
@@ -237,6 +237,77 @@ const students = [
   },
 ]
 
+const portfolioVideos = [
+  {
+    id: 1,
+    videoUrl: "/portfolio/9G0A1359.MOV.mp4",
+  },
+  {
+    id: 2,
+    videoUrl: "/portfolio/9G0A1358.MOV.mp4",
+  },
+  {
+    id: 3,
+    videoUrl: "/portfolio/8efe208e-d453-402b-b079-ea1cbea18e61.mp4",
+  },
+  {
+    id: 4,
+    videoUrl: "/portfolio/9G0A1360.MOV.mp4",
+  },
+  {
+    id: 5,
+    videoUrl: "/portfolio/9G0A1361.MOV.mp4",
+  },
+]
+
+function VideoCard({ video, index }: { video: typeof portfolioVideos[0], index: number }) {
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const handlePlay = () => {
+    setIsPlaying(true)
+  }
+
+  const handlePause = () => {
+    setIsPlaying(false)
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="group"
+    >
+      <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 border-2 border-primary/30 hover:border-primary backdrop-blur-sm">
+        {/* Video Container */}
+        <div className="relative aspect-[9/16] bg-gradient-to-br from-primary/20 to-accent/20 overflow-hidden">
+          <video
+            className="w-full h-full object-cover"
+            controls
+            preload="metadata"
+            src={video.videoUrl}
+            onPlay={handlePlay}
+            onPause={handlePause}
+            onEnded={handlePause}
+          >
+            Your browser does not support the video tag.
+          </video>
+          
+          {/* Play Button Overlay (shows before video plays) */}
+          {!isPlaying && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all pointer-events-none">
+              <div className="bg-white/90 rounded-full p-4 group-hover:scale-110 transition-transform">
+                <Play className="w-8 h-8 text-primary fill-primary" />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function StudentShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [descIndex, setDescIndex] = useState(0)
@@ -264,52 +335,33 @@ export default function StudentShowcase() {
   return (
     <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
       <div className="container mx-auto px-4">
-        <motion.h2
+        {/* What Our Students Say Section */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-serif font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+          className="text-center mb-16"
         >
-          Our Success Stories
-        </motion.h2>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Testimonials
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-sans">
+            Hear directly from our students about their transformative journey
+          </p>
+        </motion.div>
 
-        {/* Success Stories Photo Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16 max-w-7xl mx-auto">
-          {[
-            { num: 1, name: "Avneet", course: "Masters in Pro Artistry Level 3" },
-            { num: 2, name: "Neeti", course: "Masters Makeup Artistry Level 2" },
-            { num: 3, name: "Kanika", course: "Masters in Pro Artistry Level 3" },
-            { num: 4, name: "Pooja", course: "Global Artistry Course Level 4" },
-            { num: 5, name: "Vardha", course: "Masters In Pro Artistry Level 3" },
-            { num: 6, name: "Sonia", course: "Global Artistry Course" },
-            { num: 7, name: "Preeti Singh", course: "Global Artistry Course Level 4" },
-            { num: 8, name: "Manisha", course: "Masters in Pro Artistry Level 3" },
-            { num: 9, name: "Mahek", course: "Masters in Makeup Artistry" },
-            { num: 10, name: "shailigill", course: "Global Artistry Course Level 4" },
-          ].map((student) => (
-            <motion.div
-              key={student.num}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative group cursor-pointer aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10"
-            >
-              <img
-                src={`/s${student.num}.png`}
-                alt={`${student.name} - ${student.course}`}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-                  <h3 className="text-white font-serif font-bold text-base mb-1">{student.name}</h3>
-                  <p className="text-white/90 text-xs font-medium">{student.course}</p>
-                </div>
+        {/* Video Grid Layout - Single Row */}
+        <div className="overflow-x-auto pb-4 mb-20">
+          <div className="flex gap-6 min-w-max px-4">
+            {portfolioVideos.map((video, index) => (
+              <div key={video.id} className="w-64 flex-shrink-0">
+                <VideoCard video={video} index={index} />
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* Course Gallery Section */}
+        {/* Student Work Gallery Section */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -368,6 +420,53 @@ export default function StudentShowcase() {
             </motion.div>
           ))}
         </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-serif font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+        >
+          Our Success Stories
+        </motion.h2>
+
+        {/* Success Stories Photo Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16 max-w-7xl mx-auto">
+          {[
+            { num: 1, name: "Avneet", course: "Masters in Pro Artistry Level 3" },
+            { num: 2, name: "Neeti", course: "Masters Makeup Artistry Level 2" },
+            { num: 3, name: "Kanika", course: "Masters in Pro Artistry Level 3" },
+            { num: 4, name: "Pooja", course: "Global Artistry Course Level 4" },
+            { num: 5, name: "Vardha", course: "Masters In Pro Artistry Level 3" },
+            { num: 6, name: "Sonia", course: "Global Artistry Course" },
+            { num: 7, name: "Preeti Singh", course: "Global Artistry Course Level 4" },
+            { num: 8, name: "Manisha", course: "Masters in Pro Artistry Level 3" },
+            { num: 9, name: "Mahek", course: "Masters in Makeup Artistry" },
+            { num: 10, name: "shailigill", course: "Global Artistry Course Level 4" },
+          ].map((student) => (
+            <motion.div
+              key={student.num}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative group cursor-pointer aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10"
+            >
+              <img
+                src={`/s${student.num}.png`}
+                alt={`${student.name} - ${student.course}`}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                  <h3 className="text-white font-serif font-bold text-base mb-1">{student.name}</h3>
+                  <p className="text-white/90 text-xs font-medium">{student.course}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Course Gallery Section */}
+        
 
       </div>
     </section>
