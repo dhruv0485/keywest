@@ -19,19 +19,19 @@ export default function AboutSection() {
     setIsVideoOpen(false)
   }
 
-  const handleVideoHover = () => {
+  const handleVideoHover = async () => {
     setShowThumbnail(false)
     if (videoRef.current) {
-      videoRef.current.play()
+      try {
+        // Start playing muted first (browsers allow this)
+        videoRef.current.muted = true
+        await videoRef.current.play()
+        // Then unmute after playback starts
+        videoRef.current.muted = false
+      } catch (error) {
+        console.log("Autoplay failed:", error)
+      }
     }
-  }
-
-  const handleVideoLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause()
-      videoRef.current.currentTime = 0
-    }
-    setShowThumbnail(true)
   }
 
   return (
@@ -107,10 +107,10 @@ export default function AboutSection() {
         {/* Featured Video Section */}
         <div className="mt-16 md:mt-20 mb-16 md:mb-20">
           <div className="w-full max-w-5xl mx-auto">
-            <div 
-              className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer" 
+            <div
+              className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer"
               onMouseEnter={handleVideoHover}
-              onMouseLeave={handleVideoLeave}
+              onClick={handleVideoHover}
             >
               {/* Thumbnail */}
               {showThumbnail && (
@@ -120,16 +120,21 @@ export default function AboutSection() {
                     alt="Hover to play video"
                     className="w-full h-full object-cover"
                   />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all" />
                 </div>
               )}
-              
+
               {/* Video Element */}
               <video
                 ref={videoRef}
-                className="w-full h-auto object-cover"
-                muted
+                className="w-full h-auto object-cover bg-black"
+                controls={!showThumbnail}
                 playsInline
                 loop
+                muted
+                preload="auto"
+                poster="/banner.webp"
               >
                 <source src="https://res.cloudinary.com/dex1t9dm2/video/upload/v1763664561/h2_fpkk5o.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -163,7 +168,7 @@ export default function AboutSection() {
                     <source src={reel.videoUrl} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
-                  
+
 
                 </div>
               </div>
@@ -193,7 +198,7 @@ export default function AboutSection() {
               {/* Video Player */}
               <div className="relative w-full bg-black" style={{ paddingBottom: '56.25%' }}>
                 <iframe
-                  src="https://player.cloudinary.com/embed/?cloud_name=dex1t9dm2&public_id=hv_su2bd2&profile=cld-default&fluid=true"
+                  src="/Video 1.mov"
                   width="100%"
                   height="100%"
                   style={{ position: 'absolute', top: 0, left: 0, border: 0 }}
