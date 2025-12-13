@@ -333,46 +333,21 @@ export default function StudentShowcase() {
   })
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
+    <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-black via-gray-900 to-black">
       <div className="container mx-auto px-4">
-        {/* What Our Students Say Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Testimonials
-          </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-sans">
-            Hear directly from our students about their transformative journey
-          </p>
-        </motion.div>
-
-        {/* Video Grid Layout - Single Row */}
-        <div className="overflow-x-auto pb-4 mb-20">
-          <div className="flex gap-6 min-w-max px-4">
-            {portfolioVideos.map((video, index) => (
-              <div key={video.id} className="w-64 flex-shrink-0">
-                <VideoCard video={video} index={index} />
-              </div>
-            ))}
-          </div>
-        </div>
-
+        
         {/* Student Work Gallery Section */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-serif font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-serif font-bold text-center mb-12 md:mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight min-h-[5rem] md:min-h-[6rem] flex items-center justify-center"
         >
           Student Work Gallery
         </motion.h2>
 
-        {/* Gallery Grid - All 20 Images */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+        {/* Gallery Grid - All 20 Images with proper height */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto mb-16 md:mb-24">
           {[
             // Global Elite Artistry (Course 1) - 5 images
             { src: "/gec1.png", course: "Global Elite Artistry" },
@@ -405,7 +380,8 @@ export default function StudentShowcase() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="relative group cursor-pointer aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-105 hover:z-10"
+              className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-105 hover:z-10"
+              style={{ aspectRatio: '1/1', minHeight: '200px' }}
             >
               <img
                 src={item.src}
@@ -420,53 +396,85 @@ export default function StudentShowcase() {
             </motion.div>
           ))}
         </div>
+
+        {/* Our Success Stories Section - Wall of Fame Style */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-serif font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-serif font-bold text-center mb-12 md:mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
         >
           Our Success Stories
         </motion.h2>
 
-        {/* Success Stories Photo Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16 max-w-7xl mx-auto">
-          {[
-            { num: 1, name: "Avneet", course: "Masters in Pro Artistry Level 3" },
-            { num: 2, name: "Neeti", course: "Masters Makeup Artistry Level 2" },
-            { num: 3, name: "Kanika", course: "Masters in Pro Artistry Level 3" },
-            { num: 4, name: "Pooja", course: "Global Artistry Course Level 4" },
-            { num: 5, name: "Vardha", course: "Masters In Pro Artistry Level 3" },
-            { num: 6, name: "Sonia", course: "Global Artistry Course" },
-            { num: 7, name: "Preeti Singh", course: "Global Artistry Course Level 4" },
-            { num: 8, name: "Manisha", course: "Masters in Pro Artistry Level 3" },
-            { num: 9, name: "Mahek", course: "Masters in Makeup Artistry" },
-            { num: 10, name: "shailigill", course: "Global Artistry Course Level 4" },
-          ].map((student) => (
-            <motion.div
-              key={student.num}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative group cursor-pointer aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10"
-            >
-              <img
-                src={`/s${student.num}.png`}
-                alt={`${student.name} - ${student.course}`}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-                  <h3 className="text-white font-serif font-bold text-base mb-1">{student.name}</h3>
-                  <p className="text-white/90 text-xs font-medium">{student.course}</p>
+        {/* Success Stories - Wall of Fame Layout (like home page) */}
+        <div className="max-w-7xl mx-auto mb-16 md:mb-24">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+            {[
+              { num: 1, name: "Avneet", course: "Masters in Pro Artistry Level 3" },
+              { num: 2, name: "Neeti", course: "Masters Makeup Artistry Level 2" },
+              { num: 3, name: "Kanika", course: "Masters in Pro Artistry Level 3" },
+              { num: 4, name: "Pooja", course: "Global Artistry Course Level 4" },
+              { num: 5, name: "Vardha", course: "Masters In Pro Artistry Level 3" },
+              { num: 6, name: "Sonia", course: "Global Artistry Course" },
+              { num: 7, name: "Preeti Singh", course: "Global Artistry Course Level 4" },
+              { num: 8, name: "Manisha", course: "Masters in Pro Artistry Level 3" },
+              { num: 9, name: "Mahek", course: "Masters in Makeup Artistry" },
+              { num: 10, name: "shailigill", course: "Global Artistry Course Level 4" },
+            ].map((student, index) => (
+              <motion.div
+                key={student.num}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10"
+                style={{ 
+                  width: index % 3 === 0 ? '280px' : index % 3 === 1 ? '240px' : '260px',
+                  height: index % 3 === 0 ? '320px' : index % 3 === 1 ? '280px' : '300px'
+                }}
+              >
+                <img
+                  src={`/s${student.num}.png`}
+                  alt={`${student.name} - ${student.course}`}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                    <h3 className="text-white font-serif font-bold text-base md:text-lg mb-1">{student.name}</h3>
+                    <p className="text-white/90 text-xs md:text-sm font-medium">{student.course}</p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        {/* Course Gallery Section */}
-        
+        {/* Testimonials Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Testimonials
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-sans">
+            Hear directly from our students about their transformative journey
+          </p>
+        </motion.div>
+
+        {/* Video Grid Layout - Single Row */}
+        <div className="overflow-x-auto pb-4">
+          <div className="flex gap-4 md:gap-6 min-w-max px-4">
+            {portfolioVideos.map((video, index) => (
+              <div key={video.id} className="w-64 flex-shrink-0">
+                <VideoCard video={video} index={index} />
+              </div>
+            ))}
+          </div>
+        </div>
 
       </div>
     </section>

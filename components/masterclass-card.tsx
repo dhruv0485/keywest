@@ -10,7 +10,7 @@ export default function MasterclassCard() {
     duration: "60 DAYS",
     price: "FLAT 50,000",
     description: "Intensive masterclass covering comprehensive makeup and hair artistry.",
-    image: "/masterclass_800.png",
+    image: "/star.jpeg",
     sections: [
       {
         title: "THEORY",

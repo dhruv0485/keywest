@@ -29,7 +29,7 @@ export default function TeamSection() {
             Meet Our Founder
           </h2>
           <p className="text-white text-lg md:text-xl max-w-2xl mx-auto">
-            Visionary leader bringing international standards to India
+            Visionary leader bringing international makeup standards to India
           </p>
         </div>
 

@@ -4,7 +4,7 @@ export default function AboutHeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/Keywest banner (1).png"
+          src="/ab.jpeg"
           alt="Keywest Academy"
           className="w-full h-full object-cover"
         />

@@ -91,7 +91,7 @@ export default function TestimonialsCollage() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight min-h-[5rem] md:min-h-[6rem] flex items-center justify-center pb-2">
             What Our Students Say
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto font-sans">

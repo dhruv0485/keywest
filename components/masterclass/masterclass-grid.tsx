@@ -9,7 +9,7 @@ export default function MasterclassGrid() {
       id: 7,
       title: "STAR 2026 Course - Masterclass",
       description: "Limited time masterclass covering comprehensive makeup and hair artistry in just 60 days.",
-      images: ["/masterclass_800.png", "/masterclass_800.png", "/masterclass_800.png", "/masterclass_800.png"],
+      images: ["/star.jpeg", "/star.jpeg", "/star.jpeg", "/star.jpeg"],
       duration: "60 Days",
       level: "Masterclass",
       category: "Professional",

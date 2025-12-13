@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 leading-tight min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-6 leading-tight min-h-[6rem] md:min-h-[7rem] lg:min-h-[8rem] flex items-center justify-center">
             What Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Students Say</span>
           </h2>
           <p className="text-white text-base md:text-lg max-w-2xl mx-auto">

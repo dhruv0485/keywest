@@ -71,10 +71,10 @@ function CampusAmenities() {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight min-h-[4rem] md:min-h-[5rem]">
           Campus Facilities
         </h2>
-        <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+        <p className="text-lg text-white max-w-2xl mx-auto">
           Everything you need for a comfortable and productive learning environment
         </p>
       </motion.div>
@@ -316,7 +316,7 @@ export default function GeneralFacilities() {
           viewport={{ once: true }}
           className="text-center mb-12 mt-20"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight min-h-[4rem] md:min-h-[5rem]">
             General Facilities
           </h2>
           <p className="text-lg text-white max-w-2xl mx-auto font-sans">
