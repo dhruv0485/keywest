@@ -397,7 +397,7 @@ export default function StudentShowcase() {
           ))}
         </div>
 
-        {/* Our Success Stories Section - Wall of Fame Style */}
+        {/* Our Success Stories Section - Continuous Sliding Carousel */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -407,9 +407,15 @@ export default function StudentShowcase() {
           Our Success Stories
         </motion.h2>
 
-        {/* Success Stories - Wall of Fame Layout (like home page) */}
-        <div className="max-w-7xl mx-auto mb-16 md:mb-24">
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+        {/* Success Stories - Continuous Auto-Sliding Carousel */}
+        <div className="relative mb-16 md:mb-24 overflow-hidden">
+          {/* Gradient Overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-black via-gray-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-black via-gray-900 to-transparent z-10 pointer-events-none" />
+          
+          {/* Sliding Container */}
+          <div className="flex gap-6 animate-scroll">
+            {/* First set of images */}
             {[
               { num: 1, name: "Avneet", course: "Masters in Pro Artistry Level 3" },
               { num: 2, name: "Neeti", course: "Masters Makeup Artistry Level 2" },
@@ -421,18 +427,11 @@ export default function StudentShowcase() {
               { num: 8, name: "Manisha", course: "Masters in Pro Artistry Level 3" },
               { num: 9, name: "Mahek", course: "Masters in Makeup Artistry" },
               { num: 10, name: "shailigill", course: "Global Artistry Course Level 4" },
-            ].map((student, index) => (
-              <motion.div
-                key={student.num}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10"
-                style={{ 
-                  width: index % 3 === 0 ? '280px' : index % 3 === 1 ? '240px' : '260px',
-                  height: index % 3 === 0 ? '320px' : index % 3 === 1 ? '280px' : '300px'
-                }}
+            ].map((student) => (
+              <div
+                key={`first-${student.num}`}
+                className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10 flex-shrink-0"
+                style={{ width: '280px', height: '320px' }}
               >
                 <img
                   src={`/s${student.num}.png`}
@@ -445,10 +444,60 @@ export default function StudentShowcase() {
                     <p className="text-white/90 text-xs md:text-sm font-medium">{student.course}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {[
+              { num: 1, name: "Avneet", course: "Masters in Pro Artistry Level 3" },
+              { num: 2, name: "Neeti", course: "Masters Makeup Artistry Level 2" },
+              { num: 3, name: "Kanika", course: "Masters in Pro Artistry Level 3" },
+              { num: 4, name: "Pooja", course: "Global Artistry Course Level 4" },
+              { num: 5, name: "Vardha", course: "Masters In Pro Artistry Level 3" },
+              { num: 6, name: "Sonia", course: "Global Artistry Course" },
+              { num: 7, name: "Preeti Singh", course: "Global Artistry Course Level 4" },
+              { num: 8, name: "Manisha", course: "Masters in Pro Artistry Level 3" },
+              { num: 9, name: "Mahek", course: "Masters in Makeup Artistry" },
+              { num: 10, name: "shailigill", course: "Global Artistry Course Level 4" },
+            ].map((student) => (
+              <div
+                key={`second-${student.num}`}
+                className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10 flex-shrink-0"
+                style={{ width: '280px', height: '320px' }}
+              >
+                <img
+                  src={`/s${student.num}.png`}
+                  alt={`${student.name} - ${student.course}`}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                    <h3 className="text-white font-serif font-bold text-base md:text-lg mb-1">{student.name}</h3>
+                    <p className="text-white/90 text-xs md:text-sm font-medium">{student.course}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
+
+        <style jsx>{`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          .animate-scroll {
+            animation: scroll 40s linear infinite;
+          }
+          
+          .animate-scroll:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
 
         {/* Testimonials Section */}
         <motion.div
