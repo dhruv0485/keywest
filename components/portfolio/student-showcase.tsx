@@ -335,16 +335,6 @@ export default function StudentShowcase() {
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-black via-gray-900 to-black">
       <div className="container mx-auto px-4">
-        
-        {/* Student Work Gallery Section */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-serif font-bold text-center mb-12 md:mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight min-h-[5rem] md:min-h-[6rem] flex items-center justify-center"
-        >
-          Student Work Gallery
-        </motion.h2>
 
         {/* Gallery Grid - All 20 Images with proper height */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto mb-16 md:mb-24">

@@ -3,7 +3,7 @@ export default function AboutHeroSection() {
     <section className="w-full aspect-[16/9] sm:aspect-[16/8] md:aspect-[16/7] lg:aspect-[1500/586] overflow-hidden relative mt-0">
       {/* Background Image */}
       <img
-        src="/B3.png"
+        src="/b0.jpg"
         alt="Keywest Academy"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
