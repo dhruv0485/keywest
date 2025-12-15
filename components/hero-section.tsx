@@ -10,7 +10,7 @@ export default function HeroSection() {
     "/B1.png",
     "/B2.png",
     "/New Banner.png",
-    "/Banner 3.png",
+    "/infra banner.jpg",
   ]
 
   useEffect(() => {
