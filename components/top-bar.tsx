@@ -9,7 +9,7 @@ export default function TopBar() {
   return (
     <div className="bg-black border-b border-primary/20">
       <div className="max-w-7xl mx-auto px-4 py-2 md:py-3">
-        <div className="flex flex-row items-center justify-between gap-2 md:gap-4 overflow-x-auto relative">
+        <div className="flex flex-row items-center justify-between gap-2 md:gap-4 relative">
           {/* Instagram Icon - Left */}
           <div className="flex items-center flex-shrink-0">
             <a 
@@ -29,7 +29,7 @@ export default function TopBar() {
           </div>
 
           {/* Contact Info - Center/Right */}
-          <div className="flex flex-row items-center gap-2 md:gap-3 lg:gap-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          <div className="flex flex-row items-center gap-2 md:gap-3 lg:gap-4 flex-nowrap whitespace-nowrap">
             {/* Phone Numbers */}
             <a href="tel:+919811020094" className="flex items-center gap-1 text-xs md:text-sm text-white font-medium hover:text-primary transition-colors flex-shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0 md:w-4 md:h-4">
@@ -112,15 +112,16 @@ export default function TopBar() {
               {/* Mobile: Address Dropdown */}
               {showAddressDropdown && (
                 <div className="fixed top-12 left-2 right-2 bg-white border-2 border-primary rounded-lg p-3 shadow-2xl z-[100] max-w-sm mx-auto">
-                  <div className="flex items-start gap-2 mb-2">
+                  <div className="flex items-start gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0 mt-0.5">
                       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                       <circle cx="12" cy="10" r="3"/>
                     </svg>
                     <div className="flex-1 min-w-0">
                       <span className="text-gray-800 font-semibold text-xs block mb-1">Address</span>
-                      <p className="text-gray-700 text-xs leading-relaxed break-words">
-                        Building no. 63, 2nd floor, Lajpat Nagar 3, New Delhi - 110057
+                      <p className="text-gray-700 text-xs leading-relaxed">
+                        Building no. 63, 2nd floor,<br />
+                        Lajpat Nagar 3, New Delhi - 110057
                       </p>
                     </div>
                   </div>
