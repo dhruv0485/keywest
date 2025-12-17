@@ -22,7 +22,7 @@ export default function HeroSection() {
   }, [slides.length])
 
   return (
-    <section className="w-full aspect-[16/9] sm:aspect-[16/8] md:aspect-[16/7] lg:aspect-[1500/586] overflow-hidden relative mt-0">
+    <section className="w-full aspect-[1500/586] overflow-hidden relative mt-0">
       {/* Slider Images */}
       {slides.map((slide, index) => (
         <img
