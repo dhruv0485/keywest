@@ -56,8 +56,8 @@ export default function AboutTimelineSection() {
 
                 {/* Card Below Line */}
                 <div className="mt-16">
-                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-105 group">
-                    <div className="relative h-64 xl:h-72 overflow-hidden">
+                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-105 group h-[750px] flex flex-col">
+                    <div className="relative h-64 xl:h-72 overflow-hidden flex-shrink-0">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -65,11 +65,11 @@ export default function AboutTimelineSection() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-xl xl:text-2xl font-serif font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                    <div className="p-6 flex-1 flex flex-col">
+                      <h3 className="text-xl xl:text-2xl font-serif font-bold text-white mb-3 group-hover:text-primary transition-colors flex-shrink-0">
                         {item.title}
                       </h3>
-                      <p className="text-white text-sm xl:text-base leading-relaxed line-clamp-4">
+                      <p className="text-white text-sm xl:text-base leading-relaxed whitespace-normal">
                         {item.description}
                       </p>
                     </div>
@@ -106,7 +106,7 @@ export default function AboutTimelineSection() {
                     <h3 className="text-xl md:text-2xl font-serif font-bold text-white mb-3 group-hover:text-primary transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-white text-sm md:text-base leading-relaxed">
+                    <p className="text-white text-sm md:text-base leading-relaxed whitespace-normal">
                       {item.description}
                     </p>
                   </div>

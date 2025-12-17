@@ -184,10 +184,17 @@ export default function EnquiryContactSection() {
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
                   >
                     <option value="">Select a course</option>
-                    <option value="foundation">Foundation Makeup</option>
-                    <option value="bridal">Bridal Makeup</option>
-                    <option value="special-effects">Special Effects</option>
-                    <option value="professional">Professional Artistry</option>
+                    <optgroup label="Our Courses">
+                      <option value="star-2026">STAR 2026 Course - Masterclass</option>
+                      <option value="level-1">Level 1 - Professional Makeup Course</option>
+                      <option value="level-2">Level 2 - Masters in Makeup Artistry Course</option>
+                      <option value="level-3">Level 3 - MasterPro Artistry Certification</option>
+                      <option value="level-4">Level 4 - Global Elite Artistry Program</option>
+                      <option value="level-5">Level 5 - Cosmetology Course</option>
+                    </optgroup>
+                    <optgroup label="Masterclass">
+                      <option value="self-makeup">Self Makeup Course</option>
+                    </optgroup>
                   </select>
                 </div>
               </div>
@@ -205,9 +212,8 @@ export default function EnquiryContactSection() {
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
                 >
                   <option value="">Select a time</option>
-                  <option value="morning">Morning (9AM - 12PM)</option>
-                  <option value="afternoon">Afternoon (12PM - 3PM)</option>
-                  <option value="evening">Evening (3PM - 6PM)</option>
+                  <option value="morning">Morning (10am - 1pm)</option>
+                  <option value="afternoon">Afternoon (2pm - 5pm)</option>
                 </select>
               </div>
 

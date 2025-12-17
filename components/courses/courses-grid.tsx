@@ -6,6 +6,16 @@ import Link from "next/link"
 export default function CoursesGrid() {
   const courses = [
     {
+      id: 7,
+      title: "STAR 2026 Course - Masterclass",
+      description: "Limited time masterclass covering comprehensive makeup and hair artistry in just 60 days.",
+      images: ["/star_course.jpeg", "/star_course.jpeg", "/star_course.jpeg", "/star_course.jpeg"],
+      duration: "60 Days",
+      level: "Masterclass",
+      category: "Professional",
+      badge: "UPCOMING",
+    },
+    {
       id: 6,
       title: "Level 1 - Professional Makeup Course",
       description: "Foundation course covering essential makeup techniques and professional skills for aspiring makeup artists.",
@@ -39,6 +49,15 @@ export default function CoursesGrid() {
       images: ["/ge_3_800.png", "/ge_4_800.png", "/ge_2_800.png", "/ge_1_800.png"],
       duration: "6 Months",
       level: "Level 4",
+      category: "Professional",
+    },
+    {
+      id: 8,
+      title: "Level 5 - Cosmetology Course",
+      description: "Comprehensive cosmetology program covering advanced beauty treatments, skincare, and professional salon techniques.",
+      images: ["/pm_1_800.png", "/pm_2_800.png", "/pm_3_800.png", "/pm_4_800.png"],
+      duration: "8 Months",
+      level: "Level 5",
       category: "Professional",
     },
 
@@ -94,15 +113,16 @@ export default function CoursesGrid() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
 
               {/* Image Slider */}
-              <div className="relative h-64 overflow-hidden bg-white">
+              <div className={`relative overflow-hidden ${course.id === 7 ? 'bg-black h-80' : 'bg-white h-56 sm:h-64 md:h-72'}`}>
                 {course.images.map((img, imgIdx) => (
                   <img
                     key={imgIdx}
                     src={img}
                     alt={`${course.title} - Image ${imgIdx + 1}`}
-                    className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ${
+                    className={`absolute inset-0 w-full h-full ${course.id === 7 ? 'object-contain' : 'object-cover'} group-hover:scale-110 transition-all duration-1000 ${
                       imgIdx === (currentImageIndex[course.id] || 0) ? "opacity-100" : "opacity-0"
                     }`}
+                    style={course.id === 7 ? { maxWidth: '320px', maxHeight: '320px', margin: 'auto' } : {}}
                   />
                 ))}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
@@ -111,6 +131,13 @@ export default function CoursesGrid() {
                 <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                   {course.level}
                 </div>
+
+                {/* Upcoming Badge */}
+                {course.badge && (
+                  <div className="absolute top-4 left-4 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                    {course.badge}
+                  </div>
+                )}
               </div>
 
               {/* Content */}

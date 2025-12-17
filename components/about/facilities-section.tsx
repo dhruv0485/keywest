@@ -142,13 +142,9 @@ export default function FacilitiesSection() {
                     index === activeIndex ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-white/90 text-base md:text-lg leading-relaxed mb-6">
+                  <p className="text-white/90 text-base md:text-lg leading-relaxed">
                     {facility.description}
                   </p>
-
-                  <button className="bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all hover:scale-105">
-                    Learn More
-                  </button>
                 </div>
 
                 {/* Active Indicator */}
@@ -195,11 +191,7 @@ export default function FacilitiesSection() {
                   <h3 className="text-2xl font-serif font-bold text-white mb-3">{facility.title}</h3>
 
                   {/* Description */}
-                  <p className="text-white/90 text-base leading-relaxed mb-4">{facility.description}</p>
-
-                  <button className="bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all w-full">
-                    Learn More
-                  </button>
+                  <p className="text-white/90 text-base leading-relaxed">{facility.description}</p>
 
                   {/* Active Indicator */}
                   {index === activeIndex && (

@@ -8,6 +8,7 @@ export default function ContactForm() {
     email: "",
     phone: "",
     course: "",
+    time: "",
     message: "",
   })
 
@@ -208,10 +209,35 @@ export default function ContactForm() {
                   className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-xl border-2 border-primary/30 bg-black/30 text-white text-sm sm:text-base focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 >
                   <option value="">Select a course</option>
-                  <option value="foundation">Foundation Makeup</option>
-                  <option value="bridal">Bridal Makeup</option>
-                  <option value="special-effects">Special Effects</option>
-                  <option value="professional">Professional Artistry</option>
+                  <optgroup label="Our Courses">
+                    <option value="star-2026">STAR 2026 Course - Masterclass</option>
+                    <option value="level-1">Level 1 - Professional Makeup Course</option>
+                    <option value="level-2">Level 2 - Masters in Makeup Artistry Course</option>
+                    <option value="level-3">Level 3 - MasterPro Artistry Certification</option>
+                    <option value="level-4">Level 4 - Global Elite Artistry Program</option>
+                    <option value="level-5">Level 5 - Cosmetology Course</option>
+                  </optgroup>
+                  <optgroup label="Masterclass">
+                    <option value="self-makeup">Self Makeup Course</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              {/* Preferred Time */}
+              <div>
+                <label htmlFor="time" className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
+                  Preferred Time
+                </label>
+                <select
+                  id="time"
+                  name="time"
+                  value={formData.time}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-xl border-2 border-primary/30 bg-black/30 text-white text-sm sm:text-base focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                >
+                  <option value="">Select preferred time</option>
+                  <option value="morning">Morning (10am - 1pm)</option>
+                  <option value="afternoon">Afternoon (2pm - 5pm)</option>
                 </select>
               </div>
 

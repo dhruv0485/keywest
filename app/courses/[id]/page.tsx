@@ -129,17 +129,19 @@ export default function CoursePage() {
                 )}
               </div>
 
-              {/* Course Curriculum CTA */}
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border-2 border-primary/30 backdrop-blur-sm">
-                <h3 className="text-xl font-serif font-bold text-white mb-4">Explore the Course</h3>
-                <p className="text-gray-300 mb-6">Discover what you'll learn in this comprehensive program.</p>
-                <button
-                  onClick={scrollToCurriculum}
-                  className="w-full py-4 rounded-full font-semibold text-lg transition-all hover:scale-[1.02] flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-white hover:shadow-xl hover:shadow-primary/30"
-                >
-                  View Course Curriculum
-                </button>
-              </div>
+              {/* Course Curriculum CTA - Hide for STAR 2026 (id: 7) */}
+              {courseId !== 7 && (
+                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border-2 border-primary/30 backdrop-blur-sm">
+                  <h3 className="text-xl font-serif font-bold text-white mb-4">Explore the Course</h3>
+                  <p className="text-gray-300 mb-6">Discover what you'll learn in this comprehensive program.</p>
+                  <button
+                    onClick={scrollToCurriculum}
+                    className="w-full py-4 rounded-full font-semibold text-lg transition-all hover:scale-[1.02] flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-white hover:shadow-xl hover:shadow-primary/30"
+                  >
+                    View Course Curriculum
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

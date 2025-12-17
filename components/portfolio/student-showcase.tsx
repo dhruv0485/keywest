@@ -370,8 +370,8 @@ export default function StudentShowcase() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-105 hover:z-10"
-              style={{ aspectRatio: '1/1', minHeight: '200px' }}
+              className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 md:hover:scale-105 hover:z-10"
+              style={{ aspectRatio: '1/1', minHeight: '150px' }}
             >
               <img
                 src={item.src}
@@ -398,13 +398,13 @@ export default function StudentShowcase() {
         </motion.h2>
 
         {/* Success Stories - Continuous Auto-Sliding Carousel */}
-        <div className="relative mb-16 md:mb-24 overflow-hidden">
+        <div className="relative mb-16 md:mb-24 overflow-hidden w-full">
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-black via-gray-900 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-black via-gray-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 md:w-20 lg:w-32 bg-gradient-to-r from-black via-gray-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 md:w-20 lg:w-32 bg-gradient-to-l from-black via-gray-900 to-transparent z-10 pointer-events-none" />
           
           {/* Sliding Container */}
-          <div className="flex gap-6 animate-scroll">
+          <div className="flex gap-4 md:gap-6 animate-scroll-mobile md:animate-scroll">
             {/* First set of images */}
             {[
               { num: 1, name: "Avneet", course: "Masters in Pro Artistry Level 3" },
@@ -420,17 +420,18 @@ export default function StudentShowcase() {
             ].map((student) => (
               <div
                 key={`first-${student.num}`}
-                className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10 flex-shrink-0"
-                style={{ width: '280px', height: '320px' }}
+                className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 md:hover:scale-110 hover:z-10 flex-shrink-0"
+                style={{ width: '220px', height: '280px' }}
               >
                 <img
                   src={`/s${student.num}.png`}
                   alt={`${student.name} - ${student.course}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover md:group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-                    <h3 className="text-white font-serif font-bold text-base md:text-lg mb-1">{student.name}</h3>
+                {/* Mobile: Always show content */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <h3 className="text-white font-serif font-bold text-sm md:text-base lg:text-lg mb-1">{student.name}</h3>
                     <p className="text-white/90 text-xs md:text-sm font-medium">{student.course}</p>
                   </div>
                 </div>
@@ -451,17 +452,18 @@ export default function StudentShowcase() {
             ].map((student) => (
               <div
                 key={`second-${student.num}`}
-                className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-110 hover:z-10 flex-shrink-0"
-                style={{ width: '280px', height: '320px' }}
+                className="relative group cursor-pointer rounded-2xl overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 md:hover:scale-110 hover:z-10 flex-shrink-0"
+                style={{ width: '220px', height: '280px' }}
               >
                 <img
                   src={`/s${student.num}.png`}
                   alt={`${student.name} - ${student.course}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover md:group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-                    <h3 className="text-white font-serif font-bold text-base md:text-lg mb-1">{student.name}</h3>
+                {/* Mobile: Always show content */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <h3 className="text-white font-serif font-bold text-sm md:text-base lg:text-lg mb-1">{student.name}</h3>
                     <p className="text-white/90 text-xs md:text-sm font-medium">{student.course}</p>
                   </div>
                 </div>
@@ -480,11 +482,28 @@ export default function StudentShowcase() {
             }
           }
           
+          @keyframes scrollMobile {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
           .animate-scroll {
             animation: scroll 40s linear infinite;
           }
           
+          .animate-scroll-mobile {
+            animation: scrollMobile 30s linear infinite;
+          }
+          
           .animate-scroll:hover {
+            animation-play-state: paused;
+          }
+          
+          .animate-scroll-mobile:hover {
             animation-play-state: paused;
           }
         `}</style>

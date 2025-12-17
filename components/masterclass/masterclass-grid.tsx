@@ -6,14 +6,14 @@ import Link from "next/link"
 export default function MasterclassGrid() {
   const masterclasses = [
     {
-      id: 7,
-      title: "STAR 2026 Course - Masterclass",
-      description: "Limited time masterclass covering comprehensive makeup and hair artistry in just 60 days.",
-      images: ["/star.jpeg", "/star.jpeg", "/star.jpeg", "/star.jpeg"],
-      duration: "60 Days",
+      id: 9,
+      title: "Self Makeup Course",
+      description: "Learn professional self-makeup techniques for everyday looks, special occasions, and personal grooming.",
+      images: ["/ma_1_800.png", "/ma_2_800.png", "/ma_3_800.png", "/ma_4_800.png"],
+      duration: "2 Weeks",
       level: "Masterclass",
-      category: "Professional",
-      badge: "LIMITED TIME",
+      category: "Personal",
+      badge: "NEW",
     },
   ]
 
@@ -67,7 +67,7 @@ export default function MasterclassGrid() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
 
               {/* Image Slider */}
-              <div className="relative h-64 overflow-hidden bg-white">
+              <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden bg-white">
                 {masterclass.images.map((img, imgIdx) => (
                   <img
                     key={imgIdx}
@@ -85,9 +85,11 @@ export default function MasterclassGrid() {
                   {masterclass.level}
                 </div>
 
-                {/* Limited Time Badge */}
+                {/* Badge */}
                 {masterclass.badge && (
-                  <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  <div className={`absolute top-4 left-4 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg ${
+                    masterclass.badge === "LIMITED TIME" ? "bg-red-600" : "bg-green-600"
+                  }`}>
                     {masterclass.badge}
                   </div>
                 )}

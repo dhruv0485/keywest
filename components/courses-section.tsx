@@ -18,7 +18,7 @@ export default function CoursesSection() {
       id: 7,
       title: "STAR 2026 Course - Masterclass",
       description: "Limited time masterclass covering comprehensive makeup and hair artistry in just 60 days.",
-      images: ["/star.jpeg", "/star.jpeg", "/star.jpeg", "/star.jpeg"],
+      images: ["/star_course.jpeg", "/star_course.jpeg", "/star_course.jpeg", "/star_course.jpeg"],
       duration: "60 Days",
       level: "Masterclass",
       badge: "LIMITED TIME",
@@ -71,7 +71,7 @@ export default function CoursesSection() {
               href={`/courses/${course.id}`}
               className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105 block w-full"
             >
-              <div className="relative overflow-hidden h-48 sm:h-56 md:h-64 bg-white">
+              <div className={`relative overflow-hidden ${course.id === 7 ? 'bg-black h-80' : 'bg-white h-56 sm:h-64 md:h-72'}`}>
                 {!course.isUpcoming ? (
                   <>
                     {course.images.map((img, imgIdx) => (
@@ -79,9 +79,10 @@ export default function CoursesSection() {
                         key={imgIdx}
                         src={img}
                         alt={`${course.title} - Image ${imgIdx + 1}`}
-                        className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ${
+                        className={`absolute inset-0 w-full h-full ${course.id === 7 ? 'object-contain' : 'object-cover'} group-hover:scale-110 transition-all duration-1000 ${
                           imgIdx === (currentImageIndex[course.id] || 0) ? "opacity-100" : "opacity-0"
                         }`}
+                        style={course.id === 7 ? { maxWidth: '320px', maxHeight: '320px', margin: 'auto' } : {}}
                       />
                     ))}
                   </>
