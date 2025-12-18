@@ -9,7 +9,7 @@ export default function MasterclassGrid() {
       id: 9,
       title: "Self Makeup Course",
       description: "Learn professional self-makeup techniques for everyday looks, special occasions, and personal grooming.",
-      images: ["/ma_1_800.png", "/ma_2_800.png", "/ma_3_800.png", "/ma_4_800.png"],
+      images: ["/self1.png", "/self2.png", "/self3.png", "/self4.png"],
       duration: "2 Weeks",
       level: "Masterclass",
       category: "Personal",

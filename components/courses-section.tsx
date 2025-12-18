@@ -18,7 +18,7 @@ export default function CoursesSection() {
       id: 7,
       title: "STAR 2026 Course - Masterclass",
       description: "Limited time masterclass covering comprehensive makeup and hair artistry in just 60 days.",
-      images: ["/star_course.jpeg", "/star_course.jpeg", "/star_course.jpeg", "/star_course.jpeg"],
+      images: ["/star1.png", "/star2.png", "/star3.png", "/star4.png"],
       duration: "60 Days",
       level: "Masterclass",
       badge: "LIMITED TIME",
@@ -71,20 +71,39 @@ export default function CoursesSection() {
               href={`/courses/${course.id}`}
               className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden group cursor-pointer border-2 border-primary/30 hover:border-primary hover:scale-105 block w-full"
             >
-              <div className={`relative overflow-hidden ${course.id === 7 ? 'bg-black h-80' : 'bg-white h-56 sm:h-64 md:h-72'}`}>
+              <div className={`relative overflow-hidden ${course.id === 7 ? 'bg-black h-80 md:h-[320px]' : 'bg-white h-56 sm:h-64 md:h-72'}`}>
                 {!course.isUpcoming ? (
                   <>
-                    {course.images.map((img, imgIdx) => (
-                      <img
-                        key={imgIdx}
-                        src={img}
-                        alt={`${course.title} - Image ${imgIdx + 1}`}
-                        className={`absolute inset-0 w-full h-full ${course.id === 7 ? 'object-contain' : 'object-cover'} group-hover:scale-110 transition-all duration-1000 ${
-                          imgIdx === (currentImageIndex[course.id] || 0) ? "opacity-100" : "opacity-0"
-                        }`}
-                        style={course.id === 7 ? { maxWidth: '320px', maxHeight: '320px', margin: 'auto' } : {}}
-                      />
-                    ))}
+                    {course.id === 7 ? (
+                      <div className="w-full h-full flex items-center justify-center">
+                        {/* Desktop Image - 320x320px */}
+                        <img
+                          src="/star_outside.jpeg"
+                          alt={course.title}
+                          className="hidden md:block object-contain group-hover:scale-110 transition-all duration-1000"
+                          style={{ width: '320px', height: '320px' }}
+                        />
+                        {/* Mobile Image */}
+                        <img
+                          src="/star_outside_mobile.jpeg"
+                          alt={course.title}
+                          className="md:hidden w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
+                        />
+                      </div>
+                    ) : (
+                      <>
+                        {course.images.map((img, imgIdx) => (
+                          <img
+                            key={imgIdx}
+                            src={img}
+                            alt={`${course.title} - Image ${imgIdx + 1}`}
+                            className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ${
+                              imgIdx === (currentImageIndex[course.id] || 0) ? "opacity-100" : "opacity-0"
+                            }`}
+                          />
+                        ))}
+                      </>
+                    )}
                   </>
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">

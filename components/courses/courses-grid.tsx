@@ -9,7 +9,7 @@ export default function CoursesGrid() {
       id: 7,
       title: "STAR 2026 Course - Masterclass",
       description: "Limited time masterclass covering comprehensive makeup and hair artistry in just 60 days.",
-      images: ["/star_course.jpeg", "/star_course.jpeg", "/star_course.jpeg", "/star_course.jpeg"],
+      images: ["/star1.png", "/star2.png", "/star3.png", "/star4.png"],
       duration: "60 Days",
       level: "Masterclass",
       category: "Professional",
@@ -113,18 +113,37 @@ export default function CoursesGrid() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
 
               {/* Image Slider */}
-              <div className={`relative overflow-hidden ${course.id === 7 ? 'bg-black h-80' : 'bg-white h-56 sm:h-64 md:h-72'}`}>
-                {course.images.map((img, imgIdx) => (
-                  <img
-                    key={imgIdx}
-                    src={img}
-                    alt={`${course.title} - Image ${imgIdx + 1}`}
-                    className={`absolute inset-0 w-full h-full ${course.id === 7 ? 'object-contain' : 'object-cover'} group-hover:scale-110 transition-all duration-1000 ${
-                      imgIdx === (currentImageIndex[course.id] || 0) ? "opacity-100" : "opacity-0"
-                    }`}
-                    style={course.id === 7 ? { maxWidth: '320px', maxHeight: '320px', margin: 'auto' } : {}}
-                  />
-                ))}
+              <div className={`relative overflow-hidden ${course.id === 7 ? 'bg-black h-80 md:h-[320px] flex items-center justify-center' : 'bg-white h-56 sm:h-64 md:h-72'}`}>
+                {course.id === 7 ? (
+                  <>
+                    {/* Desktop Image - 320x320px */}
+                    <img
+                      src="/star_outside.jpeg"
+                      alt={course.title}
+                      className="hidden md:block object-contain group-hover:scale-110 transition-all duration-1000"
+                      style={{ width: '320px', height: '320px' }}
+                    />
+                    {/* Mobile Image */}
+                    <img
+                      src="/star_outside_mobile.jpeg"
+                      alt={course.title}
+                      className="md:hidden absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
+                    />
+                  </>
+                ) : (
+                  <>
+                    {course.images.map((img, imgIdx) => (
+                      <img
+                        key={imgIdx}
+                        src={img}
+                        alt={`${course.title} - Image ${imgIdx + 1}`}
+                        className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ${
+                          imgIdx === (currentImageIndex[course.id] || 0) ? "opacity-100" : "opacity-0"
+                        }`}
+                      />
+                    ))}
+                  </>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
 
                 {/* Level Badge */}
