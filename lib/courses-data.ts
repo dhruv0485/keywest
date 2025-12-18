@@ -737,172 +737,7 @@ export const coursesData: Course[] = [
       "/Course 1.png",
     ],
   },
-  {
-    id: 7,
-    title: "Self Makeup Course",
-    description: "Learn to perfect your own makeup from nude to glam looks with personalized guidance.",
-    fullDescription:
-      "The Self Makeup Course is designed for individuals who want to master the art of doing their own makeup. This 3-day intensive course covers everything from Nude Makeup (natural yet attractive looks with minimal products) to Glam Makeup (smokey and glittery eyes, full coverage, dewy finish) and Advanced Glam Makeup (cut crease techniques, glitter application). Learn best practices for low-intensity products, skin analysis, skincare tips, essential products and tools, face and eye shape correction, soft and intense contouring, blush and highlight techniques, vanity organization, and hygiene maintenance. Receive personalized feedback, one-on-one guidance, step-by-step tutorials tailored to your unique features, insider secrets for quick and flawless application, and access to a community of makeup enthusiasts. Hairstyling can be added upon special request.",
-    aboutPoints: [
-      "Nude Makeup: natural yet attractive looks with minimal products",
-      "Glam Makeup: smokey and glittery eyes, full coverage with dewy finish",
-      "Advanced Glam: cut crease techniques and glitter application",
-      "Skin analysis, skincare tips, essential products and tools guidance",
-      "Face and eye shape correction with soft and intense contouring",
-      "Personalized feedback and one-on-one guidance tailored to your features",
-      "Vanity organization, hygiene maintenance & insider secrets for flawless application"
-    ],
-    image: "/c7.webp",
-    images: ["/c7.webp", "/c7.webp", "/c7.webp", "/c7.webp"],
-    duration: "3 Days",
-    level: "Beginner",
-    category: "Self Makeup",
-    students: "4,100+",
-    rating: 4.7,
-    curriculum: [
-      {
-        week: 1,
-        title: "Day 1: Nude Makeup Look",
-        topics: [
-          "Natural yet attractive look with minimal makeup",
-          "Skin analysis and skincare tips",
-          "Essential products for healthy vanity",
-          "Face and eye shape correction, soft CBH",
-          "Vanity organization and hygiene tips",
-        ],
-      },
-      {
-        week: 2,
-        title: "Day 2: Glam Makeup",
-        topics: [
-          "Smokey and glittery eye makeup techniques",
-          "Full coverage foundation application",
-          "Achieving dewy finish",
-          "Intense contour, blush, and highlight",
-          "Glamorous lipstick with lip gloss",
-        ],
-      },
-      {
-        week: 3,
-        title: "Day 3: Advanced Glam Makeup",
-        topics: [
-          "Cut crease eye makeup techniques",
-          "Glitter and shimmer application",
-          "Advanced techniques for standout looks",
-          "Hygiene and cleanliness maintenance",
-          "Industry expert tips and tricks",
-        ],
-      },
-    ],
-    reviews: defaultReviews,
-    galleryImages: [
-      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80",
-      "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
-      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&q=80",
-      "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&q=80",
-      "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
-      "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80",
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
-      "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=800&q=80",
-    ],
-  },
-  {
-    id: 8,
-    title: "Skin Course",
-    description: "Professional beauty and skin course covering facials, treatments, manicure, pedicure & PMU.",
-    fullDescription:
-      "Professional Beauty and Skin Course covering comprehensive skincare education. Learn Professionalism including personal grooming, hygiene, client communication, bed and trolley setting, and salon management. Master Hygiene & Safety with basic to advanced tools and equipment, salon etiquette, and time management. Study Client Consultation techniques, skin consultation & analysis, human anatomy, and skin structure. Learn Superfluous Hair Removal including threading, waxing (normal, liposoluble, peel-off), and bleaching. Master Skin Care Theory covering cleansing, toning, exfoliation, extraction, massage, masks, and packs. Perform Facials & Cleanup tailored to different skin types (basic, fruit, gold). Study Advanced Skin Care including facial machines (high-frequency, galvanic, ultrasonic, vacuum suction) and specialized treatments (hyperpigmentation, detoxification, anti-tan, anti-acne, anti-aging, moisturizing, whitening). Learn Manicure & Pedicure techniques (basic, paraffin wax, anti-tan, crystal), Hydra Facial, and PMU (Permanent Makeup) including eyebrow filling, eyelash uplifting, and lip tinting.",
-    aboutPoints: [
-      "Professionalism: personal grooming, hygiene, client communication & salon management",
-      "Hygiene & Safety with advanced tools, equipment, salon etiquette & time management",
-      "Client Consultation, skin analysis, human anatomy & skin structure",
-      "Superfluous Hair Removal: threading, waxing (normal, liposoluble, peel-off) & bleaching",
-      "Skin Care Theory: cleansing, toning, exfoliation, extraction, massage, masks & packs",
-      "Facials & Cleanup for different skin types (basic, fruit, gold)",
-      "Advanced treatments: facial machines, hyperpigmentation, anti-tan, anti-acne, anti-aging",
-      "Manicure & Pedicure (basic, paraffin wax, anti-tan, crystal), Hydra Facial & PMU"
-    ],
-    image: "/c8.webp",
-    images: ["/c8.webp", "/c8.webp", "/c8.webp", "/c8.webp"],
-    duration: "6-8 Weeks",
-    level: "Beginner to Advanced",
-    category: "Skin",
-    students: "2,600+",
-    rating: 4.8,
-    curriculum: [
-      {
-        week: 1,
-        title: "Week 1-2: Professionalism & Consultation",
-        topics: [
-          "Personal grooming, hygiene, client communication",
-          "Bed and trolley setting, salon management",
-          "Hygiene & safety, tools & equipment",
-          "Client consultation, skin analysis, human anatomy",
-        ],
-      },
-      {
-        week: 2,
-        title: "Week 3-4: Hair Removal & Basic Skincare",
-        topics: [
-          "Threading, waxing (normal, liposoluble, peel-off)",
-          "Bleaching techniques",
-          "Cleansing, toning, exfoliation, extraction",
-          "Massage techniques, masks and packs",
-        ],
-      },
-      {
-        week: 3,
-        title: "Week 4-5: Facials & Cleanup",
-        topics: [
-          "Importance of facials and cleanup",
-          "Cleanup according to skin types",
-          "Basic, Fruit, and Gold facials",
-          "Customizing treatments for different skin conditions",
-        ],
-      },
-      {
-        week: 4,
-        title: "Week 5-6: Advanced Skin Treatments",
-        topics: [
-          "Facial machines: High-frequency, galvanic, ultrasonic, vacuum",
-          "Hyperpigmentation and skin detoxification treatment",
-          "Anti-tan, anti-acne, anti-aging treatments",
-          "Intense moisturizing and skin whitening treatment",
-        ],
-      },
-      {
-        week: 5,
-        title: "Week 7: Manicure & Pedicure",
-        topics: [
-          "Nail structure, diseases, tools & equipment",
-          "Basic manicure and pedicure",
-          "Paraffin wax, anti-tan techniques",
-          "Crystal manicure and pedicure",
-        ],
-      },
-      {
-        week: 6,
-        title: "Week 8: Hydra Facial & PMU",
-        topics: [
-          "Hydra facial procedure and benefits",
-          "Permanent Makeup (PMU) introduction",
-          "Eyebrow filling techniques",
-          "Eyelash uplifting and lip tinting",
-        ],
-      },
-    ],
-    reviews: defaultReviews,
-    galleryImages: [
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
-      "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&q=80",
-      "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
-      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&q=80",
-      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80",
-      "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
-      "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80",
-      "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&q=80",
-    ],
-  },
+
   {
     id: 8,
     title: "Professional Cosmetology Course",
@@ -1069,22 +904,25 @@ export const coursesData: Course[] = [
   {
     id: 7,
     title: "STAR 2026 Course - Masterclass",
-    description: "Limited time masterclass course covering comprehensive makeup and hair artistry in just 60 days.",
+    description: "Limited time masterclass - 60 Days intensive makeup and hair artistry program (Flat ₹50,000).",
     fullDescription:
-      "STAR 2026 Course is an intensive 60-day masterclass designed for aspiring makeup and hair artists. This limited-time course covers everything from theory and technical makeup classes to full looks, hair styling, and professional development. Perfect for those looking to launch their career quickly with comprehensive training in makeup artistry, hair styling, personality development, and marketing.",
+      "STAR 2026 Course is an intensive 60-day LIMITED TIME masterclass designed for aspiring makeup and hair artists. This comprehensive course covers everything from theory and technical makeup classes to full looks, hair styling, and professional development. Perfect for those looking to launch their career quickly with comprehensive training in makeup artistry, hair styling, personality development, and marketing. Flat fee of ₹50,000 for the complete program.",
     aboutPoints: [
+      "LIMITED TIME COURSE - 60 Days intensive program",
+      "Flat fee: ₹50,000 for complete training",
       "Theory: Rules & Regulations, Self Grooming, Safety & Hygiene",
       "Colour Theory: Shades & Undertones, Product Knowledge, Brush Knowledge",
-      "Skin Analysis: Types & Conditions, Colour Mixing & Foundation Making",
-      "Technical Makeup: Corrective Eye, Smokey Eye, Halo Eye with varying coverage",
+      "Skin Analysis: Types & Conditions, Colour Mixing & Foundation Making Activity",
+      "Face Chart practice and techniques",
+      "Technical Makeup Classes: Corrective Eye, Smokey Eye, Halo Eye with varying coverage",
       "Full Looks: Self Makeup, Corporate, High Fashion, Bridal, Graphic Liner, Party",
       "Hair Training: Tools, Client Handling, Hair Analysis, Self Styling",
-      "Advanced Hair: Twisted Bun, Half Tie Braid, Bubble Braid, Sleek Braid with Lace",
+      "Advanced Hair: Twisted Bun/S Bun, Half Tie Braid, Bubble Braid, Sleek Braid with Lace",
       "Hair Techniques: Different Braids, Hollywood Hair Dryer, Back Combing, Volume Puff",
-      "Professional Development: Personality Development, Marketing Class, Confidence Building",
+      "Extension Placement and Elegance Placement (Accessories)",
+      "Additional Topics: Personality Development, Marketing Class, Confidence Building",
       "Profile Building and Career Launch Support",
-      "Certificate upon completion",
-      "Flat fee: 50,000"
+      "Certificate upon completion"
     ],
     image: "/star_course.jpeg",
     images: ["/star_course.jpeg", "/star_course.jpeg", "/star_course.jpeg", "/star_course.jpeg"],
@@ -1097,7 +935,7 @@ export const coursesData: Course[] = [
     curriculum: [
       {
         week: 1,
-        title: "Theory Foundation",
+        title: "THEORY",
         topics: [
           "Rules & Regulations",
           "Self Grooming",
@@ -1113,7 +951,7 @@ export const coursesData: Course[] = [
       },
       {
         week: 2,
-        title: "Technical Makeup Classes",
+        title: "TECHNICAL MAKEUP CLASSES",
         topics: [
           "Corrective Eye Makeup + Sheer Coverage",
           "Smokey Eye Makeup + Medium Coverage",
@@ -1122,7 +960,7 @@ export const coursesData: Course[] = [
       },
       {
         week: 3,
-        title: "Full Looks Training",
+        title: "FULL LOOKS",
         topics: [
           "Self Makeup Techniques",
           "Corporate Makeup Look",
@@ -1134,10 +972,20 @@ export const coursesData: Course[] = [
       },
       {
         week: 4,
-        title: "Hair Styling Fundamentals",
+        title: "ADDITIONAL TOPICS",
+        topics: [
+          "Personality Development",
+          "Marketing Class",
+          "Confidence Building",
+          "Profile Building",
+        ],
+      },
+      {
+        week: 5,
+        title: "HAIR - Fundamentals & Basic Styling",
         topics: [
           "Tools Knowledge",
-          "Client Handling",
+          "Client Handeling",
           "Hair Analysis",
           "Basic Self Hair Styling (Straightening, Basic Curl)",
           "Twisted Bun / S Bun",
@@ -1146,27 +994,16 @@ export const coursesData: Course[] = [
         ],
       },
       {
-        week: 5,
-        title: "Advanced Hair Techniques",
+        week: 6,
+        title: "HAIR - Advanced Techniques",
         topics: [
           "Sleek Hair with Long Braid (with Lace)",
           "Different Braids",
           "Elegance Placement (Accessories)",
           "Hollywood Hair Dryer",
           "Back Combing Technique",
-          "Volume Building Puff",
+          "Volume building Puff",
           "Extension Placement",
-        ],
-      },
-      {
-        week: 6,
-        title: "Professional Development",
-        topics: [
-          "Personality Development",
-          "Marketing Class",
-          "Confidence Building",
-          "Profile Building",
-          "Career Launch Support",
         ],
       },
     ],
