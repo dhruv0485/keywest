@@ -761,14 +761,16 @@ export const coursesData: Course[] = [
       "Complete professional training for successful beauty industry career"
     ],
     image: "/cosmo1.png",
-    images: ["/cosmo1.png", "/cosmo2.png", "/cosmo3.png", "/cosmo4.png", "/cosmo5.png", "/cosmo6.png", "/cosmo7.png", "/cosmo8.png"],
-    thumbnails: ["/cosmo1_150.png", "/cosmo2_150.png", "/cosmo3_150.png", "/cosmo4_150.png", "/cosmo5_150.png", "/cosmo6_150.png", "/cosmo7_150.png", "/cosmo8_150.png"],
-    thumbnailMapping: { 0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7 },
+    images: ["/cosmo1.png", "/cosmo4.png", "/cosmo5.png", "/cosmo6.png"],
+    thumbnails: ["/cosmo1_150.png", "/cosmo4_150.png", "/cosmo5_150.png", "/cosmo6_150.png"],
+    thumbnailMapping: { 0: 0, 1: 1, 2: 2, 3: 3 },
     duration: "1 Year",
-    level: "Level 5",
+    level: "Professional",
     category: "Professional",
     students: "1,200+",
     rating: 5.0,
+    price: 150000,
+    originalPrice: 300000,
     curriculum: [
       {
         week: 1,
