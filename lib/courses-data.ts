@@ -760,8 +760,10 @@ export const coursesData: Course[] = [
       "Hydra Facial: Detailed procedure and benefits",
       "Complete professional training for successful beauty industry career"
     ],
-    image: "/c8.webp",
-    images: ["/c8.webp", "/c8.webp", "/c8.webp", "/c8.webp"],
+    image: "/cosmo1.png",
+    images: ["/cosmo1.png", "/cosmo2.png", "/cosmo3.png", "/cosmo4.png", "/cosmo5.png", "/cosmo6.png", "/cosmo7.png", "/cosmo8.png"],
+    thumbnails: ["/cosmo1_150.png", "/cosmo2_150.png", "/cosmo3_150.png", "/cosmo4_150.png", "/cosmo5_150.png", "/cosmo6_150.png", "/cosmo7_150.png", "/cosmo8_150.png"],
+    thumbnailMapping: { 0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7 },
     duration: "1 Year",
     level: "Level 5",
     category: "Professional",

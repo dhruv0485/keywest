@@ -55,7 +55,7 @@ export default function CoursesGrid() {
       id: 8,
       title: "Level 5 - Professional Cosmetology Course",
       description: "Comprehensive 1-year program including Masters in Makeup, Hair Technician, Nail Technician, and Skin Course.",
-      images: ["/c8.webp", "/c8.webp", "/c8.webp", "/c8.webp"],
+      images: ["/cosmo1.png", "/cosmo2.png", "/cosmo3.png", "/cosmo4.png"],
       duration: "1 Year",
       level: "Level 5",
       category: "Professional",
