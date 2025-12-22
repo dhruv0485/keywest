@@ -16,13 +16,14 @@ export default function CoursesSection() {
     },
     {
       id: 7,
-      title: "STAR 2026 Course - Masterclass",
+      title: "STAR 2026 Course",
       description: "Limited time masterclass covering comprehensive makeup and hair artistry in just 60 days.",
       images: ["/star1.png", "/star2.png", "/star3.png", "/star4.png"],
       duration: "60 Days",
       level: "Masterclass",
       badge: "LIMITED TIME",
       isMasterclass: true,
+      hideLevelBadge: true,
     },
   ]
 
@@ -111,9 +112,13 @@ export default function CoursesSection() {
                   </div>
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-gradient-to-r from-primary to-accent text-white text-xs font-semibold px-2 py-1 sm:px-3 sm:py-1 rounded-full">
-                  {course.level}
-                </div>
+                {/* Level Badge - Hide for STAR course */}
+                {!course.hideLevelBadge && (
+                  <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-gradient-to-r from-primary to-accent text-white text-xs font-semibold px-2 py-1 sm:px-3 sm:py-1 rounded-full">
+                    {course.level}
+                  </div>
+                )}
+                {/* Badge (LIMITED TIME, etc) */}
                 {course.badge && (
                   <div className={`absolute top-2 left-2 sm:top-3 sm:left-3 text-xs font-bold px-2 py-1 sm:px-3 sm:py-1 rounded-full ${
                     course.badge === "LIMITED TIME" 

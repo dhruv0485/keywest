@@ -5,7 +5,7 @@ import Link from "next/link"
 export default function MasterclassCard() {
   const masterclass = {
     id: 7,
-    title: "STAR 2026 Course - Masterclass",
+    title: "STAR 2026 Course",
     subtitle: "LIMITED TIME COURSE",
     duration: "60 DAYS",
     price: "FLAT 50,000",

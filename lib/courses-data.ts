@@ -907,7 +907,7 @@ export const coursesData: Course[] = [
   },
   {
     id: 7,
-    title: "STAR 2026 Course - Masterclass",
+    title: "STAR 2026 Course",
     description: "Limited time masterclass - 60 Days intensive makeup and hair artistry program (Flat ₹50,000).",
     fullDescription:
       "STAR 2026 Course is an intensive 60-day LIMITED TIME masterclass designed for aspiring makeup and hair artists. This comprehensive course covers everything from theory and technical makeup classes to full looks, hair styling, and professional development. Perfect for those looking to launch their career quickly with comprehensive training in makeup artistry, hair styling, personality development, and marketing. Flat fee of ₹50,000 for the complete program.",

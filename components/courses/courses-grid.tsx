@@ -7,13 +7,14 @@ export default function CoursesGrid() {
   const courses = [
     {
       id: 7,
-      title: "STAR 2026 Course - Masterclass",
+      title: "STAR 2026 Course",
       description: "Limited time masterclass covering comprehensive makeup and hair artistry in just 60 days.",
       images: ["/star1.png", "/star2.png", "/star3.png", "/star4.png"],
       duration: "60 Days",
       level: "Masterclass",
       category: "Professional",
-      badge: "UPCOMING",
+      badge: "LIMITED TIME",
+      hideLevelBadge: true,
     },
     {
       id: 6,
@@ -146,14 +147,16 @@ export default function CoursesGrid() {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
 
-                {/* Level Badge */}
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                  {course.level}
-                </div>
+                {/* Level Badge - Hide for STAR course */}
+                {!course.hideLevelBadge && (
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                    {course.level}
+                  </div>
+                )}
 
-                {/* Upcoming Badge */}
+                {/* Badge (LIMITED TIME, etc) */}
                 {course.badge && (
-                  <div className="absolute top-4 left-4 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                     {course.badge}
                   </div>
                 )}

@@ -185,7 +185,7 @@ export default function EnquiryContactSection() {
                   >
                     <option value="">Select a course</option>
                     <optgroup label="Our Courses">
-                      <option value="star-2026">STAR 2026 Course - Masterclass</option>
+                      <option value="star-2026">STAR 2026 Course</option>
                       <option value="level-1">Level 1 - Professional Makeup Course</option>
                       <option value="level-2">Level 2 - Masters in Makeup Artistry Course</option>
                       <option value="level-3">Level 3 - MasterPro Artistry Certification</option>
